@@ -45,7 +45,7 @@ function App() {
           />
         );
       case 'pos':
-        return <POSView stores={filteredStores} brandSummaries={brandSummaries} />;
+        return <POSView stores={filteredStores} />;
       case 'network':
         return <NetworkView stores={filteredStores} regionSummaries={regionSummaries} />;
       case 'devices':

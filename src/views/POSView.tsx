@@ -1,15 +1,14 @@
 import { Monitor, CheckCircle, AlertCircle, XCircle } from 'lucide-react';
-import { PieChart, Pie, Cell, ResponsiveContainer, BarChart, Bar, XAxis, YAxis, Tooltip } from 'recharts';
+import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from 'recharts';
 import { StatCard } from '../components/StatCard';
 import { StatusBadge } from '../components/StatusBadge';
-import type { Store, BrandSummary } from '../data/storeService';
+import type { Store } from '../data/storeService';
 
 interface POSViewProps {
   stores: Store[];
-  brandSummaries: BrandSummary[];
 }
 
-export function POSView({ stores, brandSummaries }: POSViewProps) {
+export function POSView({ stores }: POSViewProps) {
   const online = stores.filter(s => s.posStatus === 'online').length;
   const degraded = stores.filter(s => s.posStatus === 'degraded').length;
   const offline = stores.filter(s => s.posStatus === 'offline').length;
@@ -23,13 +22,6 @@ export function POSView({ stores, brandSummaries }: POSViewProps) {
     { name: 'Degraded', value: degraded, color: '#eab308' },
     { name: 'Offline', value: offline, color: '#ef4444' },
   ];
-
-  const brandData = brandSummaries.map(b => ({
-    name: b.brand.split(' ')[0],
-    online: b.posOnline,
-    degraded: b.posDegraded,
-    offline: b.posOffline,
-  }));
 
   const problemStores = stores
     .filter(s => s.posStatus !== 'online')
@@ -129,23 +121,6 @@ export function POSView({ stores, brandSummaries }: POSViewProps) {
             </div>
           </div>
         </div>
-      </div>
-
-      <div className="bg-slate-800/50 rounded-xl p-6 border border-slate-700">
-        <h3 className="text-lg font-medium text-white mb-4">POS Status by Brand</h3>
-        <ResponsiveContainer width="100%" height={300}>
-          <BarChart data={brandData} layout="vertical">
-            <XAxis type="number" stroke="#94a3b8" />
-            <YAxis dataKey="name" type="category" stroke="#94a3b8" width={80} />
-            <Tooltip
-              contentStyle={{ backgroundColor: '#1e293b', border: '1px solid #334155', borderRadius: '8px' }}
-              labelStyle={{ color: '#fff' }}
-            />
-            <Bar dataKey="online" stackId="a" fill="#10b981" name="Online" />
-            <Bar dataKey="degraded" stackId="a" fill="#eab308" name="Degraded" />
-            <Bar dataKey="offline" stackId="a" fill="#ef4444" name="Offline" />
-          </BarChart>
-        </ResponsiveContainer>
       </div>
 
       <div className="bg-slate-800/50 rounded-xl p-6 border border-slate-700">
