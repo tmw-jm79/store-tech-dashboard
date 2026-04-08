@@ -157,6 +157,7 @@ export function IncidentsView({ incidents, incidentStats }: IncidentsViewProps) 
             <thead>
               <tr className="border-b border-slate-700">
                 <th className="text-left py-3 px-4 text-slate-400 font-medium">Store ID</th>
+                <th className="text-left py-3 px-4 text-slate-400 font-medium">Incident ID</th>
                 <th className="text-left py-3 px-4 text-slate-400 font-medium">Incident Summary</th>
                 <th className="text-left py-3 px-4 text-slate-400 font-medium">Priority</th>
                 <th className="text-left py-3 px-4 text-slate-400 font-medium">Status</th>
@@ -166,6 +167,7 @@ export function IncidentsView({ incidents, incidentStats }: IncidentsViewProps) 
               {incidents.slice(0, 50).map(incident => (
                 <tr key={incident.id} className="border-b border-slate-700/50 hover:bg-slate-700/30">
                   <td className="py-3 px-4 text-white font-medium">{incident.storeId}</td>
+                  <td className="py-3 px-4 text-slate-300 font-mono text-sm">{incident.id}</td>
                   <td className="py-3 px-4 text-slate-300">{incident.summary}</td>
                   <td className="py-3 px-4">
                     <span className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-sm font-medium ${priorityColors[incident.priority]}`}>
