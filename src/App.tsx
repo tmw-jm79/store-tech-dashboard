@@ -15,13 +15,12 @@ import {
   getIncidentStores,
   getStoresByFilter,
   type Brand,
-  type Region,
 } from './data/mockData';
 
 function App() {
   const [currentView, setCurrentView] = useState<View>('overview');
   const [selectedBrand, setSelectedBrand] = useState<Brand | 'all'>('all');
-  const [selectedRegion, setSelectedRegion] = useState<Region | 'all'>('all');
+  const [selectedRegion, setSelectedRegion] = useState<string | 'all'>('all');
   const [lastUpdated, setLastUpdated] = useState(new Date().toISOString());
 
   const handleRefresh = useCallback(() => {
