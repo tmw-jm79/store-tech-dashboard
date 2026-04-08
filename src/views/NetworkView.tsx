@@ -2,7 +2,7 @@ import { Wifi, CheckCircle, AlertCircle, XCircle, Router } from 'lucide-react';
 import { PieChart, Pie, Cell, ResponsiveContainer, AreaChart, Area, XAxis, YAxis, Tooltip } from 'recharts';
 import { StatCard } from '../components/StatCard';
 import { StatusBadge } from '../components/StatusBadge';
-import type { Store, RegionSummary } from '../data/mockData';
+import type { Store, RegionSummary } from '../data/storeService';
 
 interface NetworkViewProps {
   stores: Store[];

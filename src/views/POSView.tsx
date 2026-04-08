@@ -2,7 +2,7 @@ import { Monitor, CheckCircle, AlertCircle, XCircle } from 'lucide-react';
 import { PieChart, Pie, Cell, ResponsiveContainer, BarChart, Bar, XAxis, YAxis, Tooltip } from 'recharts';
 import { StatCard } from '../components/StatCard';
 import { StatusBadge } from '../components/StatusBadge';
-import type { Store, BrandSummary } from '../data/mockData';
+import type { Store, BrandSummary } from '../data/storeService';
 
 interface POSViewProps {
   stores: Store[];

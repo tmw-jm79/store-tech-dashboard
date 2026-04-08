@@ -1,7 +1,7 @@
 import { Monitor, Scan, Printer, Router, HardDrive } from 'lucide-react';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, Legend, PieChart, Pie, Cell } from 'recharts';
 import { StatCard } from '../components/StatCard';
-import type { Store, BrandSummary } from '../data/mockData';
+import type { Store, BrandSummary } from '../data/storeService';
 
 interface DevicesViewProps {
   stores: Store[];

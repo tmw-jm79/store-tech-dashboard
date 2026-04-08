@@ -1,7 +1,7 @@
 import { useState, useMemo } from 'react';
 import { Search, ChevronLeft, ChevronRight } from 'lucide-react';
 import { StatusBadge } from '../components/StatusBadge';
-import type { Store } from '../data/mockData';
+import type { Store } from '../data/storeService';
 
 interface StoresViewProps {
   stores: Store[];

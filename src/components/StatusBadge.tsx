@@ -1,4 +1,4 @@
-import type { SystemStatus } from '../data/mockData';
+import type { SystemStatus } from '../data/storeService';
 
 interface StatusBadgeProps {
   status: SystemStatus;

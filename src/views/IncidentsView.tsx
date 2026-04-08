@@ -1,7 +1,7 @@
 import { AlertTriangle, AlertCircle, XCircle, Clock, MapPin } from 'lucide-react';
 import { StatCard } from '../components/StatCard';
 import { StatusBadge } from '../components/StatusBadge';
-import type { Store } from '../data/mockData';
+import type { Store } from '../data/storeService';
 
 interface IncidentsViewProps {
   incidentStores: Store[];

@@ -15,7 +15,7 @@ import {
   getIncidentStores,
   getStoresByFilter,
   type Brand,
-} from './data/mockData';
+} from './data/storeService';
 
 function App() {
   const [currentView, setCurrentView] = useState<View>('overview');

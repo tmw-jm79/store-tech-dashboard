@@ -1,5 +1,4 @@
-import type { Brand } from '../data/mockData';
-import { brands, regions } from '../data/mockData';
+import { brands, regions, brandNames, type Brand } from '../data/storeService';
 
 interface FilterBarProps {
   selectedBrand: Brand | 'all';
@@ -7,13 +6,6 @@ interface FilterBarProps {
   onBrandChange: (brand: Brand | 'all') => void;
   onRegionChange: (region: string | 'all') => void;
 }
-
-const brandLabels: Record<Brand, string> = {
-  'KNG': 'K&G Fashion',
-  'TMW': "Men's Wearhouse",
-  'MSP': 'Moores',
-  'JAB': 'Jos. A. Bank'
-};
 
 export function FilterBar({ selectedBrand, selectedRegion, onBrandChange, onRegionChange }: FilterBarProps) {
   // Group regions by brand prefix
@@ -36,7 +28,7 @@ export function FilterBar({ selectedBrand, selectedRegion, onBrandChange, onRegi
         >
           <option value="all">All Brands</option>
           {brands.map(brand => (
-            <option key={brand} value={brand}>{brandLabels[brand]}</option>
+            <option key={brand} value={brand}>{brandNames[brand]}</option>
           ))}
         </select>
       </div>
