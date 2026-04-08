@@ -51,6 +51,9 @@ export interface DeviceInventory {
   desktopPhones: NetworkedDevice;
   cordlessPhones: NetworkedDevice;
   
+  // Network infrastructure
+  networkSwitches: NetworkedDevice;
+  
   // Passive devices (count only)
   averyMarkdownScanners: PassiveDevice;
   tailoringPrinters: PassiveDevice;
@@ -75,6 +78,7 @@ export const fleetTotalsByBrand: Record<Brand, Record<string, number>> = {
     monitors: 2540,
     desktopPhones: 4508,
     cordlessPhones: 647,
+    networkSwitches: 1302, // ~2 per store
   },
   JAB: {
     posComputers: 776,
@@ -90,6 +94,7 @@ export const fleetTotalsByBrand: Record<Brand, Record<string, number>> = {
     monitors: 776,
     desktopPhones: 986,
     cordlessPhones: 196,
+    networkSwitches: 364, // ~2 per store
   },
   MSP: {
     posComputers: 330,
@@ -105,6 +110,7 @@ export const fleetTotalsByBrand: Record<Brand, Record<string, number>> = {
     monitors: 330,
     desktopPhones: 623,
     cordlessPhones: 112,
+    networkSwitches: 216, // ~2 per store
   },
   KNG: {
     posComputers: 486,
@@ -120,6 +126,7 @@ export const fleetTotalsByBrand: Record<Brand, Record<string, number>> = {
     monitors: 486,
     desktopPhones: 586,
     cordlessPhones: 167,
+    networkSwitches: 162, // ~2 per store
   },
 };
 

@@ -50,6 +50,9 @@ function generateDeviceInventory(brand: Brand): DeviceInventory {
     desktopPhones: generateNetworkedDevice(fleet.desktopPhones, storeCount),
     cordlessPhones: generateNetworkedDevice(fleet.cordlessPhones, storeCount),
     
+    // Network infrastructure
+    networkSwitches: generateNetworkedDevice(fleet.networkSwitches, storeCount),
+    
     // Passive devices
     averyMarkdownScanners: generatePassiveDevice(fleet.averyMarkdownScanners, storeCount),
     tailoringPrinters: generatePassiveDevice(fleet.tailoringPrinters, storeCount),

@@ -1,4 +1,4 @@
-import { Monitor, Tablet, CreditCard, Receipt, Printer, Laptop, Phone, PhoneCall, Barcode, DollarSign, HardDrive, Wifi, WifiOff } from 'lucide-react';
+import { Monitor, Tablet, CreditCard, Receipt, Printer, Laptop, Barcode, DollarSign, HardDrive, Wifi, WifiOff } from 'lucide-react';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, Legend } from 'recharts';
 import { StatCard } from '../components/StatCard';
 import type { Store, BrandSummary } from '../data/storeService';
@@ -34,7 +34,7 @@ interface DevicesViewProps {
 export function DevicesView({ stores, stats, brandSummaries }: DevicesViewProps) {
   const { deviceBreakdown, devices } = stats;
 
-  // Networked devices (have online/offline status)
+  // Networked devices (have online/offline status) - excludes network switches and phones (shown in Network Health)
   const networkedDevices = [
     { name: 'POS Computers', key: 'posComputers', icon: <Monitor size={20} />, ...deviceBreakdown.posComputers, color: '#3b82f6' },
     { name: 'iPads', key: 'iPads', icon: <Tablet size={20} />, ...deviceBreakdown.iPads, color: '#8b5cf6' },
@@ -42,8 +42,6 @@ export function DevicesView({ stores, stats, brandSummaries }: DevicesViewProps)
     { name: 'Receipt Printers', key: 'receiptPrinters', icon: <Receipt size={20} />, ...deviceBreakdown.receiptPrinters, color: '#14b8a6' },
     { name: 'Laser Printers', key: 'laserPrinters', icon: <Printer size={20} />, ...deviceBreakdown.laserPrinters, color: '#f97316' },
     { name: 'Chromebooks', key: 'chromebooks', icon: <Laptop size={20} />, ...deviceBreakdown.chromebooks, color: '#06b6d4' },
-    { name: 'Desktop Phones', key: 'desktopPhones', icon: <Phone size={20} />, ...deviceBreakdown.desktopPhones, color: '#84cc16' },
-    { name: 'Cordless Phones', key: 'cordlessPhones', icon: <PhoneCall size={20} />, ...deviceBreakdown.cordlessPhones, color: '#a855f7' },
   ];
 
   // Passive devices (count only, no online/offline status)
