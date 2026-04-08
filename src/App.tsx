@@ -13,24 +13,20 @@ import {
   getRegionSummaries,
   getOverallStats,
   getIncidentStores,
-  getStoresByFilter,
-  type Brand,
+  getStoresByHierarchy,
+  type HierarchyFilter,
 } from './data/storeService';
 
 function App() {
   const [currentView, setCurrentView] = useState<View>('overview');
-  const [selectedBrand, setSelectedBrand] = useState<Brand | 'all'>('all');
-  const [selectedRegion, setSelectedRegion] = useState<string | 'all'>('all');
+  const [filter, setFilter] = useState<HierarchyFilter>({});
   const [lastUpdated, setLastUpdated] = useState(new Date().toISOString());
 
   const handleRefresh = useCallback(() => {
     setLastUpdated(new Date().toISOString());
   }, []);
 
-  const filteredStores = getStoresByFilter(
-    selectedBrand === 'all' ? undefined : selectedBrand,
-    selectedRegion === 'all' ? undefined : selectedRegion
-  );
+  const filteredStores = getStoresByHierarchy(filter);
 
   const stats = getOverallStats();
   const brandSummaries = getBrandSummaries();
@@ -76,10 +72,8 @@ function App() {
           {currentView !== 'overview' && currentView !== 'incidents' && (
             <div className="mb-6">
               <FilterBar
-                selectedBrand={selectedBrand}
-                selectedRegion={selectedRegion}
-                onBrandChange={setSelectedBrand}
-                onRegionChange={setSelectedRegion}
+                filter={filter}
+                onFilterChange={setFilter}
               />
             </div>
           )}

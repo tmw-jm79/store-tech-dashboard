@@ -1,29 +1,63 @@
-import { brands, regions, brandNames, type Brand } from '../data/storeService';
+import { 
+  brands, 
+  brandNames, 
+  getZonesByBrand, 
+  getRegionsByZone, 
+  getDistrictsByRegion,
+  type Brand,
+  type HierarchyFilter 
+} from '../data/storeService';
 
 interface FilterBarProps {
-  selectedBrand: Brand | 'all';
-  selectedRegion: string | 'all';
-  onBrandChange: (brand: Brand | 'all') => void;
-  onRegionChange: (region: string | 'all') => void;
+  filter: HierarchyFilter;
+  onFilterChange: (filter: HierarchyFilter) => void;
 }
 
-export function FilterBar({ selectedBrand, selectedRegion, onBrandChange, onRegionChange }: FilterBarProps) {
-  // Group regions by brand prefix
-  const brandRegions = regions.filter(r => {
-    if (selectedBrand === 'all') return true;
-    return r.startsWith(selectedBrand);
-  });
+export function FilterBar({ filter, onFilterChange }: FilterBarProps) {
+  const zones = filter.brand ? getZonesByBrand(filter.brand) : [];
+  const regions = filter.zone ? getRegionsByZone(filter.zone) : [];
+  const districts = filter.region ? getDistrictsByRegion(filter.region) : [];
+
+  const handleBrandChange = (brand: string) => {
+    onFilterChange({ 
+      brand: brand === 'all' ? undefined : brand as Brand 
+    });
+  };
+
+  const handleZoneChange = (zone: string) => {
+    onFilterChange({ 
+      ...filter, 
+      zone: zone === 'all' ? undefined : zone,
+      region: undefined,
+      district: undefined
+    });
+  };
+
+  const handleRegionChange = (region: string) => {
+    onFilterChange({ 
+      ...filter, 
+      region: region === 'all' ? undefined : region,
+      district: undefined
+    });
+  };
+
+  const handleDistrictChange = (district: string) => {
+    onFilterChange({ 
+      ...filter, 
+      district: district === 'all' ? undefined : district
+    });
+  };
+
+  const hasFilters = filter.brand || filter.zone || filter.region || filter.district;
 
   return (
     <div className="bg-slate-800/50 rounded-lg p-4 flex flex-wrap gap-4 items-center">
+      {/* Brand */}
       <div className="flex items-center gap-2">
         <label className="text-slate-400 text-sm font-medium">Brand:</label>
         <select
-          value={selectedBrand}
-          onChange={(e) => {
-            onBrandChange(e.target.value as Brand | 'all');
-            onRegionChange('all'); // Reset region when brand changes
-          }}
+          value={filter.brand || 'all'}
+          onChange={(e) => handleBrandChange(e.target.value)}
           className="bg-slate-700 text-white rounded-lg px-3 py-2 text-sm border border-slate-600 focus:border-blue-500 focus:outline-none"
         >
           <option value="all">All Brands</option>
@@ -33,26 +67,60 @@ export function FilterBar({ selectedBrand, selectedRegion, onBrandChange, onRegi
         </select>
       </div>
 
-      <div className="flex items-center gap-2">
-        <label className="text-slate-400 text-sm font-medium">Region:</label>
-        <select
-          value={selectedRegion}
-          onChange={(e) => onRegionChange(e.target.value)}
-          className="bg-slate-700 text-white rounded-lg px-3 py-2 text-sm border border-slate-600 focus:border-blue-500 focus:outline-none"
-        >
-          <option value="all">All Regions</option>
-          {brandRegions.map(region => (
-            <option key={region} value={region}>{region}</option>
-          ))}
-        </select>
-      </div>
+      {/* Zone - only show if brand selected */}
+      {filter.brand && zones.length > 0 && (
+        <div className="flex items-center gap-2">
+          <label className="text-slate-400 text-sm font-medium">Zone:</label>
+          <select
+            value={filter.zone || 'all'}
+            onChange={(e) => handleZoneChange(e.target.value)}
+            className="bg-slate-700 text-white rounded-lg px-3 py-2 text-sm border border-slate-600 focus:border-blue-500 focus:outline-none"
+          >
+            <option value="all">All Zones</option>
+            {zones.map(zone => (
+              <option key={zone} value={zone}>{zone}</option>
+            ))}
+          </select>
+        </div>
+      )}
 
-      {(selectedBrand !== 'all' || selectedRegion !== 'all') && (
+      {/* Region - only show if zone selected */}
+      {filter.zone && regions.length > 0 && (
+        <div className="flex items-center gap-2">
+          <label className="text-slate-400 text-sm font-medium">Region:</label>
+          <select
+            value={filter.region || 'all'}
+            onChange={(e) => handleRegionChange(e.target.value)}
+            className="bg-slate-700 text-white rounded-lg px-3 py-2 text-sm border border-slate-600 focus:border-blue-500 focus:outline-none"
+          >
+            <option value="all">All Regions</option>
+            {regions.map(region => (
+              <option key={region} value={region}>{region}</option>
+            ))}
+          </select>
+        </div>
+      )}
+
+      {/* District - only show if region selected */}
+      {filter.region && districts.length > 0 && (
+        <div className="flex items-center gap-2">
+          <label className="text-slate-400 text-sm font-medium">District:</label>
+          <select
+            value={filter.district || 'all'}
+            onChange={(e) => handleDistrictChange(e.target.value)}
+            className="bg-slate-700 text-white rounded-lg px-3 py-2 text-sm border border-slate-600 focus:border-blue-500 focus:outline-none"
+          >
+            <option value="all">All Districts</option>
+            {districts.map(district => (
+              <option key={district} value={district}>{district}</option>
+            ))}
+          </select>
+        </div>
+      )}
+
+      {hasFilters && (
         <button
-          onClick={() => {
-            onBrandChange('all');
-            onRegionChange('all');
-          }}
+          onClick={() => onFilterChange({})}
           className="text-blue-400 hover:text-blue-300 text-sm"
         >
           Clear filters

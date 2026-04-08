@@ -50,6 +50,39 @@ export const stores = generateStores();
 
 export const regions = [...new Set(stores.map(s => s.region))].sort();
 
+// Hierarchy helpers: Brand → Zone → Region → District → Store
+export function getZonesByBrand(brand?: Brand): string[] {
+  const filtered = brand ? stores.filter(s => s.brand === brand) : stores;
+  return [...new Set(filtered.map(s => s.zone))].sort();
+}
+
+export function getRegionsByZone(zone?: string): string[] {
+  const filtered = zone ? stores.filter(s => s.zone === zone) : stores;
+  return [...new Set(filtered.map(s => s.region))].sort();
+}
+
+export function getDistrictsByRegion(region?: string): string[] {
+  const filtered = region ? stores.filter(s => s.region === region) : stores;
+  return [...new Set(filtered.map(s => s.district))].sort();
+}
+
+export interface HierarchyFilter {
+  brand?: Brand;
+  zone?: string;
+  region?: string;
+  district?: string;
+}
+
+export function getStoresByHierarchy(filter: HierarchyFilter): Store[] {
+  return stores.filter(store => {
+    if (filter.brand && store.brand !== filter.brand) return false;
+    if (filter.zone && store.zone !== filter.zone) return false;
+    if (filter.region && store.region !== filter.region) return false;
+    if (filter.district && store.district !== filter.district) return false;
+    return true;
+  });
+}
+
 export function getBrandSummaries(): BrandSummary[] {
   const brandList: Brand[] = ['KNG', 'TMW', 'MSP', 'JAB'];
   return brandList.map(brand => {
