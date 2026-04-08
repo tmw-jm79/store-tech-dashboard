@@ -1,0 +1,1023 @@
+STORECODE|STORENAME|BRAND|ZONE|REGION|DISTRICT|STORETYPE|STORESTATUS|CITY|STATE
+KNG_0605|#0605 Greensboro|KNG|KNG_R08|KNG_R08|KNG_R08_A|Brick & Mortar|Open|Greensboro|NC
+TMW_0999|#0999 Kng Head Office|TMW|TMW_R99|TMW_R99|TMW_R99_R99A|Brick & Mortar|Open|Atlanta|GA
+KNG_0030|#0030 Irving|KNG|KNG_R02|KNG_R02|KNG_R02_A|Brick & Mortar|Open|Irving|TX
+KNG_0112|#0112West Palm Beach|KNG|KNG_R01|KNG_R01|KNG_R01_A|Brick & Mortar|Open|West Palm Beach|FL
+KNG_0076|#0076 Flint|KNG|KNG_R04|KNG_R04|KNG_R04_A|Brick & Mortar|Open|Flint|MI
+KNG_0020|#0020 Woodbridge|KNG|KNG_R09|KNG_R09|KNG_R09_A|Brick & Mortar|Open|Woodbridge|NJ
+KNG_0708|#0708 Chicago|KNG|KNG_R03|KNG_R03|KNG_R03_A|Brick & Mortar|Open|Chicago|IL
+KNG_0080|#0080 Seattle|KNG|KNG_R03|KNG_R03|KNG_R03_A|Brick & Mortar|Open|Tukwila|WA
+TMW_7001|#7001 Bespoke Joseph Abboud(Custom App Uses This)|TMW|TMW_ZCO|TMW_ZCO|TMW_ZCO_ZCOM|Brick & Mortar|Open|Teaneck|NJ
+KNG_0023|#0023Meadows Business Park|KNG|KNG_R10|KNG_R10|KNG_R10_A|Brick & Mortar|Open|Baltimore|MD
+KNG_0101|#0101 Orlando|KNG|KNG_R01|KNG_R01|KNG_R01_A|Brick & Mortar|Open|Orlando|FL
+KNG_0064|#0064Saint Charles Towne Plaza|KNG|KNG_R10|KNG_R10|KNG_R10_A|Brick & Mortar|Open|Waldorf|MD
+KNG_0017|#0017Poplar Plaza Shopping Center|KNG|KNG_R08|KNG_R08|KNG_R08_A|Brick & Mortar|Open|Memphis|TN
+KNG_0705|#0705Place Mall Shopping Center|KNG|KNG_R03|KNG_R03|KNG_R03_A|Brick & Mortar|Open|Orland Park|IL
+KNG_0074|#0074Steelyard Commons|KNG|KNG_R04|KNG_R04|KNG_R04_A|Brick & Mortar|Open|Cleveland|OH
+KNG_0082|#0082 Tacoma|KNG|KNG_R03|KNG_R03|KNG_R03_A|Brick & Mortar|Open|Tacoma|WA
+KNG_0711|#0711Cermak Plaza Shopping Center|KNG|KNG_R03|KNG_R03|KNG_R03_A|Brick & Mortar|Open|Berwyn|IL
+KNG_0209|#0209 Deptford|KNG|KNG_R09|KNG_R09|KNG_R09_A|Brick & Mortar|Open|Woodbury|NJ
+KNG_0034|#0034Cooper Street Plaza|KNG|KNG_R02|KNG_R02|KNG_R02_A|Brick & Mortar|Open|Arlington|TX
+KNG_0011|#0011Mall Corners Shopping Center|KNG|KNG_R01|KNG_R01|KNG_R01_A|Brick & Mortar|Open|Duluth|GA
+JAB_1021|#1021 Business Outreach|JAB|JAB_Z|JAB_ZC|JAB_ZCOM|Brick & Mortar|Open|Houston|TX
+KNG_0316|#0316Manhattan Place|KNG|KNG_R08|KNG_R08|KNG_R08_A|Brick & Mortar|Open|Harvey|LA
+KNG_0319|#0319 Katy|KNG|KNG_R02|KNG_R02|KNG_R02_A|Brick & Mortar|Open|Katy|TX
+KNG_0304|#0304 Metairie|KNG|KNG_R08|KNG_R08|KNG_R08_A|Brick & Mortar|Open|Metairie|LA
+KNG_0018|#0018100 Oaks Mall|KNG|KNG_R08|KNG_R08|KNG_R08_A|Brick & Mortar|Open|Nashville|TN
+KNG_0063|#0063 Rockville Md|KNG|KNG_R10|KNG_R10|KNG_R10_A|Brick & Mortar|Open|Kensington|MD
+KNG_0308|#0308 Lewisville|KNG|KNG_R02|KNG_R02|KNG_R02_A|Brick & Mortar|Open|Lewisville|TX
+KNG_0014|#0014Southlake|KNG|KNG_R01|KNG_R01|KNG_R01_A|Brick & Mortar|Open|Morrow|GA
+KNG_0314|#0314Hammond Aire Plaza|KNG|KNG_R08|KNG_R08|KNG_R08_A|Brick & Mortar|Open|Baton Rouge|LA
+KNG_0608|#0608 Richmond|KNG|KNG_R10|KNG_R10|KNG_R10_A|Brick & Mortar|Open|Richmond|VA
+KNG_0215|#0215 Manchester|KNG|KNG_R09|KNG_R09|KNG_R09_A|Brick & Mortar|Open|Manchester|CT
+KNG_0909|#0909 Detroit|KNG|KNG_R04|KNG_R04|KNG_R04_A|Brick & Mortar|Open|Detroit|MI
+MSP_0102|#0102 Langley|MSP|MSP_C|MSP_C0|MSP_C010|Brick & Mortar|Open|Langley|BC
+MSP_0015|#0015 Vancouver - Downtown|MSP|MSP_C|MSP_C0|MSP_C010|Brick & Mortar|Open|Vancouver|BC
+MSP_0030|#0030 Regina|MSP|MSP_C|MSP_C0|MSP_C004|Brick & Mortar|Open|Regina|SK
+MSP_0003|#0003 Toronto North|MSP|MSP_C|MSP_C0|MSP_C003|Brick & Mortar|Open|Thornhill|ON
+MSP_0075|#0075 Montreal Downtown|MSP|MSP_C|MSP_C0|MSP_C006|Brick & Mortar|Open|Montreal|QC
+MSP_0123|#0123Park Place|MSP|MSP_C|MSP_C0|MSP_C008|Brick & Mortar|Open|Barrie|ON
+MSP_0127|#0127 Chatham, On|MSP|MSP_C|MSP_C0|MSP_C007|Brick & Mortar|Open|Chatham|ON
+MSP_0047|#0047 Oakville West|MSP|MSP_C|MSP_C0|MSP_C009|Brick & Mortar|Open|Oakville|ON
+MSP_0028|#0028 St. John's Nfld|MSP|MSP_C|MSP_C0|MSP_C001|Brick & Mortar|Open|St. John's|NL
+MSP_0107|#0107Aberdeen Village Centre|MSP|MSP_C|MSP_C0|MSP_C002|Brick & Mortar|Open|Kamloops|BC
+MSP_0062|#0062 Saint Leonard|MSP|MSP_C|MSP_C0|MSP_C006|Brick & Mortar|Open|Saint Leonard|QC
+MSP_0110|#0110 Warehouse Outlet|MSP|MSP_C|MSP_C0|MSP_C008|Brick & Mortar|Open|Etobicoke|ON
+MSP_0024|#0024Dartmouth Crossing|MSP|MSP_C|MSP_C0|MSP_C001|Brick & Mortar|Open|Dartmouth|NS
+MSP_0025|#0025 Newmarket|MSP|MSP_C|MSP_C0|MSP_C008|Brick & Mortar|Open|Newmarket|ON
+MSP_0023|#0023 Halifax - N.S.|MSP|MSP_C|MSP_C0|MSP_C001|Brick & Mortar|Open|Halifax|NS
+MSP_0004|#0004 Toronto Downtown|MSP|MSP_C|MSP_C0|MSP_C008|Brick & Mortar|Open|Toronto|ON
+MSP_0019|#0019 Richmond|MSP|MSP_C|MSP_C0|MSP_C010|Brick & Mortar|Open|Richmond|BC
+MSP_0006|#0006 Ottawa - East|MSP|MSP_C|MSP_C0|MSP_C005|Brick & Mortar|Open|Ottawa|ON
+MSP_0010|#0010 Burnaby|MSP|MSP_C|MSP_C0|MSP_C010|Brick & Mortar|Open|Burnaby|BC
+MSP_0051|#0051 Windsor|MSP|MSP_C|MSP_C0|MSP_C007|Brick & Mortar|Open|Windsor|ON
+MSP_0090|#0090 Woodbridge|MSP|MSP_C|MSP_C0|MSP_C008|Brick & Mortar|Open|Woodbridge|ON
+MSP_0098|#0098 Ajax|MSP|MSP_C|MSP_C0|MSP_C003|Brick & Mortar|Open|Ajax|ON
+MSP_0052|#0052 Red Deer|MSP|MSP_C|MSP_C0|MSP_C002|Brick & Mortar|Open|Red Deer|AB
+MSP_0119|#0119The Boardwalk|MSP|MSP_C|MSP_C0|MSP_C007|Brick & Mortar|Open|Kitchener|ON
+MSP_0053|#0053 Lethbridge|MSP|MSP_C|MSP_C0|MSP_C002|Brick & Mortar|Open|Lethbridge|AB
+MSP_0056|#0056 Lebourgneuf|MSP|MSP_C|MSP_C0|MSP_C006|Brick & Mortar|Open|Lebourgneuf|QC
+MSP_0060|#0060 Waterloo|MSP|MSP_C|MSP_C0|MSP_C007|Brick & Mortar|Open|Waterloo|ON
+MSP_0002|#0002 Scarbrough W Kennedy/401|MSP|MSP_C|MSP_C0|MSP_C003|Brick & Mortar|Open|Scarborough|ON
+MSP_0097|#0097Hyde Park Gate|MSP|MSP_C|MSP_C0|MSP_C009|Brick & Mortar|Open|Oakville|ON
+MSP_0041|#0041 Calgary North East|MSP|MSP_C|MSP_C0|MSP_C002|Brick & Mortar|Open|Calgary|AB
+MSP_0094|#0094 Chicoutimi - Pq|MSP|MSP_C|MSP_C0|MSP_C006|Brick & Mortar|Open|Chicoutimi|QC
+MSP_0037|#0037Southpoint Shopping Centre|MSP|MSP_C|MSP_C0|MSP_C004|Brick & Mortar|Open|Edmonton|AB
+MSP_0007|#0007 Ottawa|MSP|MSP_C|MSP_C0|MSP_C005|Brick & Mortar|Open|Ottawa|ON
+MSP_0026|#0026 Winnipeg West|MSP|MSP_C|MSP_C0|MSP_C004|Brick & Mortar|Open|Winnipeg|MB
+MSP_0044|#0044 Peterborough|MSP|MSP_C|MSP_C0|MSP_C003|Brick & Mortar|Open|Peterborough|ON
+MSP_0042|#0042Calgary Centre South|MSP|MSP_C|MSP_C0|MSP_C002|Brick & Mortar|Open|Calgary|AB
+MSP_0085|#0085 Saint Bruno|MSP|MSP_C|MSP_C0|MSP_C006|Brick & Mortar|Open|Saint Bruno|QC
+MSP_0001|Moores#0001 Mississauga East|MSP|MSP_C|MSP_C0|MSP_C008|Brick & Mortar|Open|Mississauga|ON
+MSP_0129|#0129 Vaudreuil, Qc|MSP|MSP_C|MSP_C0|MSP_C005|Brick & Mortar|Open|Vaudreuil|QC
+MSP_0038|#0038White Oaks Square|MSP|MSP_C|MSP_C0|MSP_C004|Brick & Mortar|Open|Edmonton|AB
+MSP_0105|#0105 Nanaimo|MSP|MSP_C|MSP_C0|MSP_C010|Brick & Mortar|Open|Nanaimo|BC
+MSP_0014|#0014 London South|MSP|MSP_C|MSP_C0|MSP_C007|Brick & Mortar|Open|London|ON
+MSP_0065|#0065 Pointe Claire|MSP|MSP_C|MSP_C0|MSP_C005|Brick & Mortar|Open|Pointe Claire|QC
+MSP_0083|#0083Eastgate Square|MSP|MSP_C|MSP_C0|MSP_C009|Brick & Mortar|Open|Stoney Creek|ON
+MSP_0022|#0022 Sudbury|MSP|MSP_C|MSP_C0|MSP_C005|Brick & Mortar|Open|Sudbury|ON
+MSP_0114|#0114 Brampton North|MSP|MSP_C|MSP_C0|MSP_C008|Brick & Mortar|Open|Brampton|ON
+MSP_0045|#0045 Kingston|MSP|MSP_C|MSP_C0|MSP_C003|Brick & Mortar|Open|Kingston|ON
+MSP_0048|#0048Westshore Town Centre|MSP|MSP_C|MSP_C0|MSP_C010|Brick & Mortar|Open|Victoria|BC
+MSP_0005|#0005Woodview Place|MSP|MSP_C|MSP_C0|MSP_C009|Brick & Mortar|Open|Burlington|ON
+MSP_0092|#0092 Brandon|MSP|MSP_C|MSP_C0|MSP_C004|Brick & Mortar|Open|Brandon|MB
+MSP_0081|#0081 - Abbotsford|MSP|MSP_C|MSP_C0|MSP_C010|Brick & Mortar|Open|Abbotsford|BC
+MSP_0039|#0039 Coquitlam|MSP|MSP_C|MSP_C0|MSP_C010|Brick & Mortar|Open|Coquitlam|BC
+MSP_0036|#0036West Point Centre North|MSP|MSP_C|MSP_C0|MSP_C004|Brick & Mortar|Open|Edmonton|AB
+MSP_0059|#0059Park & Tilford Shopping Centre|MSP|MSP_C|MSP_C0|MSP_C010|Brick & Mortar|Open|North Vancouver|BC
+MSP_0020|#0020 Markham - Toronto|MSP|MSP_C|MSP_C0|MSP_C003|Brick & Mortar|Open|Markham|ON
+MSP_0095|#0095 Dieppe - N.B.|MSP|MSP_C|MSP_C0|MSP_C001|Brick & Mortar|Open|Dieppe|NB
+MSP_0043|#0043 Saskatoon|MSP|MSP_C|MSP_C0|MSP_C004|Brick & Mortar|Open|Saskatoon|SK
+MSP_0079|#0079Bell-Front Shopping Centre|MSP|MSP_C|MSP_C0|MSP_C003|Brick & Mortar|Open|Belleville|ON
+MSP_0082|#0082 Sherbrooke|MSP|MSP_C|MSP_C0|MSP_C006|Brick & Mortar|Open|Sherbrooke|QC
+MSP_0031|#0031 Scarborough East|MSP|MSP_C|MSP_C0|MSP_C003|Brick & Mortar|Open|Scarborough|ON
+MSP_0078|#0078Uptown Centre|MSP|MSP_C|MSP_C0|MSP_C001|Brick & Mortar|Open|Fredericton|NB
+MSP_0071|#0071 Edmonton East|MSP|MSP_C|MSP_C0|MSP_C004|Brick & Mortar|Open|Edmonton|AB
+MSP_0021|#0021 Kitchener|MSP|MSP_C|MSP_C0|MSP_C007|Brick & Mortar|Open|Kitchener|ON
+MSP_0128|#0128 Cornwall, On|MSP|MSP_C|MSP_C0|MSP_C005|Brick & Mortar|Open|Cornwall|ON
+MSP_0091|#0091Galeries de la Capitale|MSP|MSP_C|MSP_C0|MSP_C006|Brick & Mortar|Open|Quebec|QC
+MSP_0069|#0069Heartland Town Centre|MSP|MSP_C|MSP_C0|MSP_C008|Brick & Mortar|Open|Mississauga|ON
+MSP_0027|#0027Crossroads Shopping Centre|MSP|MSP_C|MSP_C0|MSP_C004|Brick & Mortar|Open|Winnipeg|MB
+MSP_0066|#0066 Sainte Foy|MSP|MSP_C|MSP_C0|MSP_C006|Brick & Mortar|Open|Sainte Foy|QC
+MSP_0067|#0067Crowfoot Crossing|MSP|MSP_C|MSP_C0|MSP_C002|Brick & Mortar|Open|Calgary|AB
+MSP_0063|#0063 Laval|MSP|MSP_C|MSP_C0|MSP_C006|Brick & Mortar|Open|Laval|QC
+MSP_0049|#0049 Thunder Bay|MSP|MSP_C|MSP_C0|MSP_C005|Brick & Mortar|Open|Thunder Bay|ON
+MSP_0029|#0029 Sarnia|MSP|MSP_C|MSP_C0|MSP_C007|Brick & Mortar|Open|Sarnia|ON
+MSP_0103|#0103 Ottawa South|MSP|MSP_C|MSP_C0|MSP_C005|Brick & Mortar|Open|Ottawa|ON
+MSP_0061|#0061 Lasalle|MSP|MSP_C|MSP_C0|MSP_C006|Brick & Mortar|Open|Lasalle|QC
+MSP_0992|#0992 Tux Payments|MSP|MSP_Z|MSP_ZC|MSP_ZCOM|Brick & Mortar|Open|Etobicoke|ON
+MSP_0018|#0018 Oshawa|MSP|MSP_C|MSP_C0|MSP_C003|Brick & Mortar|Open|Oshawa|ON
+MSP_0111|#0111Shawnessy Towne Center|MSP|MSP_C|MSP_C0|MSP_C002|Brick & Mortar|Open|Calgary|AB
+MSP_0009|#0009 St. Catharines|MSP|MSP_C|MSP_C0|MSP_C009|Brick & Mortar|Open|St. Catharines|ON
+MSP_0068|#0068 Brantford|MSP|MSP_C|MSP_C0|MSP_C009|Brick & Mortar|Open|Brantford|ON
+MSP_0108|#0108 Charlottetown, P.E.I.|MSP|MSP_C|MSP_C0|MSP_C001|Brick & Mortar|Open|Charlottetown|PE
+MSP_0100|#0100 Halifax Power Centre,Ns|MSP|MSP_C|MSP_C0|MSP_C001|Brick & Mortar|Open|Halifax|NS
+MSP_0058|#0058Springwater Marketplace|MSP|MSP_C|MSP_C0|MSP_C008|Brick & Mortar|Open|Barrie|ON
+MSP_0126|#0126 North Bay|MSP|MSP_C|MSP_C0|MSP_C005|Brick & Mortar|Open|North Bay|ON
+MSP_0087|#0087Willow West Mall|MSP|MSP_C|MSP_C0|MSP_C007|Brick & Mortar|Open|Guelph|ON
+MSP_0013|#0013Burlington North|MSP|MSP_C|MSP_C0|MSP_C009|Brick & Mortar|Open|Burlington|ON
+MSP_0112|#0112Spruceland Shopping Centre|MSP|MSP_C|MSP_C0|MSP_C010|Brick & Mortar|Open|Prince George|BC
+MSP_0012|#0012 Hamilton|MSP|MSP_C|MSP_C0|MSP_C009|Brick & Mortar|Open|Hamilton|ON
+MSP_0073|#0073 Pickering|MSP|MSP_C|MSP_C0|MSP_C003|Brick & Mortar|Open|Pickering|ON
+MSP_0106|#0106 Niagara Falls|MSP|MSP_C|MSP_C0|MSP_C009|Brick & Mortar|Open|Niagara Falls|ON
+MSP_0117|#0117 Mascouche|MSP|MSP_C|MSP_C0|MSP_C006|Brick & Mortar|Open|Mascouche|QC
+MSP_0046|#0046 Sault St. Marie|MSP|MSP_C|MSP_C0|MSP_C005|Brick & Mortar|Open|Sault Ste. Marie|ON
+MSP_0057|#0057 Trois Rivieres|MSP|MSP_C|MSP_C0|MSP_C006|Brick & Mortar|Open|Trois Rivieres|QC
+MSP_0034|#0034St Vital Square|MSP|MSP_C|MSP_C0|MSP_C004|Brick & Mortar|Open|Winnipeg|MB
+MSP_0050|#0050 Victoria|MSP|MSP_C|MSP_C0|MSP_C010|Brick & Mortar|Open|Victoria|BC
+MSP_0011|#0011 Surrey|MSP|MSP_C|MSP_C0|MSP_C010|Brick & Mortar|Open|Surrey|BC
+MSP_0033|#0033Hylands Centre|MSP|MSP_C|MSP_C0|MSP_C007|Brick & Mortar|Open|London|ON
+MSP_0115|#0115 Mississauga West|MSP|MSP_C|MSP_C0|MSP_C009|Brick & Mortar|Open|Mississauga|ON
+MSP_0089|#0089-Kelowna|MSP|MSP_C|MSP_C0|MSP_C002|Brick & Mortar|Open|Kelowna|BC
+MSP_0096|#0096Meadowlands Power Centre|MSP|MSP_C|MSP_C0|MSP_C009|Brick & Mortar|Open|Ancaster|ON
+MSP_0086|#0086 Toronto - North York|MSP|MSP_C|MSP_C0|MSP_C008|Brick & Mortar|Open|Toronto|ON
+MSP_0064|#0064 Brossard|MSP|MSP_C|MSP_C0|MSP_C006|Brick & Mortar|Open|Brossard|QC
+MSP_0070|#0070 Orleans - Ottawa|MSP|MSP_C|MSP_C0|MSP_C005|Brick & Mortar|Open|Cumberland|ON
+MSP_0040|#0040 Saint John - Nb|MSP|MSP_C|MSP_C0|MSP_C001|Brick & Mortar|Open|Saint John|NB
+MSP_0084|#0084Calgary Center North|MSP|MSP_C|MSP_C0|MSP_C002|Brick & Mortar|Open|Calgary|AB
+MSP_0035|#0035SmartCentres Cambridge|MSP|MSP_C|MSP_C0|MSP_C007|Brick & Mortar|Open|Cambridge|ON
+MSP_0017|#0017 Ottawa - Downtown|MSP|MSP_C|MSP_C0|MSP_C005|Brick & Mortar|Open|Ottawa|ON
+MSP_0109|#0109 Medicine Hat|MSP|MSP_C|MSP_C0|MSP_C002|Brick & Mortar|Open|Medicine Hat|AB
+MSP_0125|#0125 Grande Prairie Alberta|MSP|MSP_C|MSP_C0|MSP_C004|Brick & Mortar|Open|Grande Prairie|AB
+KNG_0069|#0069Marple Crossroads Shopping Center|KNG|KNG_R10|KNG_R10|KNG_R10_A|Brick & Mortar|Open|Springfield|PA
+KNG_0106|#0106Regency Court|KNG|KNG_R01|KNG_R01|KNG_R01_A|Brick & Mortar|Open|Jacksonville|FL
+KNG_0062|#0062 New Carrolton|KNG|KNG_R10|KNG_R10|KNG_R10_A|Brick & Mortar|Open|New Carrollton|MD
+KNG_0510|#0510 Jackson|KNG|KNG_R08|KNG_R08|KNG_R08_A|Brick & Mortar|Open|Jackson|MS
+KNG_0205|#0205Carle Place|KNG|KNG_R09|KNG_R09|KNG_R09_A|Brick & Mortar|Open|Carle Place|NY
+KNG_0012|#0012 Kennesaw|KNG|KNG_R01|KNG_R01|KNG_R01_A|Brick & Mortar|Open|Kennesaw|GA
+KNG_0033|#0033 Kansas City|KNG|KNG_R03|KNG_R03|KNG_R03_A|Brick & Mortar|Open|Overland Park|KS
+KNG_0310|#0310 Mesquite|KNG|KNG_R02|KNG_R02|KNG_R02_A|Brick & Mortar|Open|Mesquite|TX
+KNG_0706|#0706 Lansing|KNG|KNG_R03|KNG_R03|KNG_R03_A|Brick & Mortar|Open|Lansing|IL
+KNG_0049|#0049 St. Louis Pk|KNG|KNG_R04|KNG_R04|KNG_R04_A|Brick & Mortar|Open|Brooklyn Center|MN
+KNG_0701|#0701 Evergreen|KNG|KNG_R03|KNG_R03|KNG_R03_A|Brick & Mortar|Open|Evergreen Park|IL
+KNG_0028|#0028Twin City Plaza|KNG|KNG_R09|KNG_R09|KNG_R09_A|Brick & Mortar|Open|Somerville|MA
+KNG_0311|#0311Capital Plaza|KNG|KNG_R02|KNG_R02|KNG_R02_A|Brick & Mortar|Open|Austin|TX
+KNG_0903|#0903 Tsw Dearborn|KNG|KNG_R04|KNG_R04|KNG_R04_A|Brick & Mortar|Open|Dearborn|MI
+KNG_0604|#0604Capital Crossing|KNG|KNG_R08|KNG_R08|KNG_R08_A|Brick & Mortar|Open|Raleigh|NC
+KNG_0303|#0303Houston 1960|KNG|KNG_R02|KNG_R02|KNG_R02_A|Brick & Mortar|Open|Houston|TX
+KNG_0206|#0206 Harlem|KNG|KNG_R09|KNG_R09|KNG_R09_A|Brick & Mortar|Open|New York|NY
+KNG_0071|#0071 Columbus|KNG|KNG_R04|KNG_R04|KNG_R04_A|Brick & Mortar|Open|Columbus|OH
+KNG_0108|#0108Wildwood Centre|KNG|KNG_R01|KNG_R01|KNG_R01_A|Brick & Mortar|Open|Homewood|AL
+KNG_0712|#0712Clocktower Place|KNG|KNG_R03|KNG_R03|KNG_R03_A|Brick & Mortar|Open|Florissant|MO
+KNG_0015|#0015 Stone Mtn|KNG|KNG_R01|KNG_R01|KNG_R01_A|Brick & Mortar|Open|Stone Mountain|GA
+KNG_0036|#0036Meyerland|KNG|KNG_R02|KNG_R02|KNG_R02_A|Brick & Mortar|Open|Houston|TX
+KNG_0105|#0105University Mall|KNG|KNG_R01|KNG_R01|KNG_R01_A|Brick & Mortar|Open|Tampa|FL
+KNG_0309|#0309 Duncanville|KNG|KNG_R02|KNG_R02|KNG_R02_A|Brick & Mortar|Open|Duncanville|TX
+KNG_0312|#0312 Humble|KNG|KNG_R02|KNG_R02|KNG_R02_A|Brick & Mortar|Open|Humble|TX
+KNG_0111|#0111 Margate|KNG|KNG_R01|KNG_R01|KNG_R01_A|Brick & Mortar|Open|Margate|FL
+KNG_0031|#0031 Plano|KNG|KNG_R02|KNG_R02|KNG_R02_A|Brick & Mortar|Open|Plano|TX
+KNG_0073|#0073Golden Gate Plaza|KNG|KNG_R04|KNG_R04|KNG_R04_A|Brick & Mortar|Open|Mayfield Heights|OH
+KNG_0066|#0066 Cherry Hill|KNG|KNG_R09|KNG_R09|KNG_R09_A|Brick & Mortar|Open|Cherry Hill|NJ
+KNG_0212|#0212 Wyncote|KNG|KNG_R10|KNG_R10|KNG_R10_A|Brick & Mortar|Open|Wyncote|PA
+TMW_3348|#3348University Town Center|TMW|TMW_S|TMW_S2|TMW_S205|Brick & Mortar|Open|Sarasota|FL
+TMW_2276|#2276 Fresno|TMW|TMW_W|TMW_W1|TMW_W101|Brick & Mortar|Open|Fresno|CA
+TMW_5432|#5432 Paramus|TMW|TMW_N|TMW_N4|TMW_N402|Brick & Mortar|Open|Paramus|NJ
+TMW_3112|#3112Oglethorpe Plaza Center|TMW|TMW_S|TMW_S1|TMW_S103|Brick & Mortar|Open|Savannah|GA
+TMW_2689|#2689Bellis Fair Mall|TMW|TMW_W|TMW_W3|TMW_W305|Brick & Mortar|Open|Bellingham|WA
+TMW_5413|#5413 White Plains, Ny|TMW|TMW_N|TMW_N4|TMW_N402|Brick & Mortar|Open|White Plains|NY
+TMW_4152|#4152 Bismarck|TMW|TMW_W|TMW_W4|TMW_W402|Brick & Mortar|Open|Bismarck|ND
+TMW_2684|#2684Bellevue Galleria|TMW|TMW_W|TMW_W3|TMW_W305|Brick & Mortar|Open|Bellevue|WA
+TMW_4407|#4407The Strip|TMW|TMW_N|TMW_N1|TMW_N103|Brick & Mortar|Open|North Canton|OH
+TMW_4633|#4633Patriot Commons|TMW|TMW_W|TMW_W4|TMW_W406|Brick & Mortar|Open|Grafton|WI
+TMW_5207|#5207 Lancaster, Pa|TMW|TMW_N|TMW_N2|TMW_N202|Brick & Mortar|Open|Lancaster|PA
+TMW_5418|#5418 Plainview, Ny|TMW|TMW_N|TMW_N4|TMW_N403|Brick & Mortar|Open|Plainview|NY
+TMW_4202|#4202Shelby Corners|TMW|TMW_N|TMW_N1|TMW_N101|Brick & Mortar|Open|Utica|MI
+TMW_1403|#1403Bluebonnet Parc Shopping Center|TMW|TMW_S|TMW_S4|TMW_S403|Brick & Mortar|Open|Baton Rouge|LA
+TMW_4306|#4306University Park Mall|TMW|TMW_N|TMW_N1|TMW_N106|Brick & Mortar|Open|Mishawaka|IN
+TMW_3537|#353729th Place|TMW|TMW_N|TMW_N2|TMW_N203|Brick & Mortar|Open|Charlottesville|VA
+TMW_5137|#5137 West Simsbury, Ct|TMW|TMW_N|TMW_N3|TMW_N303|Brick & Mortar|Open|West Simsbury|CT
+TMW_5311|#5311 Rochester, Ny|TMW|TMW_N|TMW_N3|TMW_N301|Brick & Mortar|Open|Rochester|NY
+TMW_5123|#5123The Mall of New Hampshire|TMW|TMW_N|TMW_N3|TMW_N304|Brick & Mortar|Open|Manchester|NH
+TMW_1262|#1262 Amarillo, Tx|TMW|TMW_S|TMW_S5|TMW_S507|Brick & Mortar|Open|Amarillo|TX
+TMW_3315|#3315 Melbourne, Fl|TMW|TMW_S|TMW_S2|TMW_S202|Brick & Mortar|Open|Melbourne|FL
+TMW_5109|#5109Franklin Village Shopping Center|TMW|TMW_N|TMW_N3|TMW_N302|Brick & Mortar|Open|Franklin|MA
+TMW_2404|#2404Stephanie Street Shopping Center|TMW|TMW_W|TMW_W3|TMW_W302|Brick & Mortar|Open|Henderson|NV
+TMW_5322|#5322 New Hartford, Ny|TMW|TMW_N|TMW_N3|TMW_N306|Brick & Mortar|Open|New Hartford|NY
+TMW_3403|#3403Westside Pavilion|TMW|TMW_S|TMW_S4|TMW_S401|Brick & Mortar|Open|Huntsville|AL
+TMW_3313|#3313 Sarasota, Fl|TMW|TMW_S|TMW_S2|TMW_S205|Brick & Mortar|Open|Sarasota|FL
+TMW_2508|#2508Broadway Center|TMW|TMW_W|TMW_W3|TMW_W304|Brick & Mortar|Open|Tucson|AZ
+TMW_2687|#2687Overlake Fashion Plaza|TMW|TMW_W|TMW_W3|TMW_W305|Brick & Mortar|Open|Redmond|WA
+TMW_4622|#4622 Rockford, Il|TMW|TMW_W|TMW_W4|TMW_W405|Brick & Mortar|Open|Rockford|IL
+TMW_2744|#2744Redlands Town Center|TMW|TMW_W|TMW_W1|TMW_W104|Brick & Mortar|Open|Redlands|CA
+TMW_1213|#1213Southpark Meadows|TMW|TMW_S|TMW_S5|TMW_S501|Brick & Mortar|Open|Austin|TX
+TMW_2161|#2161 Sunnyvale|TMW|TMW_W|TMW_W1|TMW_W106|Brick & Mortar|Open|Sunnyvale|CA
+TMW_2681|#2681Target Place Plaza|TMW|TMW_W|TMW_W3|TMW_W305|Brick & Mortar|Open|Olympia|WA
+TMW_3311|#3311Governor's Square Marketplace|TMW|TMW_S|TMW_S2|TMW_S203|Brick & Mortar|Open|Tallahassee|FL
+TMW_1211|#1211 San Antonio, Tx|TMW|TMW_S|TMW_S5|TMW_S505|Brick & Mortar|Open|San Antonio|TX
+TMW_4217|#4217 Saginaw, Mi|TMW|TMW_N|TMW_N1|TMW_N104|Brick & Mortar|Open|Saginaw|MI
+TMW_1115|#1115Willowbrook Commons|TMW|TMW_S|TMW_S5|TMW_S506|Brick & Mortar|Open|Houston|TX
+TMW_4656|#4656Gurnee Town Center|TMW|TMW_W|TMW_W4|TMW_W405|Brick & Mortar|Open|Gurnee|IL
+TMW_3205|#3205Carolina Place Mall|TMW|TMW_S|TMW_S1|TMW_S101|Brick & Mortar|Open|Pineville|NC
+TMW_2673|#2673 State Street|TMW|TMW_W|TMW_W3|TMW_W301|Brick & Mortar|Open|Murray|UT
+TMW_3327|#3327The Palms at Town & Country|TMW|TMW_S|TMW_S2|TMW_S204|Brick & Mortar|Open|Miami|FL
+TMW_5433|#5433Westfield Southshore Mall|TMW|TMW_N|TMW_N4|TMW_N403|Brick & Mortar|Open|Bayshore|NY
+TMW_4124|#4124Lindale Mall|TMW|TMW_W|TMW_W4|TMW_W405|Brick & Mortar|Open|Cedar Rapids|IA
+TMW_4402|#4402Southern Park Mall Shops|TMW|TMW_N|TMW_N1|TMW_N103|Brick & Mortar|Open|Boardman|OH
+TMW_4134|#4134Northwest Crossing Shopping Center|TMW|TMW_W|TMW_W2|TMW_W205|Brick & Mortar|Open|Grand Island|NE
+TMW_5201|#5201King Of Prussia Center|TMW|TMW_N|TMW_N4|TMW_N404|Brick & Mortar|Open|King Of Prussia|PA
+TMW_5110|#5110Wellington Circle|TMW|TMW_N|TMW_N3|TMW_N305|Brick & Mortar|Open|Medford|MA
+TMW_1229|#1229Paseo Plaza|TMW|TMW_S|TMW_S5|TMW_S505|Brick & Mortar|Open|Mcallen|TX
+TMW_1313|#1313Southlands Shopping Center|TMW|TMW_W|TMW_W2|TMW_W204|Brick & Mortar|Open|Aurora|CO
+TMW_3508|#3508 Rockville Pike|TMW|TMW_N|TMW_N2|TMW_N206|Brick & Mortar|Open|Rockville|MD
+TMW_1120|#1120River Oaks Shopping Center|TMW|TMW_S|TMW_S5|TMW_S503|Brick & Mortar|Open|Houston|TX
+TMW_2192|#2192 Antioch, Ca|TMW|TMW_W|TMW_W1|TMW_W101|Brick & Mortar|Open|Antioch|CA
+TMW_5416|#5416 Scarsdale, Ny|TMW|TMW_N|TMW_N4|TMW_N402|Brick & Mortar|Open|Scarsdale|NY
+TMW_1233|#1233Town East|TMW|TMW_S|TMW_S5|TMW_S502|Brick & Mortar|Open|Mesquite|TX
+TMW_2295|#2295Discovery Village|TMW|TMW_W|TMW_W1|TMW_W103|Brick & Mortar|Open|Redding|CA
+TMW_5233|#5233Dover Mall|TMW|TMW_N|TMW_N2|TMW_N205|Brick & Mortar|Open|Dover|DE
+TMW_4142|#4142 Rapid City|TMW|TMW_W|TMW_W2|TMW_W205|Brick & Mortar|Open|Rapid City|SD
+TMW_4610|#4610Courtyard At Stratford|TMW|TMW_W|TMW_W4|TMW_W401|Brick & Mortar|Open|Bloomingdale|IL
+TMW_4608|#4608Hawthorne Hills Square|TMW|TMW_W|TMW_W4|TMW_W405|Brick & Mortar|Open|Vernon Hills|IL
+TMW_3341|#3341 Kissimmee, Fl|TMW|TMW_S|TMW_S2|TMW_S201|Brick & Mortar|Open|Kissimmee|FL
+TMW_1713|#1713North Park Crossing|TMW|TMW_W|TMW_W2|TMW_W203|Brick & Mortar|Open|Joplin|MO
+TMW_2747|#2747 Los Angeles|TMW|TMW_W|TMW_W1|TMW_W102|Brick & Mortar|Open|Los Angeles|CA
+TMW_4416|#4416Easton Square|TMW|TMW_N|TMW_N1|TMW_N102|Brick & Mortar|Open|Columbus|OH
+TMW_5431|#5431Freehold Raceway Mall|TMW|TMW_N|TMW_N4|TMW_N407|Brick & Mortar|Open|Freehold|NJ
+TMW_3408|#3408 Dothan, Al|TMW|TMW_S|TMW_S4|TMW_S405|Brick & Mortar|Open|Dothan|AL
+TMW_3202|#3202New Hope Commons|TMW|TMW_S|TMW_S1|TMW_S102|Brick & Mortar|Open|Durham|NC
+TMW_4209|#4209Gratiot Center|TMW|TMW_N|TMW_N1|TMW_N101|Brick & Mortar|Open|Roseville|MI
+TMW_1410|#1410Houma Crossing|TMW|TMW_S|TMW_S4|TMW_S403|Brick & Mortar|Open|Houma|LA
+TMW_2729|#2729Villa Marina Marketplace|TMW|TMW_W|TMW_W1|TMW_W104|Brick & Mortar|Open|Marina Del Rey|CA
+TMW_4601|#4601Orchard Plaza|TMW|TMW_W|TMW_W4|TMW_W401|Brick & Mortar|Open|Skokie|IL
+TMW_1604|#1604 Independence, Mo|TMW|TMW_W|TMW_W2|TMW_W201|Brick & Mortar|Open|Independence|MO
+TMW_4153|#4153Columbia Mall|TMW|TMW_W|TMW_W4|TMW_W402|Brick & Mortar|Open|Grand Forks|ND
+TMW_4613|#4613Harlem Irving Plaza|TMW|TMW_W|TMW_W4|TMW_W401|Brick & Mortar|Open|Norridge|IL
+TMW_5112|#5112Emerald Square Mall|TMW|TMW_N|TMW_N3|TMW_N302|Brick & Mortar|Open|North Attleboro|MA
+TMW_4483|#4483 Cincinnati, Oh|TMW|TMW_S|TMW_S3|TMW_S301|Brick & Mortar|Open|Cincinnati|OH
+TMW_3350|#3350 Ocala, Fl|TMW|TMW_S|TMW_S2|TMW_S205|Brick & Mortar|Open|Ocala|FL
+TMW_3234|#3234 Selma, Nc|TMW|TMW_S|TMW_S1|TMW_S102|Brick & Mortar|Open|Selma|NC
+TMW_3514|#3514Potomac Yards|TMW|TMW_N|TMW_N2|TMW_N204|Brick & Mortar|Open|Alexandria|VA
+TMW_2695|#2695Clackamas Promenade|TMW|TMW_W|TMW_W3|TMW_W303|Brick & Mortar|Open|Clackamas|OR
+TMW_3407|#3407Tiger Town Outdoor Shopping Center|TMW|TMW_S|TMW_S4|TMW_S401|Brick & Mortar|Open|Opelika|AL
+TMW_2675|#2675Layton Market Center|TMW|TMW_W|TMW_W3|TMW_W301|Brick & Mortar|Open|Layton|UT
+TMW_1309|#1309 Ft. Collins|TMW|TMW_W|TMW_W2|TMW_W202|Brick & Mortar|Open|Fort Collins|CO
+TMW_5321|#5321 State Capitol Ny|TMW|TMW_N|TMW_N3|TMW_N306|Brick & Mortar|Open|Colonie|NY
+TMW_1255|#1255Towne East Square Mall|TMW|TMW_W|TMW_W2|TMW_W201|Brick & Mortar|Open|Wichita|KS
+TMW_1251|#1251Southern Trails Shopping Center|TMW|TMW_W|TMW_W2|TMW_W203|Brick & Mortar|Open|Tulsa|OK
+TMW_2671|#2671Festival Shopping Center|TMW|TMW_W|TMW_W3|TMW_W301|Brick & Mortar|Open|Orem|UT
+TMW_5133|#5133Corbins Center Shopping Center|TMW|TMW_N|TMW_N3|TMW_N303|Brick & Mortar|Open|West Hartford|CT
+TMW_4121|#4121 West Des Moines, Ia|TMW|TMW_W|TMW_W2|TMW_W205|Brick & Mortar|Open|West Des Moines|IA
+TMW_1227|#1227Moore Plaza|TMW|TMW_S|TMW_S5|TMW_S505|Brick & Mortar|Open|Corpus Christi|TX
+TMW_3307|#3307St. John's Town Center|TMW|TMW_S|TMW_S2|TMW_S203|Brick & Mortar|Open|Jacksonville|FL
+TMW_3509|#3509Snowden Square|TMW|TMW_N|TMW_N2|TMW_N201|Brick & Mortar|Open|Columbia|MD
+TMW_4220|#4220Baldwin Commons|TMW|TMW_N|TMW_N1|TMW_N104|Brick & Mortar|Open|Orion|MI
+TMW_5417|#5417Parkway Plaza|TMW|TMW_N|TMW_N3|TMW_N301|Brick & Mortar|Open|Vestal|NY
+TMW_2723|#2723 Magic Mountain Prkwy|TMW|TMW_W|TMW_W1|TMW_W102|Brick & Mortar|Open|Santa Clarita|CA
+TMW_5206|#5206Downtown Philadelphia|TMW|TMW_N|TMW_N4|TMW_N406|Brick & Mortar|Open|Philadelphia|PA
+TMW_1268|#1268Alliance Town Center|TMW|TMW_S|TMW_S5|TMW_S507|Brick & Mortar|Open|Fort Worth|TX
+TMW_5232|#5232 Wilmington, De|TMW|TMW_N|TMW_N4|TMW_N406|Brick & Mortar|Open|Wilmington|DE
+TMW_4221|#4221Rivertown Crossings Mall|TMW|TMW_N|TMW_N1|TMW_N104|Brick & Mortar|Open|Grandville|MI
+TMW_1244|#1244Broadway Square Mall|TMW|TMW_S|TMW_S5|TMW_S502|Brick & Mortar|Open|Tyler|TX
+TMW_3301|#3301Town Square|TMW|TMW_S|TMW_S2|TMW_S201|Brick & Mortar|Open|Altamonte Springs|FL
+TMW_4640|#4640Sunnyside|TMW|TMW_W|TMW_W4|TMW_W406|Brick & Mortar|Open|Madison|WI
+TMW_3512|#3512Washington Square|TMW|TMW_N|TMW_N2|TMW_N204|Brick & Mortar|Open|Washington|DC
+TMW_3540|#3540The Centre At Salisbury|TMW|TMW_N|TMW_N2|TMW_N205|Brick & Mortar|Open|Salisbury|MD
+TMW_3340|#3340Shoppes At Lakeland|TMW|TMW_S|TMW_S2|TMW_S201|Brick & Mortar|Open|Lakeland|FL
+TMW_4703|#4703Lloyds Crossing|TMW|TMW_S|TMW_S3|TMW_S303|Brick & Mortar|Open|Evansville|IN
+TMW_3333|#3333 Miami, Fl|TMW|TMW_S|TMW_S2|TMW_S204|Brick & Mortar|Open|Sweetwater|FL
+TMW_1511|#1511Market Place Court|TMW|TMW_S|TMW_S3|TMW_S305|Brick & Mortar|Open|Murfreesboro|TN
+TMW_2670|#2670Tanasbourne Retail Ctr|TMW|TMW_W|TMW_W3|TMW_W303|Brick & Mortar|Open|Hillsboro|OR
+TMW_3538|#3538Commonwealth Centre|TMW|TMW_S|TMW_S1|TMW_S104|Brick & Mortar|Open|Midlothian|VA
+TMW_1246|#1246Vista Ridge Village|TMW|TMW_S|TMW_S5|TMW_S504|Brick & Mortar|Open|Lewisville|TX
+TMW_3346|#3346Shops At Midtown Miami|TMW|TMW_S|TMW_S2|TMW_S204|Brick & Mortar|Open|Miami|FL
+TMW_4419|#4419Polaris Town Center|TMW|TMW_N|TMW_N1|TMW_N102|Brick & Mortar|Open|Columbus|OH
+TMW_1801|#1801 Billings, Mt|TMW|TMW_W|TMW_W2|TMW_W202|Brick & Mortar|Open|Billings|MT
+TMW_2167|#2167Metro Center|TMW|TMW_W|TMW_W1|TMW_W106|Brick & Mortar|Open|Colma|CA
+TMW_3523|#3523Valley View Crossing|TMW|TMW_N|TMW_N2|TMW_N203|Brick & Mortar|Open|Roanoke|VA
+TMW_3204|#3204Sycamore Commons|TMW|TMW_S|TMW_S1|TMW_S101|Brick & Mortar|Open|Matthews|NC
+TMW_3118|#3118Columbus Park Shopping Center|TMW|TMW_S|TMW_S4|TMW_S401|Brick & Mortar|Open|Columbus|GA
+TMW_4138|#4138Mountain View Shopping Center|TMW|TMW_W|TMW_W4|TMW_W404|Brick & Mortar|Open|Wausau|WI
+TMW_3207|#3207Silas Creek Crossing|TMW|TMW_S|TMW_S1|TMW_S105|Brick & Mortar|Open|Winston Salem|NC
+TMW_4139|#4139 Eau Claire, Wi|TMW|TMW_W|TMW_W4|TMW_W404|Brick & Mortar|Open|Eau Claire|WI
+TMW_2505|#2505Arrowhead Crossing|TMW|TMW_W|TMW_W3|TMW_W302|Brick & Mortar|Open|Peoria|AZ
+TMW_3533|#3533Colonnades West Shopping Center|TMW|TMW_S|TMW_S1|TMW_S104|Brick & Mortar|Open|Glen Allen|VA
+TMW_4627|#4627 Champaign, Il|TMW|TMW_S|TMW_S3|TMW_S302|Brick & Mortar|Open|Champaign|IL
+TMW_3222|#3222Brier Creek Commons|TMW|TMW_S|TMW_S1|TMW_S102|Brick & Mortar|Open|Raleigh|NC
+TMW_1514|#1514Providence Marketplace|TMW|TMW_S|TMW_S3|TMW_S305|Brick & Mortar|Open|Mt. Juliet|TN
+TMW_1260|#1260 Garland, Tx|TMW|TMW_S|TMW_S5|TMW_S502|Brick & Mortar|Open|Garland|TX
+TMW_5116|#5116Dartmouth Mall|TMW|TMW_N|TMW_N3|TMW_N302|Brick & Mortar|Open|Dartmouth|MA
+TMW_4417|#4417 Upper Arlington|TMW|TMW_N|TMW_N1|TMW_N102|Brick & Mortar|Open|Upper Arlington|OH
+TMW_4126|#4126Coral North Shopping Center|TMW|TMW_W|TMW_W4|TMW_W405|Brick & Mortar|Open|Coralville|IA
+TMW_1206|#1206 Gates Of Prosper|TMW|TMW_S|TMW_S5|TMW_S504|Brick & Mortar|Open|Prosper|TX
+TMW_3401|#3401River Ridge Shopping Center|TMW|TMW_S|TMW_S4|TMW_S401|Brick & Mortar|Open|Birmingham|AL
+TMW_5127|#5127Village At Colony Place|TMW|TMW_N|TMW_N3|TMW_N302|Brick & Mortar|Open|Plymouth|MA
+TMW_3227|#3227 Fayetteville, Nc|TMW|TMW_S|TMW_S1|TMW_S102|Brick & Mortar|Open|Fayetteville|NC
+TMW_4210|#4210Art Van Plaza|TMW|TMW_N|TMW_N1|TMW_N106|Brick & Mortar|Open|Taylor|MI
+TMW_1510|#1510 Nashville, Tn|TMW|TMW_S|TMW_S3|TMW_S305|Brick & Mortar|Open|Nashville|TN
+TMW_3228|#3228West Blackstock|TMW|TMW_S|TMW_S4|TMW_S402|Brick & Mortar|Open|Spartanburg|SC
+TMW_2507|#2507Wetmore Plaza|TMW|TMW_W|TMW_W3|TMW_W304|Brick & Mortar|Open|Tucson|AZ
+TMW_5412|#5412 Co-Op City|TMW|TMW_N|TMW_N4|TMW_N402|Brick & Mortar|Open|Bronx|NY
+TMW_1224|#1224Huebner Oaks Center|TMW|TMW_S|TMW_S5|TMW_S505|Brick & Mortar|Open|San Antonio|TX
+TMW_1314|#1314Mesa Mall|TMW|TMW_W|TMW_W2|TMW_W204|Brick & Mortar|Open|Grand Junction|CO
+TMW_4122|#4122 Davenport Ia|TMW|TMW_W|TMW_W4|TMW_W405|Brick & Mortar|Open|Davenport|IA
+TMW_3109|#3109Perimeter Expo|TMW|TMW_S|TMW_S4|TMW_S404|Brick & Mortar|Open|Atlanta|GA
+TMW_4216|#4216Lansing Mall|TMW|TMW_N|TMW_N1|TMW_N104|Brick & Mortar|Open|Lansing|MI
+TMW_5429|#5429 Toms River, Nj|TMW|TMW_N|TMW_N4|TMW_N401|Brick & Mortar|Open|Toms River|NJ
+TMW_4224|#4224Meridian Mall|TMW|TMW_N|TMW_N1|TMW_N104|Brick & Mortar|Open|Okemos|MI
+TMW_5304|#5304McKinley Plaza|TMW|TMW_N|TMW_N3|TMW_N301|Brick & Mortar|Open|Blasdell|NY
+TMW_2154|#2154Pleasant Hill Shopping Center|TMW|TMW_W|TMW_W1|TMW_W101|Brick & Mortar|Open|Pleasant Hill|CA
+TMW_2406|#2406The Arroyo|TMW|TMW_W|TMW_W3|TMW_W302|Brick & Mortar|Open|Las Vegas|NV
+TMW_3526|#3526Bowie Town & Country|TMW|TMW_N|TMW_N2|TMW_N204|Brick & Mortar|Open|Bowie|MD
+TMW_1223|#1223Lakeline Mall|TMW|TMW_S|TMW_S5|TMW_S501|Brick & Mortar|Open|Cedar Park|TX
+TMW_4307|#4307Lafayette Pavilions|TMW|TMW_S|TMW_S3|TMW_S302|Brick & Mortar|Open|Lafayette|IN
+TMW_4705|#4705Greenwood Mall|TMW|TMW_S|TMW_S3|TMW_S303|Brick & Mortar|Open|Bowling Green|KY
+TMW_1128|#1128Grand Parkway Marketplace|TMW|TMW_S|TMW_S5|TMW_S506|Brick & Mortar|Open|Spring|TX
+TMW_1512|#1512Rivergate Mall|TMW|TMW_S|TMW_S3|TMW_S305|Brick & Mortar|Open|Madison|TN
+TMW_1523|#1523 Jackson, Tn|TMW|TMW_S|TMW_S3|TMW_S305|Brick & Mortar|Open|Jackson|TN
+TMW_2193|#2193 Morgan Hill, Ca|TMW|TMW_W|TMW_W1|TMW_W106|Brick & Mortar|Open|Morgan Hill|CA
+TMW_1110|#1110 Beaumont, Tx|TMW|TMW_S|TMW_S4|TMW_S403|Brick & Mortar|Open|Beaumont|TX
+TMW_5440|#5440Circle Plaza|TMW|TMW_N|TMW_N4|TMW_N405|Brick & Mortar|Open|Livingston|NJ
+TMW_4502|#4502Westmoreland Mall|TMW|TMW_N|TMW_N1|TMW_N105|Brick & Mortar|Open|Greensburg|PA
+TMW_3231|#3231 Rock Hill, Sc|TMW|TMW_S|TMW_S1|TMW_S101|Brick & Mortar|Open|Rock Hill|SC
+TMW_4425|#4425Elida Retail|TMW|TMW_N|TMW_N1|TMW_N106|Brick & Mortar|Open|Lima|OH
+TMW_4630|#4630East Town Plaza|TMW|TMW_W|TMW_W4|TMW_W404|Brick & Mortar|Open|Onalaska|WI
+TMW_4426|#4426Bridgewater Falls|TMW|TMW_S|TMW_S3|TMW_S301|Brick & Mortar|Open|Hamilton|OH
+TMW_4225|#4225Jackson Crossing|TMW|TMW_N|TMW_N1|TMW_N106|Brick & Mortar|Open|Jackson|MI
+TMW_3568|#3568River Ridge Mall|TMW|TMW_N|TMW_N2|TMW_N203|Brick & Mortar|Open|Lynchburg|VA
+TMW_4406|#4406Chapel Center|TMW|TMW_N|TMW_N1|TMW_N103|Brick & Mortar|Open|Akron|OH
+TMW_2504|#2504The Pavilions|TMW|TMW_W|TMW_W3|TMW_W304|Brick & Mortar|Open|Scottsdale|AZ
+TMW_4607|#4607River Oaks West Shopping Center|TMW|TMW_W|TMW_W4|TMW_W403|Brick & Mortar|Open|Calumet City|IL
+TMW_2605|#2605 Plaza 9 Shopping Center|TMW|TMW_W|TMW_W3|TMW_W303|Brick & Mortar|Open|Corvallis|OR
+TMW_3235|#3235 Arcadian Shores|TMW|TMW_S|TMW_S1|TMW_S103|Brick & Mortar|Open|Myrtle Beach|SC
+TMW_5402|#5402 Madison Ave & 45th St|TMW|TMW_N|TMW_N4|TMW_N405|Brick & Mortar|Open|New York|NY
+TMW_2160|#2160 Walnut Creek|TMW|TMW_W|TMW_W1|TMW_W101|Brick & Mortar|Open|Walnut Creek|CA
+TMW_1603|#1603Zona Rosa Shopping Center|TMW|TMW_W|TMW_W2|TMW_W201|Brick & Mortar|Open|Kansas City|MO
+TMW_3342|#3342Shoppes At Paradise Key|TMW|TMW_S|TMW_S4|TMW_S405|Brick & Mortar|Open|Destin|FL
+TMW_3110|#3110 Augusta Exchange|TMW|TMW_S|TMW_S4|TMW_S402|Brick & Mortar|Open|Augusta|GA
+TMW_4219|#4219 Portage, Mi|TMW|TMW_N|TMW_N1|TMW_N106|Brick & Mortar|Open|Portage|MI
+TMW_5502|#5502 Augusta, Me|TMW|TMW_N|TMW_N3|TMW_N304|Brick & Mortar|Open|Augusta|ME
+TMW_2698|#2698Ammon Town Center|TMW|TMW_W|TMW_W3|TMW_W301|Brick & Mortar|Open|Ammon|ID
+TMW_2663|#2663Westfield Vancouver|TMW|TMW_W|TMW_W3|TMW_W303|Brick & Mortar|Open|Vancouver|WA
+TMW_3531|#3531Greenbrier Market Center|TMW|TMW_S|TMW_S1|TMW_S104|Brick & Mortar|Open|Chesapeake|VA
+TMW_4302|#4302Greenwood Shoppes|TMW|TMW_S|TMW_S3|TMW_S302|Brick & Mortar|Open|Greenwood|IN
+TMW_4141|#4141 Sioux Falls, Sd|TMW|TMW_W|TMW_W2|TMW_W205|Brick & Mortar|Open|Sioux Falls|SD
+TMW_3101|#3101Town Center Plaza|TMW|TMW_S|TMW_S4|TMW_S404|Brick & Mortar|Open|Kennesaw|GA
+TMW_2688|#2688 Tukwila|TMW|TMW_W|TMW_W3|TMW_W305|Brick & Mortar|Open|Tukwila|WA
+TMW_3505|#3505Fairlakes|TMW|TMW_N|TMW_N2|TMW_N206|Brick & Mortar|Open|Fairfax|VA
+TMW_1266|#1266 Dallas, Tx|TMW|TMW_S|TMW_S5|TMW_S502|Brick & Mortar|Open|Dallas|TX
+TMW_4101|#4101Rosedale Marketplce|TMW|TMW_W|TMW_W4|TMW_W402|Brick & Mortar|Open|Roseville|MN
+TMW_2950|#2950 Honolulu, Hi|TMW|TMW_W|TMW_W1|TMW_W102|Brick & Mortar|Open|Honolulu|HI
+TMW_1228|#1228Mission Plaza Shopping Center|TMW|TMW_S|TMW_S5|TMW_S505|Brick & Mortar|Open|El Paso|TX
+TMW_2171|#2171 Santa Rosa|TMW|TMW_W|TMW_W1|TMW_W103|Brick & Mortar|Open|Santa Rosa|CA
+TMW_2281|#2281Park Place Promenade|TMW|TMW_W|TMW_W1|TMW_W101|Brick & Mortar|Open|Visalia|CA
+TMW_5403|#5403 Forest Hills, Ny|TMW|TMW_N|TMW_N4|TMW_N403|Brick & Mortar|Open|Forest Hills|NY
+TMW_4629|#4629Algonquin Commons|TMW|TMW_W|TMW_W4|TMW_W405|Brick & Mortar|Open|Algonquin|IL
+TMW_2727|#2727Eng's Plaza|TMW|TMW_W|TMW_W1|TMW_W104|Brick & Mortar|Open|Monterey Park|CA
+TMW_1218|#1218 Selma, Tx|TMW|TMW_S|TMW_S5|TMW_S505|Brick & Mortar|Open|Selma|TX
+TMW_4201|#4201Troy Market Place|TMW|TMW_N|TMW_N1|TMW_N101|Brick & Mortar|Open|Troy|MI
+TMW_3211|#3211Outback Plaza|TMW|TMW_S|TMW_S1|TMW_S103|Brick & Mortar|Open|Charleston|SC
+TMW_2502|#2502Tempe Marketplace|TMW|TMW_W|TMW_W3|TMW_W304|Brick & Mortar|Open|Tempe|AZ
+TMW_3405|#3405Eastern Shore Centre|TMW|TMW_S|TMW_S4|TMW_S405|Brick & Mortar|Open|Spanish Fort|AL
+TMW_4206|#4206Oak Valley Center|TMW|TMW_N|TMW_N1|TMW_N106|Brick & Mortar|Open|Ann Arbor|MI
+TMW_3338|#3338 Viera, Fl|TMW|TMW_S|TMW_S2|TMW_S202|Brick & Mortar|Open|Viera|FL
+TMW_3103|#3103Buckhead Square|TMW|TMW_S|TMW_S4|TMW_S406|Brick & Mortar|Open|Atlanta|GA
+TMW_1306|#1306Lakewood City Commons|TMW|TMW_W|TMW_W2|TMW_W202|Brick & Mortar|Open|Lakewood|CO
+TMW_5442|#5442Danbury Fair Mall|TMW|TMW_N|TMW_N3|TMW_N303|Brick & Mortar|Open|Danbury|CT
+TMW_3223|#3223Village At Sandhill|TMW|TMW_S|TMW_S1|TMW_S103|Brick & Mortar|Open|Columbia|SC
+TMW_4311|#4311College Mall|TMW|TMW_S|TMW_S3|TMW_S301|Brick & Mortar|Open|Bloomington|IN
+TMW_3525|#3525Downtown Silver Spring|TMW|TMW_N|TMW_N2|TMW_N204|Brick & Mortar|Open|Silver Spring|MD
+TMW_4614|#4614Bolingbrook Town Center|TMW|TMW_W|TMW_W4|TMW_W403|Brick & Mortar|Open|Bolingbrook|IL
+TMW_5150|#5150Maple Tree Place|TMW|TMW_N|TMW_N3|TMW_N306|Brick & Mortar|Open|Williston|VT
+TMW_3104|#3104 Atlanta, Ga|TMW|TMW_S|TMW_S4|TMW_S406|Brick & Mortar|Open|Atlanta|GA
+TMW_2509|#2509Shops At Norterra|TMW|TMW_W|TMW_W3|TMW_W302|Brick & Mortar|Open|Phoenix|AZ
+TMW_1704|#1704Drew Station|TMW|TMW_S|TMW_S3|TMW_S304|Brick & Mortar|Open|Chesterfield|MO
+TMW_4205|#4205Normandy Plaza|TMW|TMW_N|TMW_N1|TMW_N101|Brick & Mortar|Open|Royal Oak|MI
+TMW_1209|#1209Gateway Square Shopping Center|TMW|TMW_S|TMW_S5|TMW_S501|Brick & Mortar|Open|Austin|TX
+TMW_3519|#3519Arundel Mills|TMW|TMW_N|TMW_N2|TMW_N201|Brick & Mortar|Open|Hanover|MD
+TMW_4623|#4623Gateway Plaza|TMW|TMW_S|TMW_S3|TMW_S304|Brick & Mortar|Open|Peoria|IL
+TMW_5423|#5423Sunrise Promenade|TMW|TMW_N|TMW_N4|TMW_N403|Brick & Mortar|Open|Massapequa Park|NY
+TMW_1254|#1254The Shops At Moore|TMW|TMW_W|TMW_W2|TMW_W203|Brick & Mortar|Open|Moore|OK
+TMW_4114|#4114Miller Hill Mall|TMW|TMW_W|TMW_W4|TMW_W402|Brick & Mortar|Open|Duluth|MN
+TMW_5313|#5313 Dewitt, Ny|TMW|TMW_N|TMW_N3|TMW_N306|Brick & Mortar|Open|Syracuse|NY
+TMW_3347|#3347 Philips Hwy|TMW|TMW_S|TMW_S2|TMW_S203|Brick & Mortar|Open|Jacksonville|FL
+TMW_3522|#3522Waugh Chapel Towne Centre|TMW|TMW_N|TMW_N2|TMW_N201|Brick & Mortar|Open|Gambrills|MD
+TMW_3330|#3330Bal Harbour Square|TMW|TMW_S|TMW_S2|TMW_S204|Brick & Mortar|Open|Ft Lauderdale|FL
+TMW_1269|#1269Creekside Town Center|TMW|TMW_S|TMW_S5|TMW_S505|Brick & Mortar|Open|New Braunfels|TX
+TMW_5419|#5419Chestnut Plaza|TMW|TMW_N|TMW_N4|TMW_N402|Brick & Mortar|Open|Poughkeepsie|NY
+TMW_1225|#1225La Plaza Del Norte|TMW|TMW_S|TMW_S5|TMW_S505|Brick & Mortar|Open|San Antonio|TX
+TMW_2699|#2699Canyon Park West Shopping Center|TMW|TMW_W|TMW_W3|TMW_W301|Brick & Mortar|Open|Twin Falls|ID
+TMW_1307|#1307First & Main Town Center|TMW|TMW_W|TMW_W2|TMW_W204|Brick & Mortar|Open|Colorado Springs|CO
+TMW_1308|#1308Belleview Shores|TMW|TMW_W|TMW_W2|TMW_W202|Brick & Mortar|Open|Littleton|CO
+TMW_5314|#5314Market Place|TMW|TMW_N|TMW_N3|TMW_N306|Brick & Mortar|Open|Cicero|NY
+TMW_5217|#5217Market Place at Garden State Park|TMW|TMW_N|TMW_N4|TMW_N406|Brick & Mortar|Open|Cherry Hill|NJ
+TMW_3532|#3532Town Center Plaza|TMW|TMW_S|TMW_S1|TMW_S104|Brick & Mortar|Open|North Chesterfield|VA
+TMW_2159|#2159 Stevens Creek|TMW|TMW_W|TMW_W1|TMW_W106|Brick & Mortar|Open|San Jose|CA
+TMW_1240|#1240 Cedar Hill, Tx|TMW|TMW_S|TMW_S5|TMW_S507|Brick & Mortar|Open|Cedar Hill|TX
+TMW_4657|#4657The Maxwell|TMW|TMW_W|TMW_W4|TMW_W401|Brick & Mortar|Open|Chicago|IL
+TMW_1256|#1256 Waco, Tx|TMW|TMW_S|TMW_S5|TMW_S501|Brick & Mortar|Open|Waco|TX
+TMW_4404|#4404North Olmsted Town Center|TMW|TMW_N|TMW_N1|TMW_N103|Brick & Mortar|Open|North Olmsted|OH
+TMW_2705|#2705Magnolia Tyler Shopping Center|TMW|TMW_W|TMW_W1|TMW_W104|Brick & Mortar|Open|Riverside|CA
+TMW_2182|#2182Powell Street Plaza|TMW|TMW_W|TMW_W1|TMW_W106|Brick & Mortar|Open|Emeryville|CA
+TMW_2294|#2294Laguna Crossroads|TMW|TMW_W|TMW_W1|TMW_W103|Brick & Mortar|Open|Elk Grove|CA
+TMW_1515|#1515 Clarksville, Tn|TMW|TMW_S|TMW_S3|TMW_S303|Brick & Mortar|Open|Clarksville|TN
+TMW_2735|#2735Antelope Valley Mall|TMW|TMW_W|TMW_W1|TMW_W102|Brick & Mortar|Open|Palmdale|CA
+TMW_4103|#4103Ridgedale Festival|TMW|TMW_W|TMW_W4|TMW_W404|Brick & Mortar|Open|Minnetonka|MN
+TMW_5134|#5134Crystal Mall|TMW|TMW_N|TMW_N3|TMW_N302|Brick & Mortar|Open|Waterford|CT
+TMW_3308|#3308River City Marketplace|TMW|TMW_S|TMW_S2|TMW_S203|Brick & Mortar|Open|Jacksonville|FL
+TMW_1236|#1236Caruth Plaza|TMW|TMW_S|TMW_S5|TMW_S502|Brick & Mortar|Open|Dallas|TX
+TMW_2265|#2265 Sacramento|TMW|TMW_W|TMW_W1|TMW_W103|Brick & Mortar|Open|Sacramento|CA
+TMW_4602|#4602Rice Lake Square|TMW|TMW_W|TMW_W4|TMW_W403|Brick & Mortar|Open|Wheaton|IL
+TMW_2745|#2745 Lakewood, Ca|TMW|TMW_W|TMW_W1|TMW_W104|Brick & Mortar|Open|Lakewood|CA
+TMW_2180|#2180 41st Ave Capitola|TMW|TMW_W|TMW_W1|TMW_W106|Brick & Mortar|Open|Capitola|CA
+TMW_2405|#2405Best Of The West Center|TMW|TMW_W|TMW_W3|TMW_W302|Brick & Mortar|Open|Las Vegas|NV
+TMW_5422|#5422 Horseheads, Ny|TMW|TMW_N|TMW_N3|TMW_N301|Brick & Mortar|Open|Horseheads|NY
+TMW_3106|#3106 Scenic Highway|TMW|TMW_S|TMW_S4|TMW_S406|Brick & Mortar|Open|Snellville|GA
+TMW_5121|#5121The Mall at Rockingham Park|TMW|TMW_N|TMW_N3|TMW_N304|Brick & Mortar|Open|Salem|NH
+TMW_5222|#5222 Maple Shade, Nj|TMW|TMW_N|TMW_N4|TMW_N401|Brick & Mortar|Open|Maple Shade|NJ
+TMW_3209|#3209Landmark Station|TMW|TMW_S|TMW_S1|TMW_S105|Brick & Mortar|Open|Greensboro|NC
+TMW_2679|#2679 Auburn Wa|TMW|TMW_W|TMW_W3|TMW_W305|Brick & Mortar|Open|Auburn|WA
+TMW_5103|#5103 Peabody, Ma|TMW|TMW_N|TMW_N3|TMW_N304|Brick & Mortar|Open|Peabody|MA
+TMW_2308|#2308Plaza Bonita|TMW|TMW_W|TMW_W1|TMW_W105|Brick & Mortar|Open|National City|CA
+TMW_5401|#5401Shops At Richmond|TMW|TMW_N|TMW_N4|TMW_N407|Brick & Mortar|Open|Staten Island|NY
+TMW_1125|#1125 Pearland, Tx|TMW|TMW_S|TMW_S5|TMW_S503|Brick & Mortar|Open|Pearland|TX
+TMW_5271|#5271Shoppes At N. Brunswick|TMW|TMW_N|TMW_N4|TMW_N407|Brick & Mortar|Open|North Brunswick|NJ
+TMW_3217|#3217Northlake Commons|TMW|TMW_S|TMW_S1|TMW_S101|Brick & Mortar|Open|Charlotte|NC
+TMW_3529|#3529Valley Mall|TMW|TMW_N|TMW_N2|TMW_N201|Brick & Mortar|Open|Hagerstown|MD
+TMW_3310|#3310Shoppes At Millenia|TMW|TMW_S|TMW_S2|TMW_S201|Brick & Mortar|Open|Orlando|FL
+TMW_4625|#4625River Forest Town Center|TMW|TMW_W|TMW_W4|TMW_W403|Brick & Mortar|Open|River Forest|IL
+TMW_2186|#2186Del Monte Center|TMW|TMW_W|TMW_W1|TMW_W106|Brick & Mortar|Open|Monterey|CA
+TMW_4701|#4701Paddock Shops|TMW|TMW_S|TMW_S3|TMW_S303|Brick & Mortar|Open|Louisville|KY
+TMW_1608|#1608NewMarket Square|TMW|TMW_W|TMW_W2|TMW_W201|Brick & Mortar|Open|Wichita|KS
+TMW_3278|#3278Northwoods Mall|TMW|TMW_S|TMW_S1|TMW_S103|Brick & Mortar|Open|North Charleston|SC
+TMW_5205|#5205Grant @ One|TMW|TMW_N|TMW_N4|TMW_N401|Brick & Mortar|Open|Philadelphia|PA
+TMW_2740|#2740Burbank Town Center|TMW|TMW_W|TMW_W1|TMW_W102|Brick & Mortar|Open|Burbank|CA
+TMW_4413|#4413 Cincinnati Oh|TMW|TMW_S|TMW_S3|TMW_S301|Brick & Mortar|Open|Cincinnati|OH
+TMW_1203|#1203 Chimney Rock Sc|TMW|TMW_S|TMW_S5|TMW_S507|Brick & Mortar|Open|Odessa|TX
+TMW_5408|#5408 Chelsea|TMW|TMW_N|TMW_N4|TMW_N405|Brick & Mortar|Open|New York|NY
+TMW_1250|#1250The Center at Preston Ridge|TMW|TMW_S|TMW_S5|TMW_S504|Brick & Mortar|Open|Frisco|TX
+TMW_5426|#5426 Middletown, Ny|TMW|TMW_N|TMW_N4|TMW_N402|Brick & Mortar|Open|Middletown|NY
+TMW_5501|#5501Maine Crossing|TMW|TMW_N|TMW_N3|TMW_N304|Brick & Mortar|Open|South Portland|ME
+TMW_4408|#4408Great Escape Plaza|TMW|TMW_N|TMW_N1|TMW_N103|Brick & Mortar|Open|Strongsville|OH
+TMW_4401|#4401Office Max Plaza|TMW|TMW_N|TMW_N1|TMW_N103|Brick & Mortar|Open|Fairlawn|OH
+TMW_5231|#5231Christiana Retail Center|TMW|TMW_N|TMW_N2|TMW_N205|Brick & Mortar|Open|Newark|DE
+TMW_4301|#4301Avon Creek Shopps|TMW|TMW_S|TMW_S3|TMW_S302|Brick & Mortar|Open|Avon|IN
+TMW_2702|#2702Woodland Hills Retail Center|TMW|TMW_W|TMW_W1|TMW_W102|Brick & Mortar|Open|Woodland Hills|CA
+TMW_3501|#3501 Sterling, Va|TMW|TMW_N|TMW_N2|TMW_N206|Brick & Mortar|Open|Sterling|VA
+TMW_1513|#1513Cool Springs Mall|TMW|TMW_S|TMW_S3|TMW_S305|Brick & Mortar|Open|Franklin|TN
+TMW_2742|#2742 San Luis Obispo, Ca|TMW|TMW_W|TMW_W1|TMW_W106|Brick & Mortar|Open|San Luis Obispo|CA
+TMW_3219|#3219 Myrtle Beach, Sc|TMW|TMW_S|TMW_S1|TMW_S103|Brick & Mortar|Open|Myrtle Beach|SC
+TMW_4634|#4634 Chicago, Il|TMW|TMW_W|TMW_W4|TMW_W401|Brick & Mortar|Open|Chicago|IL
+TMW_3114|#3114Mall Of Georgia Crossing|TMW|TMW_S|TMW_S4|TMW_S402|Brick & Mortar|Open|Buford|GA
+TMW_3105|#3105North Point Marketcenter|TMW|TMW_S|TMW_S4|TMW_S404|Brick & Mortar|Open|Alpharetta|GA
+TMW_4418|#4418Blazer Parkway|TMW|TMW_N|TMW_N1|TMW_N102|Brick & Mortar|Open|Dublin|OH
+TMW_4128|#4128Grand Pointe|TMW|TMW_W|TMW_W2|TMW_W205|Brick & Mortar|Open|Ankeny|IA
+TMW_4422|#4422Shops At Fallen Timbers|TMW|TMW_N|TMW_N1|TMW_N106|Brick & Mortar|Open|Maumee|OH
+TMW_2403|#2403Reno Smithridge Center|TMW|TMW_W|TMW_W1|TMW_W103|Brick & Mortar|Open|Reno|NV
+TMW_5420|#5420Atlantic Terminal|TMW|TMW_N|TMW_N4|TMW_N405|Brick & Mortar|Open|Brooklyn|NY
+TMW_2156|#2156 Market Street|TMW|TMW_W|TMW_W1|TMW_W106|Brick & Mortar|Open|San Francisco|CA
+TMW_4102|#4102Southdale Center|TMW|TMW_W|TMW_W4|TMW_W404|Brick & Mortar|Open|Edina|MN
+TMW_4603|#4603 22nd St Plaza|TMW|TMW_W|TMW_W4|TMW_W403|Brick & Mortar|Open|Oakbrook Terrace|IL
+TMW_4151|#4151 Fargo, Nd|TMW|TMW_W|TMW_W4|TMW_W402|Brick & Mortar|Open|Fargo|ND
+TMW_1602|#1602 Lee Summit, Mo|TMW|TMW_W|TMW_W2|TMW_W201|Brick & Mortar|Open|Lees Summit|MO
+TMW_5405|#5405 Lake Grove, Ny|TMW|TMW_N|TMW_N4|TMW_N403|Brick & Mortar|Open|Lake Grove|NY
+TMW_1253|#1253Penn Square Mall|TMW|TMW_W|TMW_W2|TMW_W203|Brick & Mortar|Open|Oklahoma City|OK
+TMW_1706|#1706 Kmart Plaza|TMW|TMW_W|TMW_W2|TMW_W203|Brick & Mortar|Open|Springfield|MO
+TMW_2714|#2714Victoria Garden|TMW|TMW_W|TMW_W1|TMW_W104|Brick & Mortar|Open|Rancho Cucamonga|CA
+TMW_5218|#5218 Wilkes Barre, Pa|TMW|TMW_N|TMW_N4|TMW_N404|Brick & Mortar|Open|Wilkes Barre|PA
+TMW_5113|#5113Hanover Commons|TMW|TMW_N|TMW_N3|TMW_N302|Brick & Mortar|Open|Hanover|MA
+TMW_3320|#3320 Gainsville, Fl|TMW|TMW_S|TMW_S2|TMW_S203|Brick & Mortar|Open|Gainesville|FL
+TMW_4510|#4510 State College, Pa|TMW|TMW_N|TMW_N2|TMW_N202|Brick & Mortar|Open|State College|PA
+TMW_2187|#2187Stoneridge Mall|TMW|TMW_W|TMW_W1|TMW_W101|Brick & Mortar|Open|Pleasanton|CA
+TMW_4615|#4615Crossing at Hobart|TMW|TMW_W|TMW_W4|TMW_W403|Brick & Mortar|Open|Hobart|IN
+TMW_5107|#5107Dedham Plaza|TMW|TMW_N|TMW_N3|TMW_N305|Brick & Mortar|Open|Dedham|MA
+TMW_3521|#3521Toll Gate Plaza|TMW|TMW_N|TMW_N2|TMW_N205|Brick & Mortar|Open|Bel Air|MD
+TMW_1214|#1214Legacy Shopping Center|TMW|TMW_S|TMW_S5|TMW_S505|Brick & Mortar|Open|San Antonio|TX
+TMW_2690|#2690Kitsap Mall Plaza|TMW|TMW_W|TMW_W3|TMW_W305|Brick & Mortar|Open|Silverdale|WA
+TMW_3336|#3336Plaza at Wellington Green|TMW|TMW_S|TMW_S2|TMW_S202|Brick & Mortar|Open|Wellington|FL
+TMW_3530|#3530 Westminster, Md|TMW|TMW_N|TMW_N2|TMW_N201|Brick & Mortar|Open|Westminster|MD
+TMW_5213|#5213Mercer Mall|TMW|TMW_N|TMW_N4|TMW_N401|Brick & Mortar|Open|Lawrenceville|NJ
+TMW_3312|#3312Cypress Creek Town Ctr|TMW|TMW_S|TMW_S2|TMW_S205|Brick & Mortar|Open|Lutz|FL
+TMW_2708|#2708 Hawthorne Blvd.|TMW|TMW_W|TMW_W1|TMW_W104|Brick & Mortar|Open|Torrance|CA
+TMW_4308|#4308 Noblesville, In|TMW|TMW_S|TMW_S3|TMW_S302|Brick & Mortar|Open|Noblesville|IN
+TMW_1305|#1305Plaza at Westminster Mall|TMW|TMW_W|TMW_W2|TMW_W202|Brick & Mortar|Open|Westminster|CO
+TMW_4113|#4113Eden Prairie Mall|TMW|TMW_W|TMW_W4|TMW_W404|Brick & Mortar|Open|Eden Prairie|MN
+TMW_2162|#2162 San Mateo|TMW|TMW_W|TMW_W1|TMW_W106|Brick & Mortar|Open|San Mateo|CA
+TMW_4632|#4632 Southridge, Kopps|TMW|TMW_W|TMW_W4|TMW_W406|Brick & Mortar|Open|Greenfield|WI
+TMW_4415|#4415The Shoppes Of Beavercreek|TMW|TMW_N|TMW_N1|TMW_N102|Brick & Mortar|Open|Beavercreek|OH
+TMW_3120|#3120 Athens, Ga|TMW|TMW_S|TMW_S4|TMW_S402|Brick & Mortar|Open|Athens|GA
+TMW_4501|#4501Ross Park Mall|TMW|TMW_N|TMW_N1|TMW_N105|Brick & Mortar|Open|Pittsburgh|PA
+TMW_4702|#4702 Louisville, Ky|TMW|TMW_S|TMW_S3|TMW_S303|Brick & Mortar|Open|Louisville|KY
+TMW_3232|#3232 Franklin Square Iii|TMW|TMW_S|TMW_S1|TMW_S101|Brick & Mortar|Open|Gastonia|NC
+TMW_2311|#2311Grossmont Plaza|TMW|TMW_W|TMW_W1|TMW_W105|Brick & Mortar|Open|La Mesa|CA
+TMW_4304|#4304 Carmel, In|TMW|TMW_S|TMW_S3|TMW_S302|Brick & Mortar|Open|Carmel|IN
+TMW_4403|#4403 The Habitat|TMW|TMW_N|TMW_N1|TMW_N103|Brick & Mortar|Open|Mentor|OH
+TMW_2746|#2746 Palm Desert, Ca|TMW|TMW_W|TMW_W1|TMW_W105|Brick & Mortar|Open|Palm Desert|CA
+TMW_1421|#1421Bel Air Mall|TMW|TMW_S|TMW_S4|TMW_S405|Brick & Mortar|Open|Mobile|AL
+TMW_1401|#1401 Causeway|TMW|TMW_S|TMW_S4|TMW_S403|Brick & Mortar|Open|Metairie|LA
+TMW_3316|#3316Wells Road and State Road 21|TMW|TMW_S|TMW_S2|TMW_S203|Brick & Mortar|Open|Orange Park|FL
+TMW_5450|#5450Rockaway Townsquare|TMW|TMW_N|TMW_N4|TMW_N405|Brick & Mortar|Open|Rockaway|NJ
+TMW_2286|#2286Chico Mall|TMW|TMW_W|TMW_W1|TMW_W103|Brick & Mortar|Open|Chico|CA
+TMW_2707|#2707Santa Ana Shopping Center|TMW|TMW_W|TMW_W1|TMW_W105|Brick & Mortar|Open|Santa Ana|CA
+TMW_3210|#3210 Battleground Kupps|TMW|TMW_S|TMW_S1|TMW_S105|Brick & Mortar|Open|Greensboro|NC
+TMW_4411|#4411Cincinnati Market|TMW|TMW_S|TMW_S3|TMW_S301|Brick & Mortar|Open|Florence|KY
+TMW_2682|#2682 Northgate|TMW|TMW_W|TMW_W3|TMW_W305|Brick & Mortar|Open|Seattle|WA
+TMW_5124|#5124 Concord, Nh|TMW|TMW_N|TMW_N3|TMW_N304|Brick & Mortar|Open|Concord|NH
+TMW_2692|#2692Downtown Seattle|TMW|TMW_W|TMW_W3|TMW_W305|Brick & Mortar|Open|Seattle|WA
+TMW_1409|#1409 Covington La|TMW|TMW_S|TMW_S4|TMW_S403|Brick & Mortar|Open|Covington|LA
+TMW_5406|#5406Gateway Plaza|TMW|TMW_N|TMW_N4|TMW_N403|Brick & Mortar|Open|Patchogue|NY
+TMW_5203|#5203Trolley Stop at Willow Grove|TMW|TMW_N|TMW_N4|TMW_N404|Brick & Mortar|Open|Willow Grove|PA
+TMW_2307|#2307 El Camino North S/C|TMW|TMW_W|TMW_W1|TMW_W105|Brick & Mortar|Open|Oceanside|CA
+TMW_1121|#1121Sugarland Town Center|TMW|TMW_S|TMW_S5|TMW_S506|Brick & Mortar|Open|Sugar Land|TX
+TMW_1105|#1105Westgate Marketplace Shopping Center|TMW|TMW_S|TMW_S5|TMW_S506|Brick & Mortar|Open|Houston|TX
+TMW_1534|#1534 Jonesboro, Ar|TMW|TMW_S|TMW_S3|TMW_S305|Brick & Mortar|Open|Jonesboro|AR
+TMW_5118|#5118Auburn Mall|TMW|TMW_N|TMW_N3|TMW_N305|Brick & Mortar|Open|Auburn|MA
+TMW_4618|#4618 Oak Lawn, Il|TMW|TMW_W|TMW_W4|TMW_W403|Brick & Mortar|Open|Oak Lawn|IL
+TMW_4412|#4412Tri-County Mall|TMW|TMW_S|TMW_S3|TMW_S301|Brick & Mortar|Open|Springdale|OH
+TMW_4226|#4226The Lakes Mall|TMW|TMW_N|TMW_N1|TMW_N104|Brick & Mortar|Open|Muskegon|MI
+TMW_1414|#1414Edgewater Mall|TMW|TMW_S|TMW_S4|TMW_S403|Brick & Mortar|Open|Biloxi|MS
+TMW_4631|#4631 Glendale, Wi|TMW|TMW_W|TMW_W4|TMW_W406|Brick & Mortar|Open|Glendale|WI
+TMW_4423|#4423 Warren, Oh|TMW|TMW_N|TMW_N1|TMW_N103|Brick & Mortar|Open|Warren|OH
+TMW_1301|#1301 Aurora, Co|TMW|TMW_W|TMW_W2|TMW_W202|Brick & Mortar|Open|Aurora|CO
+TMW_3352|#3352 Coastal Landing|TMW|TMW_S|TMW_S2|TMW_S205|Brick & Mortar|Open|Brooksville|FL
+TMW_1204|#1204 Longview Mall|TMW|TMW_S|TMW_S5|TMW_S502|Brick & Mortar|Open|Longview|TX
+TMW_2518|#2518 Prasada North|TMW|TMW_W|TMW_W3|TMW_W302|Brick & Mortar|Open|Surprise|AZ
+TMW_3502|#3502Spectrum Center|TMW|TMW_N|TMW_N2|TMW_N206|Brick & Mortar|Open|Reston|VA
+TMW_1310|#1310Zelman Meadows Marketplace|TMW|TMW_W|TMW_W2|TMW_W204|Brick & Mortar|Open|Lone Tree|CO
+TMW_4410|#4410Sycamore Plaza at Kenwood|TMW|TMW_S|TMW_S3|TMW_S301|Brick & Mortar|Open|Cincinnati|OH
+TMW_3511|#3511Central Park|TMW|TMW_N|TMW_N2|TMW_N203|Brick & Mortar|Open|Fredericksburg|VA
+TMW_4218|#4218 Toledo, Oh|TMW|TMW_N|TMW_N1|TMW_N106|Brick & Mortar|Open|Toledo|OH
+TMW_2739|#2739 Mission Viejo|TMW|TMW_W|TMW_W1|TMW_W105|Brick & Mortar|Open|Mission Viejo|CA
+TMW_1238|#1238 So. Arlington|TMW|TMW_S|TMW_S5|TMW_S507|Brick & Mortar|Open|Arlington|TX
+TMW_2674|#2674Southtown|TMW|TMW_W|TMW_W3|TMW_W301|Brick & Mortar|Open|Sandy|UT
+TMW_2677|#2677Columbia Square|TMW|TMW_W|TMW_W3|TMW_W303|Brick & Mortar|Open|Kennewick|WA
+TMW_4132|#4132 Omaha, Ne-Dodge Street|TMW|TMW_W|TMW_W2|TMW_W205|Brick & Mortar|Open|Omaha|NE
+TMW_4609|#4609The Foundry Shopping Center|TMW|TMW_W|TMW_W4|TMW_W401|Brick & Mortar|Open|Chicago|IL
+TMW_3212|#3212Columbiana Center|TMW|TMW_S|TMW_S1|TMW_S103|Brick & Mortar|Open|Columbia|SC
+TMW_5223|#5223The Court At Deptford|TMW|TMW_N|TMW_N4|TMW_N406|Brick & Mortar|Open|Deptford|NJ
+TMW_4616|#4616Park Pointe Plaza|TMW|TMW_W|TMW_W4|TMW_W403|Brick & Mortar|Open|Orland Park|IL
+TMW_1516|#1516Pinnacle At Turkey Creek|TMW|TMW_S|TMW_S1|TMW_S105|Brick & Mortar|Open|Knoxville|TN
+TMW_3119|#3119Ashley Park|TMW|TMW_S|TMW_S4|TMW_S406|Brick & Mortar|Open|Newnan|GA
+TMW_1222|#1222Barton Creek Square|TMW|TMW_S|TMW_S5|TMW_S501|Brick & Mortar|Open|Austin|TX
+TMW_3516|#3516 Pikesville|TMW|TMW_N|TMW_N2|TMW_N201|Brick & Mortar|Open|Pikesville|MD
+TMW_4110|#4110 Arbor Lakes|TMW|TMW_W|TMW_W4|TMW_W402|Brick & Mortar|Open|Maple Grove|MN
+TMW_1311|#1311 Colorado Springs, Co|TMW|TMW_W|TMW_W2|TMW_W204|Brick & Mortar|Open|Colorado Springs|CO
+TMW_2685|#2685 Tacoma|TMW|TMW_W|TMW_W3|TMW_W305|Brick & Mortar|Open|Tacoma|WA
+TMW_1533|#1533Scottsdale Center|TMW|TMW_W|TMW_W2|TMW_W203|Brick & Mortar|Open|Rogers|AR
+TMW_5214|#5214 Reading, Pa|TMW|TMW_N|TMW_N2|TMW_N202|Brick & Mortar|Open|Reading|PA
+TMW_2701|#2701Sher Lane Shopping Center|TMW|TMW_W|TMW_W1|TMW_W104|Brick & Mortar|Open|Huntington Beach|CA
+TMW_3528|#3528 Charleston, Wv|TMW|TMW_S|TMW_S3|TMW_S303|Brick & Mortar|Open|Charleston|WV
+TMW_1705|#1705 Fairview Heights, Il|TMW|TMW_S|TMW_S3|TMW_S304|Brick & Mortar|Open|Fairview Heights|IL
+TMW_5220|#5220Capital City|TMW|TMW_N|TMW_N2|TMW_N202|Brick & Mortar|Open|Camp Hill|PA
+TMW_1230|#1230Winrock Town Center|TMW|TMW_W|TMW_W2|TMW_W204|Brick & Mortar|Open|Albuquerque|NM
+TMW_1101|#1101Briarcroft Shopping Center|TMW|TMW_S|TMW_S5|TMW_S503|Brick & Mortar|Open|Houston|TX
+TMW_4123|#4123Lakeport Commons|TMW|TMW_W|TMW_W2|TMW_W205|Brick & Mortar|Open|Sioux City|IA
+TMW_5438|#5438Eatontown Center|TMW|TMW_N|TMW_N4|TMW_N407|Brick & Mortar|Open|Eatontown|NJ
+TMW_4611|#4611Northpoint Shopping Center|TMW|TMW_W|TMW_W4|TMW_W401|Brick & Mortar|Open|Arlington Heights|IL
+TMW_2163|#2163Marina Square Center|TMW|TMW_W|TMW_W1|TMW_W101|Brick & Mortar|Open|San Leandro|CA
+TMW_1103|#1103 Pasadena, Tx|TMW|TMW_S|TMW_S5|TMW_S503|Brick & Mortar|Open|Pasadena|TX
+TMW_1207|#1207 Market Heights|TMW|TMW_S|TMW_S5|TMW_S501|Brick & Mortar|Open|Harker Heights|TX
+TMW_3302|#3302Colonial Plaza Marketplace|TMW|TMW_S|TMW_S2|TMW_S201|Brick & Mortar|Open|Orlando|FL
+TMW_2153|#2153Pacific Commons|TMW|TMW_W|TMW_W1|TMW_W101|Brick & Mortar|Open|Fremont|CA
+TMW_4108|#4108Apache Mall|TMW|TMW_W|TMW_W4|TMW_W404|Brick & Mortar|Open|Rochester|MN
+TMW_2273|#2273 Stockton, Ca|TMW|TMW_W|TMW_W1|TMW_W103|Brick & Mortar|Open|Stockton|CA
+TMW_2178|#2178Solano Mall|TMW|TMW_W|TMW_W1|TMW_W103|Brick & Mortar|Open|Fairfield|CA
+TMW_2668|#2668 Salt Lake City, Ut|TMW|TMW_W|TMW_W3|TMW_W301|Brick & Mortar|Open|Salt Lake City|UT
+TMW_3539|#3539Creeks at Virginia Centre|TMW|TMW_S|TMW_S1|TMW_S104|Brick & Mortar|Open|Glen Allen|VA
+TMW_2301|#2301Mira Mesa Market Center|TMW|TMW_W|TMW_W1|TMW_W105|Brick & Mortar|Open|San Diego|CA
+TMW_4208|#4208West Village|TMW|TMW_N|TMW_N1|TMW_N106|Brick & Mortar|Open|Dearborn|MI
+TMW_2710|#2710Oxnard Auto Center|TMW|TMW_W|TMW_W1|TMW_W102|Brick & Mortar|Open|Oxnard|CA
+TMW_5228|#5228 Bala Cynwyd Sc|TMW|TMW_N|TMW_N4|TMW_N406|Brick & Mortar|Open|Bala Cynwyd|PA
+TMW_5117|#5117Cape Cod Mall|TMW|TMW_N|TMW_N3|TMW_N302|Brick & Mortar|Open|Hyannis|MA
+TMW_2274|#2274 Riverbank, Ca|TMW|TMW_W|TMW_W1|TMW_W101|Brick & Mortar|Open|Riverbank|CA
+TMW_1405|#1405 Monroe, La|TMW|TMW_S|TMW_S4|TMW_S405|Brick & Mortar|Open|Monroe|LA
+TMW_4312|#4312Markland Mall|TMW|TMW_S|TMW_S3|TMW_S302|Brick & Mortar|Open|Kokomo|IN
+TMW_1205|#1205 Sherman Commons|TMW|TMW_S|TMW_S5|TMW_S504|Brick & Mortar|Open|Sherman|TX
+TMW_2625|#2625 Treasure Valley|TMW|TMW_W|TMW_W3|TMW_W301|Brick & Mortar|Open|Nampa|ID
+TMW_5446|#5446 Riverhead Ny|TMW|TMW_N|TMW_N4|TMW_N403|Brick & Mortar|Open|Riverhead|NY
+TMW_1536|#1536 Fort Smith Pavilion|TMW|TMW_W|TMW_W2|TMW_W203|Brick & Mortar|Open|Fort Smith|AR
+TMW_3201|#3201Crossroads Plaza|TMW|TMW_S|TMW_S1|TMW_S102|Brick & Mortar|Open|Cary|NC
+TMW_3213|#3213Promenade At Haywood|TMW|TMW_S|TMW_S4|TMW_S402|Brick & Mortar|Open|Greenville|SC
+TMW_5404|#5404Country Glen Shopping Center|TMW|TMW_N|TMW_N4|TMW_N403|Brick & Mortar|Open|Carle Place|NY
+TMW_2666|#2666 Tigard, Or|TMW|TMW_W|TMW_W3|TMW_W303|Brick & Mortar|Open|Tigard|OR
+TMW_4107|#4107Tamarack Village|TMW|TMW_W|TMW_W4|TMW_W402|Brick & Mortar|Open|Woodbury|MN
+TMW_5140|#5140 Warwick, Ri|TMW|TMW_N|TMW_N3|TMW_N302|Brick & Mortar|Open|Warwick|RI
+TMW_2510|#2510 Scottsdale, Az|TMW|TMW_W|TMW_W3|TMW_W304|Brick & Mortar|Open|Scottsdale|AZ
+TMW_5312|#5312 Victor, Ny|TMW|TMW_N|TMW_N3|TMW_N301|Brick & Mortar|Open|Victor|NY
+TMW_3515|#3515Festival At Riva|TMW|TMW_N|TMW_N2|TMW_N204|Brick & Mortar|Open|Annapolis|MD
+TMW_5415|#5415Bay Terrace Shopping Center|TMW|TMW_N|TMW_N4|TMW_N403|Brick & Mortar|Open|Bayside|NY
+TMW_4223|#4223Green Oak Village|TMW|TMW_N|TMW_N1|TMW_N101|Brick & Mortar|Open|Brighton|MI
+TMW_3216|#3216 Wilmington, Nc|TMW|TMW_S|TMW_S1|TMW_S102|Brick & Mortar|Open|Wilmington|NC
+TMW_1261|#1261Denton Towne Center|TMW|TMW_S|TMW_S5|TMW_S504|Brick & Mortar|Open|Denton|TX
+TMW_1541|#1541Hamilton Place Mall|TMW|TMW_S|TMW_S4|TMW_S404|Brick & Mortar|Open|Chattanooga|TN
+TMW_4414|#4414Dayton Mall|TMW|TMW_N|TMW_N1|TMW_N102|Brick & Mortar|Open|Dayton|OH
+TMW_1601|#1601Orchard Corners Shopping Center|TMW|TMW_W|TMW_W2|TMW_W201|Brick & Mortar|Open|Lenexa|KS
+TMW_4305|#4305 Ft. Wayne, In|TMW|TMW_N|TMW_N1|TMW_N106|Brick & Mortar|Open|Fort Wayne|IN
+TMW_4104|#4104Burnsville Marketplace|TMW|TMW_W|TMW_W4|TMW_W404|Brick & Mortar|Open|Burnsville|MN
+TMW_2697|#2697Keizer Station|TMW|TMW_W|TMW_W3|TMW_W303|Brick & Mortar|Open|Keizer|OR
+TMW_5115|#5115 Braintree, Ma|TMW|TMW_N|TMW_N3|TMW_N305|Brick & Mortar|Open|Braintree|MA
+TMW_1212|#1212 Round Rock, Tx|TMW|TMW_S|TMW_S5|TMW_S501|Brick & Mortar|Open|Round Rock|TX
+TMW_1521|#1521West Towne Pointe|TMW|TMW_S|TMW_S1|TMW_S105|Brick & Mortar|Open|Knoxville|TN
+TMW_4507|#4507Lafayette Plaza|TMW|TMW_N|TMW_N1|TMW_N105|Brick & Mortar|Open|Pittsburgh|PA
+TMW_5212|#5212Fairfield Place|TMW|TMW_N|TMW_N4|TMW_N406|Brick & Mortar|Open|Exton|PA
+TMW_4621|#4621Rose Plaza|TMW|TMW_W|TMW_W4|TMW_W405|Brick & Mortar|Open|Crystal Lake|IL
+TMW_5204|#5204Airport Square Shopping Center|TMW|TMW_N|TMW_N4|TMW_N404|Brick & Mortar|Open|North Wales|PA
+TMW_4227|#4227Grand Traverse Commerce Center|TMW|TMW_N|TMW_N1|TMW_N104|Brick & Mortar|Open|Traverse City|MI
+TMW_3108|#3108Henry Town Center|TMW|TMW_S|TMW_S4|TMW_S406|Brick & Mortar|Open|Mcdonough|GA
+TMW_1252|#1252 Oklahoma City, Ok|TMW|TMW_W|TMW_W2|TMW_W203|Brick & Mortar|Open|Oklahoma City|OK
+TMW_5444|#5444 Milford Ct|TMW|TMW_N|TMW_N3|TMW_N303|Brick & Mortar|Open|Milford|CT
+TMW_3314|#3314Winter Garden Village|TMW|TMW_S|TMW_S2|TMW_S201|Brick & Mortar|Open|Winter Garden|FL
+TMW_3534|#3534Pembroke Town Center|TMW|TMW_S|TMW_S1|TMW_S104|Brick & Mortar|Open|Virginia Beach|VA
+TMW_5119|#5119 Leominster, Ma|TMW|TMW_N|TMW_N3|TMW_N304|Brick & Mortar|Open|Leominster|MA
+TMW_2717|#2717Paseo Nuevo|TMW|TMW_W|TMW_W1|TMW_W102|Brick & Mortar|Open|Santa Barbara|CA
+TMW_1248|#1248 Southlake, Tx|TMW|TMW_S|TMW_S5|TMW_S504|Brick & Mortar|Open|Southlake|TX
+TMW_3321|#3321Ramblewood Square|TMW|TMW_S|TMW_S2|TMW_S202|Brick & Mortar|Open|Coral Springs|FL
+TMW_5209|#5209Whitehall Mall|TMW|TMW_N|TMW_N4|TMW_N404|Brick & Mortar|Open|Whitehall|PA
+TMW_2515|#2515 Avondale, Az|TMW|TMW_W|TMW_W3|TMW_W304|Brick & Mortar|Open|Avondale|AZ
+TMW_3504|#3504270 Center|TMW|TMW_N|TMW_N2|TMW_N206|Brick & Mortar|Open|Gaithersburg|MD
+TMW_3513|#3513Shops At Waldorf Center|TMW|TMW_N|TMW_N2|TMW_N203|Brick & Mortar|Open|Waldorf|MD
+TMW_5101|#5101Park Plaza|TMW|TMW_N|TMW_N3|TMW_N305|Brick & Mortar|Open|Framingham|MA
+TMW_3325|#3325Downtown Dadeland|TMW|TMW_S|TMW_S2|TMW_S204|Brick & Mortar|Open|Miami|FL
+TMW_3115|#3115Landing At Arbor Place|TMW|TMW_S|TMW_S4|TMW_S406|Brick & Mortar|Open|Douglasville|GA
+TMW_2512|#2512 Chandler, Az|TMW|TMW_W|TMW_W3|TMW_W304|Brick & Mortar|Open|Chandler|AZ
+TMW_5441|#5441 Stamford, Ct|TMW|TMW_N|TMW_N4|TMW_N402|Brick & Mortar|Open|Stamford|CT
+TMW_4508|#4508Millcreek Mall|TMW|TMW_N|TMW_N3|TMW_N301|Brick & Mortar|Open|Erie|PA
+TMW_3218|#3218Mt. Pleasant Town Center|TMW|TMW_S|TMW_S1|TMW_S103|Brick & Mortar|Open|Mount Pleasant|SC
+TMW_5208|#5208Paxton Towne Centre|TMW|TMW_N|TMW_N2|TMW_N202|Brick & Mortar|Open|Harrisburg|PA
+TMW_3208|#3208Triangle Town Commons|TMW|TMW_S|TMW_S1|TMW_S102|Brick & Mortar|Open|Raleigh|NC
+TMW_5445|#5445Kings Mall|TMW|TMW_N|TMW_N3|TMW_N306|Brick & Mortar|Open|Kingston|NY
+TMW_4641|#4641The Mayfair Collection|TMW|TMW_W|TMW_W4|TMW_W406|Brick & Mortar|Open|Wauwatosa|WI
+TMW_1504|#1504Wolfchase Commons|TMW|TMW_S|TMW_S3|TMW_S305|Brick & Mortar|Open|Memphis|TN
+TMW_1607|#1607 Overland Park, Ks|TMW|TMW_W|TMW_W2|TMW_W201|Brick & Mortar|Open|Overland Park|KS
+TMW_4620|#4620Fox Valley Store|TMW|TMW_W|TMW_W4|TMW_W403|Brick & Mortar|Open|Aurora|IL
+TMW_3542|#3542Apple Blossom Mall|TMW|TMW_N|TMW_N2|TMW_N206|Brick & Mortar|Open|Winchester|VA
+TMW_5320|#5320 Clifton Park|TMW|TMW_N|TMW_N3|TMW_N306|Brick & Mortar|Open|Clifton Park|NY
+TMW_5136|#5136Chamberlain Plaza|TMW|TMW_N|TMW_N3|TMW_N303|Brick & Mortar|Open|Meriden|CT
+TMW_1406|#1406 Lake Charles, La|TMW|TMW_S|TMW_S4|TMW_S403|Brick & Mortar|Open|Lake Charles|LA
+TMW_3233|#3233 University Commons|TMW|TMW_S|TMW_S1|TMW_S105|Brick & Mortar|Open|Burlington|NC
+TMW_1522|#1522 Johnson City, Tn|TMW|TMW_S|TMW_S1|TMW_S105|Brick & Mortar|Open|Johnson City|TN
+TMW_4639|#4639Regency Point Shopping Center|TMW|TMW_W|TMW_W4|TMW_W406|Brick & Mortar|Open|Racine|WI
+TMW_5470|#5470 New York, Ny|TMW|TMW_N|TMW_N4|TMW_N405|Brick & Mortar|Open|New York|NY
+TMW_3337|#3337 Orlando, Fl|TMW|TMW_S|TMW_S2|TMW_S201|Brick & Mortar|Open|Orlando|FL
+TMW_1267|#1267 Abilene, Tx|TMW|TMW_S|TMW_S5|TMW_S507|Brick & Mortar|Open|Abilene|TX
+TMW_4127|#4127 Waterloo, Ia|TMW|TMW_W|TMW_W4|TMW_W405|Brick & Mortar|Open|Waterloo|IA
+TMW_4309|#4309Honey Creek Commons|TMW|TMW_S|TMW_S3|TMW_S301|Brick & Mortar|Open|Terre Haute|IN
+TMW_2402|#2402Boca Park|TMW|TMW_W|TMW_W3|TMW_W302|Brick & Mortar|Open|Las Vegas|NV
+TMW_2733|#2733Chino Spectrum Marketplace|TMW|TMW_W|TMW_W1|TMW_W104|Brick & Mortar|Open|Chino|CA
+TMW_2703|#2703 Santa Monica|TMW|TMW_W|TMW_W1|TMW_W104|Brick & Mortar|Open|Santa Monica|CA
+TMW_1701|#1701 Brentwood, Mo|TMW|TMW_S|TMW_S3|TMW_S304|Brick & Mortar|Open|Brentwood|MO
+TMW_1210|#1210Bird Creek Crossing|TMW|TMW_S|TMW_S5|TMW_S501|Brick & Mortar|Open|Temple|TX
+TMW_3116|#3116Stonecrest Parc|TMW|TMW_S|TMW_S4|TMW_S406|Brick & Mortar|Open|Lithonia|GA
+TMW_1413|#1413Turtle Creek Crossing|TMW|TMW_S|TMW_S4|TMW_S405|Brick & Mortar|Open|Hattiesburg|MS
+TMW_2401|#2401 Las Vegas, Nv|TMW|TMW_W|TMW_W3|TMW_W302|Brick & Mortar|Open|Las Vegas|NV
+TMW_3351|#3351 Posner Commons|TMW|TMW_S|TMW_S2|TMW_S201|Brick & Mortar|Open|Davenport|FL
+TMW_2686|#2686Alderwood Crossing|TMW|TMW_W|TMW_W3|TMW_W305|Brick & Mortar|Open|Lynnwood|WA
+TMW_2683|#2683 North Division|TMW|TMW_W|TMW_W3|TMW_W301|Brick & Mortar|Open|Spokane|WA
+TMW_3503|#3503Springfield Town Center|TMW|TMW_N|TMW_N2|TMW_N204|Brick & Mortar|Open|Springfield|VA
+TMW_3331|#3331Pembroke Crossing|TMW|TMW_S|TMW_S2|TMW_S204|Brick & Mortar|Open|Pembroke Pines|FL
+TMW_1431|#1431Cordova Mall|TMW|TMW_S|TMW_S4|TMW_S405|Brick & Mortar|Open|Pensacola|FL
+TMW_2513|#2513San Tan Village|TMW|TMW_W|TMW_W3|TMW_W304|Brick & Mortar|Open|Gilbert|AZ
+TMW_1231|#1231Hulen Fashion Center|TMW|TMW_S|TMW_S5|TMW_S507|Brick & Mortar|Open|Fort Worth|TX
+TMW_5122|#5122Webster Square Shopping Center|TMW|TMW_N|TMW_N3|TMW_N304|Brick & Mortar|Open|Nashua|NH
+TMW_3306|#3306Plaza at Brandon Town Ctr|TMW|TMW_S|TMW_S2|TMW_S205|Brick & Mortar|Open|Brandon|FL
+TMW_3334|#3334 Jensen Beach, Fl|TMW|TMW_S|TMW_S2|TMW_S202|Brick & Mortar|Open|Stuart|FL
+TMW_3524|#3524Riverview Plaza|TMW|TMW_N|TMW_N2|TMW_N201|Brick & Mortar|Open|Frederick|MD
+TMW_3317|#3317Page Field Commons|TMW|TMW_S|TMW_S2|TMW_S204|Brick & Mortar|Open|Fort Myers|FL
+TMW_4509|#4509Cranberry Crossroads|TMW|TMW_N|TMW_N1|TMW_N105|Brick & Mortar|Open|Cranberry Township|PA
+TMW_4637|#4637 Grand Chute, Wi|TMW|TMW_W|TMW_W4|TMW_W406|Brick & Mortar|Open|Grand Chute|WI
+TMW_3535|#3535Yoder Plaza|TMW|TMW_S|TMW_S1|TMW_S104|Brick & Mortar|Open|Newport News|VA
+TMW_2603|#2603Red Cliffs Mall|TMW|TMW_W|TMW_W3|TMW_W302|Brick & Mortar|Open|Saint George|UT
+TMW_2664|#2664Cascade Village|TMW|TMW_W|TMW_W3|TMW_W303|Brick & Mortar|Open|Bend|OR
+TMW_4212|#4212Shops at Centerpoint|TMW|TMW_N|TMW_N1|TMW_N104|Brick & Mortar|Open|Grand Rapids|MI
+TMW_1263|#1263 Allen, Tx|TMW|TMW_S|TMW_S5|TMW_S504|Brick & Mortar|Open|Allen|TX
+TMW_4706|#4706 Lexington, Ky|TMW|TMW_S|TMW_S3|TMW_S303|Brick & Mortar|Open|Lexington|KY
+TMW_1708|#1708West County Center|TMW|TMW_S|TMW_S3|TMW_S304|Brick & Mortar|Open|Des Peres|MO
+TMW_4131|#4131 Lincoln, Ne|TMW|TMW_W|TMW_W2|TMW_W205|Brick & Mortar|Open|Lincoln|NE
+TMW_3335|#3335Granada Shoppes|TMW|TMW_S|TMW_S2|TMW_S204|Brick & Mortar|Open|Naples|FL
+TMW_1606|#1606Prestige Plaza|TMW|TMW_W|TMW_W2|TMW_W201|Brick & Mortar|Open|Topeka|KS
+TMW_5106|#5106 Burlington, Ma|TMW|TMW_N|TMW_N3|TMW_N304|Brick & Mortar|Open|Burlington|MA
+TMW_5439|#5439 Totowa Route 46 East|TMW|TMW_N|TMW_N4|TMW_N405|Brick & Mortar|Open|Totowa|NJ
+TMW_2272|#2272Vintage Fair Village|TMW|TMW_W|TMW_W1|TMW_W101|Brick & Mortar|Open|Modesto|CA
+TMW_5132|#5132 Target/Lowes Plaza|TMW|TMW_N|TMW_N3|TMW_N303|Brick & Mortar|Open|South Windsor|CT
+TMW_1802|#1802South Center Crossing Shopping Center|TMW|TMW_W|TMW_W3|TMW_W301|Brick & Mortar|Open|Missoula|MT
+TMW_1245|#1245Central Plaza Shopping Center|TMW|TMW_S|TMW_S5|TMW_S507|Brick & Mortar|Open|Lubbock|TX
+TMW_5211|#5211Springfield Square|TMW|TMW_N|TMW_N4|TMW_N406|Brick & Mortar|Open|Springfield|PA
+TMW_2303|#2303Escondido Promenade|TMW|TMW_W|TMW_W1|TMW_W105|Brick & Mortar|Open|Escondido|CA
+TMW_2310|#2310Encinitas Ranch Town Center|TMW|TMW_W|TMW_W1|TMW_W105|Brick & Mortar|Open|Encinitas|CA
+TMW_2726|#2726Village At Moorpark|TMW|TMW_W|TMW_W1|TMW_W102|Brick & Mortar|Open|Thousand Oaks|CA
+TMW_3117|#3117Riverside Crossing|TMW|TMW_S|TMW_S4|TMW_S406|Brick & Mortar|Open|Macon|GA
+TMW_4303|#4303Castleton Place|TMW|TMW_S|TMW_S3|TMW_S302|Brick & Mortar|Open|Indianapolis|IN
+TMW_3230|#3230Concord Mills|TMW|TMW_S|TMW_S1|TMW_S101|Brick & Mortar|Open|Concord|NC
+TMW_2716|#2716South Lake Shopping Center|TMW|TMW_W|TMW_W1|TMW_W102|Brick & Mortar|Open|Pasadena|CA
+TMW_5224|#5224Logan Town Center|TMW|TMW_N|TMW_N2|TMW_N202|Brick & Mortar|Open|Altoona|PA
+TMW_1531|#1531Chenal Parkway|TMW|TMW_W|TMW_W2|TMW_W203|Brick & Mortar|Open|Little Rock|AR
+TMW_3229|#3229Valley Hills Mall|TMW|TMW_S|TMW_S1|TMW_S101|Brick & Mortar|Open|Hickory|NC
+TMW_3226|#3226 Anderson, Sc|TMW|TMW_S|TMW_S4|TMW_S402|Brick & Mortar|Open|Anderson|SC
+TMW_3309|#3309 St. Petersburg, Fl|TMW|TMW_S|TMW_S2|TMW_S205|Brick & Mortar|Open|St Petersburg|FL
+TMW_1302|#1302Twenty Ninth Street Mall|TMW|TMW_W|TMW_W2|TMW_W202|Brick & Mortar|Open|Boulder|CO
+TMW_2503|#2503Camelback Colonnade|TMW|TMW_W|TMW_W3|TMW_W304|Brick & Mortar|Open|Phoenix|AZ
+TMW_1711|#1711Edwardsville Crossing|TMW|TMW_S|TMW_S3|TMW_S304|Brick & Mortar|Open|Edwardsville|IL
+TMW_5202|#5202Lincoln Plaza|TMW|TMW_N|TMW_N4|TMW_N401|Brick & Mortar|Open|Langhorne|PA
+TMW_1243|#1243Collin Creek|TMW|TMW_S|TMW_S5|TMW_S502|Brick & Mortar|Open|Plano|TX
+TMW_5310|#5310 Rochester, Ny|TMW|TMW_N|TMW_N3|TMW_N301|Brick & Mortar|Open|Rochester|NY
+TMW_5215|#5215 York, Pa|TMW|TMW_N|TMW_N2|TMW_N202|Brick & Mortar|Open|York|PA
+TMW_3518|#3518The Avenue At Whitemarsh|TMW|TMW_N|TMW_N2|TMW_N205|Brick & Mortar|Open|White Marsh|MD
+TMW_3409|#3409 Tuscaloosa, Al|TMW|TMW_S|TMW_S4|TMW_S401|Brick & Mortar|Open|Tuscaloosa|AL
+TMW_2516|#2516 Prescott Valley|TMW|TMW_W|TMW_W3|TMW_W302|Brick & Mortar|Open|Prescott Valley|AZ
+TMW_4213|#4213 Flint, Mi|TMW|TMW_N|TMW_N1|TMW_N104|Brick & Mortar|Open|Flint|MI
+TMW_3323|#3323Aventura Commons|TMW|TMW_S|TMW_S2|TMW_S204|Brick & Mortar|Open|Aventura|FL
+TMW_1304|#1304Plaza at Highlands Ranch|TMW|TMW_W|TMW_W2|TMW_W204|Brick & Mortar|Open|Highlands Ranch|CO
+TMW_1239|#1239 South Of Northeast Mall|TMW|TMW_S|TMW_S5|TMW_S507|Brick & Mortar|Open|Hurst|TX
+TMW_2676|#2676South Hill Center|TMW|TMW_W|TMW_W3|TMW_W305|Brick & Mortar|Open|Puyallup|WA
+TMW_4112|#4112Crossroads Mall|TMW|TMW_W|TMW_W4|TMW_W402|Brick & Mortar|Open|Saint Cloud|MN
+TMW_4642|#4642Louis Joliet Pointe|TMW|TMW_W|TMW_W4|TMW_W403|Brick & Mortar|Open|Joliet|IL
+TMW_4503|#4503 Monroeville|TMW|TMW_N|TMW_N1|TMW_N105|Brick & Mortar|Open|Monroeville|PA
+TMW_3224|#3224Five Points|TMW|TMW_S|TMW_S1|TMW_S103|Brick & Mortar|Open|Columbia|SC
+TMW_1232|#1232Prestonwood Town Center|TMW|TMW_S|TMW_S5|TMW_S502|Brick & Mortar|Open|Dallas|TX
+TMW_1709|#1709South County Mall|TMW|TMW_S|TMW_S3|TMW_S304|Brick & Mortar|Open|Saint Louis|MO
+TMW_1707|#1707Mid Rivers Mall|TMW|TMW_S|TMW_S3|TMW_S304|Brick & Mortar|Open|St Peters|MO
+TMW_3121|#3121Albany Mall|TMW|TMW_S|TMW_S2|TMW_S203|Brick & Mortar|Open|Albany|GA
+TMW_4505|#4505Waterfront Town Center|TMW|TMW_N|TMW_N1|TMW_N105|Brick & Mortar|Open|Homestead|PA
+TMW_1411|#1411County Line Plaza|TMW|TMW_S|TMW_S4|TMW_S405|Brick & Mortar|Open|Jackson|MS
+TMW_4129|#4129Wacker Plaza|TMW|TMW_W|TMW_W4|TMW_W405|Brick & Mortar|Open|Dubuque|IA
+TMW_5138|#5138Hamden Mart|TMW|TMW_N|TMW_N3|TMW_N303|Brick & Mortar|Open|Hamden|CT
+TMW_1111|#1111 CYPRESS TOWNE CENTER|TMW|TMW_S|TMW_S5|TMW_S506|Brick & Mortar|Open|CYPRESS|TX
+TMW_4420|#4420 Ontario, Oh|TMW|TMW_N|TMW_N1|TMW_N102|Brick & Mortar|Open|Ontario|OH
+TMW_2693|#2693Boise Town Plaza|TMW|TMW_W|TMW_W3|TMW_W301|Brick & Mortar|Open|Boise|ID
+TMW_2270|#2270Creekside Town Center|TMW|TMW_W|TMW_W1|TMW_W103|Brick & Mortar|Open|Roseville|CA
+TMW_5105|#5105Holyoke Crossing|TMW|TMW_N|TMW_N3|TMW_N305|Brick & Mortar|Open|Holyoke|MA
+TMW_4635|#4635Calhoun Crossing|TMW|TMW_W|TMW_W4|TMW_W406|Brick & Mortar|Open|Brookfield|WI
+TMW_4638|#4638 Ashwaubenon|TMW|TMW_W|TMW_W4|TMW_W406|Brick & Mortar|Open|Green Bay|WI
+TMW_3113|#3113Fayette Pavilion|TMW|TMW_S|TMW_S4|TMW_S406|Brick & Mortar|Open|Fayetteville|GA
+TMW_2678|#2678Valley River Plaza|TMW|TMW_W|TMW_W3|TMW_W303|Brick & Mortar|Open|Eugene|OR
+TMW_4133|#4133Oakview Plaza|TMW|TMW_W|TMW_W2|TMW_W205|Brick & Mortar|Open|Omaha|NE
+TMW_3318|#3318 Daytona Beach, Fl|TMW|TMW_S|TMW_S2|TMW_S201|Brick & Mortar|Open|Daytona Beach|FL
+TMW_3329|#3329Somerset Shoppes|TMW|TMW_S|TMW_S2|TMW_S202|Brick & Mortar|Open|Boca Raton|FL
+TMW_1117|#1117Baybrook Mall|TMW|TMW_S|TMW_S5|TMW_S503|Brick & Mortar|Open|Friendswood|TX
+TMW_3402|#3402Galleria Circle|TMW|TMW_S|TMW_S4|TMW_S401|Brick & Mortar|Open|Hoover|AL
+TMW_4215|#4215Novi Town Center|TMW|TMW_N|TMW_N1|TMW_N101|Brick & Mortar|Open|Novi|MI
+TMW_3220|#3220Lynncroft Shopping Center|TMW|TMW_S|TMW_S1|TMW_S102|Brick & Mortar|Open|Greenville|NC
+TMW_5301|#5301Walden Crossings|TMW|TMW_N|TMW_N3|TMW_N301|Brick & Mortar|Open|Cheektowaga|NY
+TMW_3303|#3303Clearwater Mall|TMW|TMW_S|TMW_S2|TMW_S205|Brick & Mortar|Open|Clearwater|FL
+TMW_1257|#1257 College Station, Tx|TMW|TMW_S|TMW_S5|TMW_S501|Brick & Mortar|Open|College Station|TX
+TMW_4628|#4628 Springfield, Il|TMW|TMW_S|TMW_S3|TMW_S304|Brick & Mortar|Open|Springfield|IL
+TMW_2302|#2302Park Valley Center|TMW|TMW_W|TMW_W1|TMW_W105|Brick & Mortar|Open|San Diego|CA
+TMW_2706|#2706Brea Marketplace|TMW|TMW_W|TMW_W1|TMW_W104|Brick & Mortar|Open|Brea|CA
+TMW_3215|#3215Beaucatcher Crossing|TMW|TMW_S|TMW_S1|TMW_S105|Brick & Mortar|Open|Asheville|NC
+TMW_2511|#2511 Mesa, Az|TMW|TMW_W|TMW_W3|TMW_W304|Brick & Mortar|Open|Mesa|AZ
+TMW_2264|#2264 Folsom, Ca|TMW|TMW_W|TMW_W1|TMW_W103|Brick & Mortar|Open|Folsom|CA
+TMW_4504|#4504South Hills Village|TMW|TMW_N|TMW_N1|TMW_N105|Brick & Mortar|Open|Pittsburgh|PA
+TMW_4619|#4619Randall Square Shopping Center|TMW|TMW_W|TMW_W4|TMW_W401|Brick & Mortar|Open|Geneva|IL
+TMW_3304|#3304 North Dale Mabry|TMW|TMW_S|TMW_S2|TMW_S205|Brick & Mortar|Open|Tampa|FL
+TMW_4636|#4636Oakbridge Commons|TMW|TMW_W|TMW_W4|TMW_W406|Brick & Mortar|Open|Madison|WI
+TMW_2604|#2604Blue Sky Plaza|TMW|TMW_W|TMW_W3|TMW_W303|Brick & Mortar|Open|Medford|OR
+TMW_1258|#1258The Commons At Northpark|TMW|TMW_S|TMW_S5|TMW_S507|Brick & Mortar|Open|Midland|TX
+TMW_3324|#3324Legacy Place|TMW|TMW_S|TMW_S2|TMW_S202|Brick & Mortar|Open|Palm Beach Gardens|FL
+TMW_1123|#1123Portofino Center|TMW|TMW_S|TMW_S5|TMW_S506|Brick & Mortar|Open|Shenandoah|TX
+TMW_1108|#1108 Bella Terra|TMW|TMW_S|TMW_S5|TMW_S506|Brick & Mortar|Open|Richmond|TX
+TMW_5435|#5435Target Square Plaza|TMW|TMW_N|TMW_N4|TMW_N407|Brick & Mortar|Open|Edison|NJ
+TMW_2736|#2736Town & Country|TMW|TMW_W|TMW_W1|TMW_W104|Brick & Mortar|Open|Orange|CA
+TMW_4604|#4604Woodfield Commons Shopping Center|TMW|TMW_W|TMW_W4|TMW_W401|Brick & Mortar|Open|Schaumburg|IL
+TMW_3326|#3326Shops At Broward|TMW|TMW_S|TMW_S2|TMW_S204|Brick & Mortar|Open|Plantation|FL
+TMW_5411|#5411Green Acres Shopping Center|TMW|TMW_N|TMW_N4|TMW_N403|Brick & Mortar|Open|Valley Stream|NY
+TMW_5434|#5434 Ledgewood Mall|TMW|TMW_N|TMW_N4|TMW_N405|Brick & Mortar|Open|Ledgewood|NJ
+TMW_1404|#1404Acadiana Mall|TMW|TMW_S|TMW_S4|TMW_S403|Brick & Mortar|Open|Lafayette|LA
+TMW_2801|#2801Dimond Crossing|TMW|TMW_W|TMW_W3|TMW_W303|Brick & Mortar|Open|Anchorage|AK
+TMW_5428|#5428Somerset Shopping Center|TMW|TMW_N|TMW_N4|TMW_N407|Brick & Mortar|Open|Bridgewater|NJ
+TMW_5436|#5436 Center Island Route 22|TMW|TMW_N|TMW_N4|TMW_N407|Brick & Mortar|Open|Union|NJ
+TMW_4115|#4115Central Park Commons|TMW|TMW_W|TMW_W4|TMW_W404|Brick & Mortar|Open|Eagan|MN
+TMW_2711|#2711 Brand Blvd|TMW|TMW_W|TMW_W1|TMW_W102|Brick & Mortar|Open|Glendale|CA
+TMW_1249|#1249Las Colinas|TMW|TMW_S|TMW_S5|TMW_S502|Brick & Mortar|Open|Irving|TX
+TMW_3203|#3203Sharon Corners Shopping Center|TMW|TMW_S|TMW_S1|TMW_S101|Brick & Mortar|Open|Charlotte|NC
+TMW_1237|#1237Chapel Hill|TMW|TMW_S|TMW_S5|TMW_S507|Brick & Mortar|Open|Fort Worth|TX
+TMW_5139|#5139Brookside Plaza|TMW|TMW_N|TMW_N3|TMW_N305|Brick & Mortar|Open|Enfield|CT
+TMW_5409|#5409Rockland Plaza|TMW|TMW_N|TMW_N4|TMW_N402|Brick & Mortar|Open|Nanuet|NY
+TMW_4109|#4109Riverdale Shopping Center|TMW|TMW_W|TMW_W4|TMW_W402|Brick & Mortar|Open|Coon Rapids|MN
+TMW_5221|#5221Wrangleboror Consumer Square|TMW|TMW_N|TMW_N4|TMW_N401|Brick & Mortar|Open|Mays Landing|NJ
+TMW_1312|#1312 Broomfield Co|TMW|TMW_W|TMW_W2|TMW_W202|Brick & Mortar|Open|Broomfield|CO
+TMW_4707|#4707Jefferson Commons|TMW|TMW_S|TMW_S3|TMW_S303|Brick & Mortar|Open|Louisville|KY
+TMW_2285|#2285Ming Avenue and Valley Plaza|TMW|TMW_W|TMW_W1|TMW_W102|Brick & Mortar|Open|Bakersfield|CA
+TMW_2151|#2151Almaden Plaza|TMW|TMW_W|TMW_W1|TMW_W106|Brick & Mortar|Open|San Jose|CA
+TMW_2737|#2737Promenade Mall|TMW|TMW_W|TMW_W1|TMW_W105|Brick & Mortar|Open|Temecula|CA
+TMW_1219|#1219Plaza at Cottonwood|TMW|TMW_W|TMW_W2|TMW_W204|Brick & Mortar|Open|Albuquerque|NM
+TMW_4704|#4704 Lexington, Ky|TMW|TMW_S|TMW_S3|TMW_S303|Brick & Mortar|Open|Lexington|KY
+TMW_4310|#4310Muncie Market Place|TMW|TMW_N|TMW_N1|TMW_N102|Brick & Mortar|Open|Muncie|IN
+TMW_3344|#3344 Panama City Beach, Fl|TMW|TMW_S|TMW_S4|TMW_S405|Brick & Mortar|Open|Panama City Beach|FL
+TMW_4624|#4624 Bloomington, Il|TMW|TMW_S|TMW_S3|TMW_S302|Brick & Mortar|Open|Bloomington|IL
+TMW_4405|#4405 Mayfield Heights|TMW|TMW_N|TMW_N1|TMW_N103|Brick & Mortar|Open|Mayfield Heights|OH
+TMW_1124|#1124Conroe Marketplace|TMW|TMW_S|TMW_S5|TMW_S506|Brick & Mortar|Open|Conroe|TX
+TMW_1710|#1710 Columbia, Mo|TMW|TMW_W|TMW_W2|TMW_W201|Brick & Mortar|Open|Columbia|MO
+TMW_3319|#3319Citrus Park Drive|TMW|TMW_S|TMW_S2|TMW_S205|Brick & Mortar|Open|Tampa|FL
+TMW_3332|#3332Boynton Town Center|TMW|TMW_S|TMW_S2|TMW_S202|Brick & Mortar|Open|Boynton Beach|FL
+TMW_3406|#3406Parkway Place|TMW|TMW_S|TMW_S4|TMW_S401|Brick & Mortar|Open|Huntsville|AL
+TMW_1412|#1412Southaven Town Center|TMW|TMW_S|TMW_S3|TMW_S305|Brick & Mortar|Open|Southaven|MS
+TMW_3520|#3520Manaport Plaza|TMW|TMW_N|TMW_N2|TMW_N203|Brick & Mortar|Open|Manassas|VA
+TMW_1407|#1407Kings Crossing|TMW|TMW_S|TMW_S5|TMW_S502|Brick & Mortar|Open|Shreveport|LA
+TMW_4222|#4222 Grosse Pointe Woods|TMW|TMW_N|TMW_N1|TMW_N101|Brick & Mortar|Open|Grosse Pointe Woods|MI
+TMW_4211|#4211Westland Shopping Center|TMW|TMW_N|TMW_N1|TMW_N106|Brick & Mortar|Open|Westland|MI
+TMW_1402|#1402 Harvey, La|TMW|TMW_S|TMW_S4|TMW_S403|Brick & Mortar|Open|Harvey|LA
+TMW_5210|#5210The Metroplex|TMW|TMW_N|TMW_N4|TMW_N404|Brick & Mortar|Open|Plymouth Meeting|PA
+TMW_3404|#3404Eastchase Center|TMW|TMW_S|TMW_S4|TMW_S401|Brick & Mortar|Open|Montgomery|AL
+TMW_5414|#5414 Oceanside, Ny|TMW|TMW_N|TMW_N4|TMW_N403|Brick & Mortar|Open|Oceanside|NY
+TMW_1106|#1106Deerbrook Mall|TMW|TMW_S|TMW_S5|TMW_S503|Brick & Mortar|Open|Humble|TX
+TMW_4125|#4125 Council Bluffs, Ia|TMW|TMW_W|TMW_W2|TMW_W205|Brick & Mortar|Open|Council Bluffs|IA
+TMW_3225|#3225Commons At Magnolia|TMW|TMW_S|TMW_S1|TMW_S103|Brick & Mortar|Open|Florence|SC
+TMW_1330|#1330 Cheyenne, Wy|TMW|TMW_W|TMW_W2|TMW_W202|Brick & Mortar|Open|Cheyenne|WY
+TMW_4421|#4421Ohio Valley Mall|TMW|TMW_N|TMW_N1|TMW_N105|Brick & Mortar|Open|St Clairsville|OH
+TMW_1315|#1315 Orchard Town Center|TMW|TMW_W|TMW_W2|TMW_W202|Brick & Mortar|Open|Westminster|CO
+TMW_3122|#3122 Gainesville, Ga|TMW|TMW_S|TMW_S4|TMW_S402|Brick & Mortar|Open|Gainesville|GA
+TMW_2519|#2519 Yuma Palms|TMW|TMW_W|TMW_W3|TMW_W304|Brick & Mortar|Open|Yuma|AZ
+TMW_1114|#1114 San Jacinto Marketplace|TMW|TMW_S|TMW_S5|TMW_S503|Brick & Mortar|Open|Baytown|TX
+TMW_3543|#3543 University Town Center|TMW|TMW_N|TMW_N1|TMW_N104|Brick & Mortar|Open|Morgantown|WV
+KNG_0908|#0908 Roseville|KNG|KNG_R04|KNG_R04|KNG_R04_A|Brick & Mortar|Open|Roseville|MI
+KNG_0102|#0102Highland Lakes Plaza|KNG|KNG_R01|KNG_R01|KNG_R01_A|Brick & Mortar|Open|Orlando|FL
+KNG_0021|#0021 Farmingdale|KNG|KNG_R09|KNG_R09|KNG_R09_A|Brick & Mortar|Open|Farmingdale|NY
+KNG_0208|#0208 N. Philly|KNG|KNG_R10|KNG_R10|KNG_R10_A|Brick & Mortar|Open|Philadelphia|PA
+KNG_0702|#0702Finley Square|KNG|KNG_R03|KNG_R03|KNG_R03_A|Brick & Mortar|Open|Downers Grove|IL
+KNG_0216|#0216 Orange|KNG|KNG_R09|KNG_R09|KNG_R09_A|Brick & Mortar|Open|Orange|CT
+KNG_0600|#0600Janaf Shopping Center|KNG|KNG_R10|KNG_R10|KNG_R10_A|Brick & Mortar|Open|Norfolk|VA
+KNG_0010|#0010 Atlanta|KNG|KNG_R01|KNG_R01|KNG_R01_A|Brick & Mortar|Open|Atlanta|GA
+KNG_0709|#0709Brown Deer|KNG|KNG_R04|KNG_R04|KNG_R04_A|Brick & Mortar|Open|Milwaukee|WI
+KNG_0061|#0061The Shoppes at Baileys Crossraods|KNG|KNG_R10|KNG_R10|KNG_R10_A|Brick & Mortar|Open|Falls Church|VA
+KNG_0025|#0025 Reading|KNG|KNG_R09|KNG_R09|KNG_R09_A|Brick & Mortar|Open|Reading|MA
+KNG_0201|#0201 Irvington|KNG|KNG_R09|KNG_R09|KNG_R09_A|Brick & Mortar|Open|Irvington|NJ
+KNG_0016|#0016Tyvola Square|KNG|KNG_R08|KNG_R08|KNG_R08_A|Brick & Mortar|Open|Charlotte|NC
+KNG_0607|#0607Verdae Village|KNG|KNG_R08|KNG_R08|KNG_R08_A|Brick & Mortar|Open|Greenville|SC
+KNG_0305|#0305 San Antonio|KNG|KNG_R02|KNG_R02|KNG_R02_A|Brick & Mortar|Open|San Antonio|TX
+KNG_0261|#0261 Rosedale|KNG|KNG_R10|KNG_R10|KNG_R10_A|Brick & Mortar|Open|Rosedale|MD
+KNG_0027|#0027 Dedham|KNG|KNG_R09|KNG_R09|KNG_R09_A|Brick & Mortar|Open|Dedham|MA
+KNG_0035|#0035Northglenn Marketplace|KNG|KNG_R03|KNG_R03|KNG_R03_A|Brick & Mortar|Open|Northglenn|CO
+KNG_0040|#0040 Indianapolis|KNG|KNG_R04|KNG_R04|KNG_R04_A|Brick & Mortar|Open|Indianapolis|IN
+KNG_0070|#0070 Cincinnati|KNG|KNG_R04|KNG_R04|KNG_R04_A|Brick & Mortar|Open|Springdale|OH
+KNG_0048|#0048HarMar Mall|KNG|KNG_R04|KNG_R04|KNG_R04_A|Brick & Mortar|Open|Roseville|MN
+JAB_0017|#0017Morrocroft Village|JAB|JAB_S|JAB_S1|JAB_S101|Brick & Mortar|Open|Charlotte|NC
+JAB_0070|#0070 449 Haywood Road|JAB|JAB_S|JAB_S4|JAB_S402|Brick & Mortar|Open|Greenville|SC
+JAB_0345|#0345The Shops At Riverwoods|JAB|JAB_W|JAB_W3|JAB_W301|Brick & Mortar|Open|Provo|UT
+JAB_0532|#0532The Promenade|JAB|JAB_W|JAB_W3|JAB_W302|Brick & Mortar|Open|Scottsdale|AZ
+JAB_0658|#0658Holmdel Town Center|JAB|JAB_N|JAB_N4|JAB_N407|Brick & Mortar|Open|Holmdel|NJ
+JAB_0067|#0067The Aboretum|JAB|JAB_S|JAB_S5|JAB_S501|Brick & Mortar|Open|Austin|TX
+JAB_0061|#0061La Promenade|JAB|JAB_S|JAB_S1|JAB_S104|Brick & Mortar|Open|Virginia Beach|VA
+JAB_0325|#0325Village Of Rochester Hills|JAB|JAB_N|JAB_N1|JAB_N101|Brick & Mortar|Open|Rochester Hills|MI
+JAB_0597|#0597Legacy Place|JAB|JAB_S|JAB_S2|JAB_S202|Brick & Mortar|Open|Palm Beach Gardens|FL
+JAB_0940|#0940 880 Providence Hwy|JAB|JAB_N|JAB_N3|JAB_N305|Brick & Mortar|Open|Dedham|MA
+JAB_0453|#0453Mayfair Shopping Center|JAB|JAB_N|JAB_N0|JAB_N014|Brick & Mortar|Open|Commack|NY
+JAB_0040|#0040Jos. A. Bank Centre|JAB|JAB_S|JAB_S3|JAB_S301|Brick & Mortar|Open|Cincinnati|OH
+JAB_0457|#0457The Shops At Briargate|JAB|JAB_W|JAB_W2|JAB_W204|Brick & Mortar|Open|Colorado Springs|CO
+JAB_0364|#0364Fashion District at Easton|JAB|JAB_N|JAB_N1|JAB_N102|Brick & Mortar|Open|Columbus|OH
+JAB_0769|#0769Shoppes At Flowers Mill|JAB|JAB_N|JAB_N4|JAB_N401|Brick & Mortar|Open|Langhorne|PA
+JAB_0551|#0551Abercorn Walk|JAB|JAB_S|JAB_S1|JAB_S103|Brick & Mortar|Open|Savannah|GA
+JAB_0331|#0331 Wisconsin Avenue|JAB|JAB_N|JAB_N2|JAB_N206|Brick & Mortar|Open|Bethesda|MD
+JAB_0315|#0315Champions Plaza|JAB|JAB_S|JAB_S5|JAB_S506|Brick & Mortar|Open|Houston|TX
+JAB_0842|#0842Suncrest Town Center|JAB|JAB_N|JAB_N1|JAB_N105|Brick & Mortar|Open|Morgantown|WV
+JAB_0314|#0314Crossings at Akers Mill|JAB|JAB_S|JAB_S4|JAB_S404|Brick & Mortar|Open|Atlanta|GA
+JAB_0651|#0651The Streets Of Cranberry|JAB|JAB_N|JAB_N1|JAB_N105|Brick & Mortar|Open|Cranberry Township|PA
+JAB_0885|#0885Center Pointe Plaza|JAB|JAB_N|JAB_N2|JAB_N205|Brick & Mortar|Open|Newark|DE
+JAB_0758|#0758Shops At Long Wharf|JAB|JAB_N|JAB_N3|JAB_N302|Brick & Mortar|Open|Newport|RI
+JAB_0016|#0016Buckhead|JAB|JAB_S|JAB_S4|JAB_S406|Brick & Mortar|Open|Atlanta|GA
+JAB_0338|#0338North Point Village Shopping Center|JAB|JAB_S|JAB_S4|JAB_S404|Brick & Mortar|Open|Alpharetta|GA
+JAB_0036|#0036 Creve Coeur|JAB|JAB_S|JAB_S3|JAB_S304|Brick & Mortar|Open|Creve Coeur|MO
+JAB_0547|#0547 28 S. 32nd St. # C & D|JAB|JAB_N|JAB_N2|JAB_N202|Brick & Mortar|Open|Camp Hill|PA
+JAB_0012|#0012 379 Lancaster Avenue|JAB|JAB_N|JAB_N4|JAB_N406|Brick & Mortar|Open|Haverford|PA
+JAB_0429|#0429Villaggio Shopping Center|JAB|JAB_W|JAB_W1|JAB_W101|Brick & Mortar|Open|Fresno|CA
+JAB_0826|#0826The Peerless Center|JAB|JAB_S|JAB_S1|JAB_S105|Brick & Mortar|Open|Johnson City|TN
+JAB_0858|#0858The Plaza|JAB|JAB_S|JAB_S4|JAB_S402|Brick & Mortar|Open|Buford|GA
+JAB_0416|#0416Spring Creek Plaza|JAB|JAB_W|JAB_W2|JAB_W203|Brick & Mortar|Open|Edmond|OK
+JAB_0389|#0389Hamilton Place Mall|JAB|JAB_S|JAB_S4|JAB_S404|Brick & Mortar|Open|Chattanooga|TN
+JAB_0332|#0332The Avenue at East Cobb|JAB|JAB_S|JAB_S4|JAB_S404|Brick & Mortar|Open|Marietta|GA
+JAB_0590|#0590Marketplace At Tech Center|JAB|JAB_S|JAB_S1|JAB_S104|Brick & Mortar|Open|Newport News|VA
+JAB_0534|#0534Hunt Valley Towne Centre|JAB|JAB_N|JAB_N2|JAB_N205|Brick & Mortar|Open|Hunt Valley|MD
+JAB_0395|#0395Orland Square|JAB|JAB_W|JAB_W4|JAB_W403|Brick & Mortar|Open|Orland Park|IL
+JAB_0595|#0595West End Plaza|JAB|JAB_S|JAB_S1|JAB_S102|Brick & Mortar|Open|Rocky Mount|NC
+JAB_0359|#0359Rookwood Commons & Pavilion|JAB|JAB_S|JAB_S3|JAB_S301|Brick & Mortar|Open|Cincinnati|OH
+JAB_0021|#0021Kitchin Place|JAB|JAB_S|JAB_S1|JAB_S105|Brick & Mortar|Open|Asheville|NC
+JAB_0031|#0031Saddle Creek South|JAB|JAB_S|JAB_S3|JAB_S305|Brick & Mortar|Open|Germantown|TN
+JAB_0449|#0449Mount Pleasant Towne Centre|JAB|JAB_S|JAB_S1|JAB_S103|Brick & Mortar|Open|Mount Pleasant|SC
+JAB_0472|#0472Village Pointe|JAB|JAB_W|JAB_W2|JAB_W205|Brick & Mortar|Open|Omaha|NE
+JAB_0425|#0425Central Park Plaza|JAB|JAB_N|JAB_N2|JAB_N203|Brick & Mortar|Open|Fredericksburg|VA
+JAB_0773|#0773Centerton Square|JAB|JAB_N|JAB_N4|JAB_N401|Brick & Mortar|Open|Mount Laurel|NJ
+JAB_0563|#0563Crestview Hills Town Ctr|JAB|JAB_S|JAB_S3|JAB_S301|Brick & Mortar|Open|Crestview Hills|KY
+JAB_0577|#0577Lakeside Village|JAB|JAB_S|JAB_S2|JAB_S201|Brick & Mortar|Open|Lakeland|FL
+JAB_0652|#0652LaCenterra at Cinco Ranch|JAB|JAB_S|JAB_S5|JAB_S506|Brick & Mortar|Open|Katy|TX
+JAB_0006|#0006 1200 19th Street N.W.|JAB|JAB_N|JAB_N2|JAB_N204|Brick & Mortar|Open|Washington|DC
+JAB_0479|#0479The India Building|JAB|JAB_N|JAB_N3|JAB_N305|Brick & Mortar|Open|Boston|MA
+JAB_0390|#0390Cool Springs Galleria|JAB|JAB_S|JAB_S3|JAB_S305|Brick & Mortar|Open|Franklin|TN
+JAB_0755|#0755The Collection at Forsyth|JAB|JAB_S|JAB_S4|JAB_S404|Brick & Mortar|Open|Cumming|GA
+JAB_0075|#0075Woodlands Mall|JAB|JAB_S|JAB_S5|JAB_S506|Brick & Mortar|Open|The Woodlands|TX
+JAB_0788|#0788Promenade Shops at Clifton|JAB|JAB_N|JAB_N4|JAB_N405|Brick & Mortar|Open|Clifton|NJ
+JAB_0392|#0392Summit Mall|JAB|JAB_N|JAB_N1|JAB_N103|Brick & Mortar|Open|Fairlawn|OH
+JAB_0799|#0799Market Plaza|JAB|JAB_S|JAB_S2|JAB_S203|Brick & Mortar|Open|Tallahassee|FL
+JAB_0062|#0062 Village @ Pelican Point|JAB|JAB_S|JAB_S4|JAB_S403|Brick & Mortar|Open|Mandeville|LA
+JAB_0436|#0436Marsh Landing|JAB|JAB_S|JAB_S2|JAB_S203|Brick & Mortar|Open|Jacksonville Beach|FL
+JAB_0029|#0029Colonial Brookwood Village|JAB|JAB_S|JAB_S4|JAB_S401|Brick & Mortar|Open|Birmingham|AL
+JAB_0937|#0937Leesburg Premium Outlets|JAB|JAB_N|JAB_N2|JAB_N206|Brick & Mortar|Open|Leesburg|VA
+JAB_0419|#0419 Sacramento|JAB|JAB_W|JAB_W1|JAB_W103|Brick & Mortar|Open|Sacramento|CA
+JAB_0421|#0421Winter Park Village Shopping Center|JAB|JAB_S|JAB_S2|JAB_S201|Brick & Mortar|Open|Winter Park|FL
+JAB_0665|#0665Towne Place at Greenbrier|JAB|JAB_S|JAB_S1|JAB_S104|Brick & Mortar|Open|Chesapeake|VA
+JAB_0086|#0086Burlington Marketplace|JAB|JAB_N|JAB_N3|JAB_N304|Brick & Mortar|Open|Burlington|MA
+JAB_0082|#0082 624 N. Route 17|JAB|JAB_N|JAB_N4|JAB_N402|Brick & Mortar|Open|Paramus|NJ
+JAB_0932|#0932St. John's Town Center|JAB|JAB_S|JAB_S2|JAB_S203|Brick & Mortar|Open|Jacksonville|FL
+JAB_0054|#0054Fashion Center at Pentagon City|JAB|JAB_N|JAB_N2|JAB_N204|Brick & Mortar|Open|Arlington|VA
+JAB_0459|#0459Promenade On Providence|JAB|JAB_S|JAB_S1|JAB_S101|Brick & Mortar|Open|Charlotte|NC
+JAB_0042|#0042 Charles Schwab Building|JAB|JAB_N|JAB_N0|JAB_N014|Brick & Mortar|Open|Garden City|NY
+JAB_0630|#0630Legacy Village at Spring Hill|JAB|JAB_S|JAB_S4|JAB_S405|Brick & Mortar|Open|Mobile|AL
+JAB_0069|#0069West Hartford Center|JAB|JAB_N|JAB_N3|JAB_N303|Brick & Mortar|Open|West Hartford|CT
+JAB_0818|#0818Crocker Park|JAB|JAB_N|JAB_N1|JAB_N103|Brick & Mortar|Open|Westlake|OH
+JAB_0381|#0381Summit at Louisville Shopping Center|JAB|JAB_S|JAB_S3|JAB_S303|Brick & Mortar|Open|Louisville|KY
+JAB_0678|#0678 Warrington|JAB|JAB_N|JAB_N4|JAB_N404|Brick & Mortar|Open|Warrington|PA
+JAB_0379|#0379The Promenade at Sagemore|JAB|JAB_N|JAB_N4|JAB_N401|Brick & Mortar|Open|Marlton|NJ
+JAB_0637|#0637Oak Brook Promenade|JAB|JAB_W|JAB_W4|JAB_W403|Brick & Mortar|Open|Oak Brook|IL
+JAB_0046|#0046Centenniel Lakes Plaza|JAB|JAB_W|JAB_W4|JAB_W404|Brick & Mortar|Open|Edina|MN
+JAB_0100|#0100Harbison Crossing|JAB|JAB_S|JAB_S1|JAB_S103|Brick & Mortar|Open|Columbia|SC
+JAB_0398|#0398Towne Center at Fayetteville|JAB|JAB_N|JAB_N3|JAB_N306|Brick & Mortar|Open|Fayetteville|NY
+JAB_0060|#0060 N. Causeway Blvd|JAB|JAB_S|JAB_S4|JAB_S403|Brick & Mortar|Open|Metairie|LA
+JAB_0576|#0576Randolph Park Shopping Center|JAB|JAB_N|JAB_N2|JAB_N202|Brick & Mortar|Open|York|PA
+JAB_0018|#0018Gayton Crossing|JAB|JAB_S|JAB_S1|JAB_S104|Brick & Mortar|Open|Richmond|VA
+JAB_0044|#0044Centennial Promenade|JAB|JAB_W|JAB_W2|JAB_W204|Brick & Mortar|Open|Englewood|CO
+JAB_0026|#0026 275 E. Maple Road|JAB|JAB_N|JAB_N1|JAB_N101|Brick & Mortar|Open|Birmingham|MI
+JAB_0446|#0446Kingwood Commons|JAB|JAB_S|JAB_S5|JAB_S503|Brick & Mortar|Open|Kingwood|TX
+JAB_0573|#0573The Promenade at Centerra|JAB|JAB_W|JAB_W2|JAB_W202|Brick & Mortar|Open|Loveland|CO
+JAB_0402|#0402Eastwood Town Center|JAB|JAB_N|JAB_N1|JAB_N104|Brick & Mortar|Open|Lansing|MI
+JAB_0973|#0973Huebner Oaks Center|JAB|JAB_S|JAB_S5|JAB_S505|Brick & Mortar|Open|San Antonio|TX
+JAB_0517|#0517Creekside Station|JAB|JAB_N|JAB_N2|JAB_N206|Brick & Mortar|Open|Winchester|VA
+JAB_0681|#0681Shoppes At Wyomissing|JAB|JAB_N|JAB_N2|JAB_N202|Brick & Mortar|Open|Reading|PA
+JAB_0624|#0624ABQ Uptown|JAB|JAB_W|JAB_W2|JAB_W204|Brick & Mortar|Open|Albuquerque|NM
+JAB_0056|#0056Hawthorne Plaza|JAB|JAB_W|JAB_W2|JAB_W201|Brick & Mortar|Open|Overland Park|KS
+JAB_0027|#0027River Oaks Shopping Center|JAB|JAB_S|JAB_S5|JAB_S503|Brick & Mortar|Open|Houston|TX
+JAB_0409|#0409Utica Square|JAB|JAB_W|JAB_W2|JAB_W203|Brick & Mortar|Open|Tulsa|OK
+JAB_0518|#0518Birkdale Commons|JAB|JAB_S|JAB_S1|JAB_S101|Brick & Mortar|Open|Huntersville|NC
+JAB_0575|#0575The Shoppes At Westgate|JAB|JAB_S|JAB_S1|JAB_S104|Brick & Mortar|Open|Richmond|VA
+JAB_0074|#0074Brookfield Lakes Retail Center|JAB|JAB_W|JAB_W4|JAB_W406|Brick & Mortar|Open|Brookfield|WI
+JAB_0444|#0444Westview Promenade|JAB|JAB_N|JAB_N2|JAB_N201|Brick & Mortar|Open|Frederick|MD
+JAB_0343|#0343Danbury Fair Mall|JAB|JAB_N|JAB_N3|JAB_N303|Brick & Mortar|Open|Danbury|CT
+JAB_0052|#0052Fashion Mall Commons|JAB|JAB_S|JAB_S3|JAB_S302|Brick & Mortar|Open|Indianapolis|IN
+JAB_0452|#0452Alamo Quarry Market|JAB|JAB_S|JAB_S5|JAB_S505|Brick & Mortar|Open|San Antonio|TX
+JAB_0634|#0634Center Valley|JAB|JAB_N|JAB_N4|JAB_N404|Brick & Mortar|Open|Center Valley|PA
+JAB_0489|#0489First & Main Hudson|JAB|JAB_N|JAB_N1|JAB_N103|Brick & Mortar|Open|Hudson|OH
+JAB_0440|#0440Shoppes at English Village|JAB|JAB_N|JAB_N4|JAB_N404|Brick & Mortar|Open|North Wales|PA
+JAB_0669|#0669Milford Marketplace|JAB|JAB_N|JAB_N3|JAB_N303|Brick & Mortar|Open|Milford|CT
+JAB_0670|#0670Shoppes at River Ridge|JAB|JAB_N|JAB_N1|JAB_N102|Brick & Mortar|Open|Dublin|OH
+JAB_0782|#0782 Saratoga Springs|JAB|JAB_N|JAB_N3|JAB_N306|Brick & Mortar|Open|Saratoga Springs|NY
+JAB_0317|#0317Baybrook Village Shopping Center|JAB|JAB_S|JAB_S5|JAB_S503|Brick & Mortar|Open|Webster|TX
+JAB_0337|#0337Kildeer Village Square|JAB|JAB_W|JAB_W4|JAB_W405|Brick & Mortar|Open|Kildeer|IL
+JAB_0938|#0938Crabtree Valley Place|JAB|JAB_S|JAB_S1|JAB_S102|Brick & Mortar|Open|Raleigh|NC
+JAB_0313|#0313Columbia Crossing|JAB|JAB_N|JAB_N2|JAB_N201|Brick & Mortar|Open|Columbia|MD
+JAB_0063|#0063Plaza at Preston Village|JAB|JAB_S|JAB_S5|JAB_S502|Brick & Mortar|Open|Dallas|TX
+JAB_0464|#0464 728 S. Washington Street|JAB|JAB_N|JAB_N2|JAB_N204|Brick & Mortar|Open|Alexandria|VA
+JAB_0825|#0825Virginia Gateway|JAB|JAB_N|JAB_N2|JAB_N203|Brick & Mortar|Open|Gainesville|VA
+JAB_0686|#0686Mansfield Crossing|JAB|JAB_N|JAB_N3|JAB_N302|Brick & Mortar|Open|Mansfield|MA
+JAB_0066|#0066Breton Village Shopping Center|JAB|JAB_N|JAB_N1|JAB_N104|Brick & Mortar|Open|Grand Rapids|MI
+JAB_0448|#0448The Avenue|JAB|JAB_S|JAB_S4|JAB_S404|Brick & Mortar|Open|Marietta|GA
+JAB_0077|#0077Stuyvesant Plaza|JAB|JAB_N|JAB_N3|JAB_N306|Brick & Mortar|Open|Albany|NY
+JAB_0861|#0861Des Perez Corners|JAB|JAB_S|JAB_S3|JAB_S304|Brick & Mortar|Open|Des Peres|MO
+JAB_0761|#0761Town And Country Village|JAB|JAB_S|JAB_S5|JAB_S503|Brick & Mortar|Open|Houston|TX
+JAB_0368|#0368University Park Village Shopping Center|JAB|JAB_S|JAB_S5|JAB_S507|Brick & Mortar|Open|Fort Worth|TX
+JAB_0059|#0059Garden City Center|JAB|JAB_N|JAB_N3|JAB_N302|Brick & Mortar|Open|Cranston|RI
+JAB_0463|#0463Legacy Village|JAB|JAB_N|JAB_N1|JAB_N103|Brick & Mortar|Open|Lyndhurst|OH
+JAB_0696|#0696Romeo Commons|JAB|JAB_N|JAB_N1|JAB_N101|Brick & Mortar|Open|Macomb|MI
+JAB_0357|#0357Chenal Creek Shopping Center|JAB|JAB_W|JAB_W2|JAB_W203|Brick & Mortar|Open|Little Rock|AR
+JAB_0102|#0102Glenford Crossing|JAB|JAB_S|JAB_S1|JAB_S102|Brick & Mortar|Open|Fayetteville|NC
+JAB_0072|#0072Lawrence Farms Market Square|JAB|JAB_N|JAB_N4|JAB_N402|Brick & Mortar|Open|Fishkill|NY
+JAB_0950|#0950Providence Town Center|JAB|JAB_N|JAB_N4|JAB_N404|Brick & Mortar|Open|Collegeville|PA
+JAB_0873|#0873Rice Village|JAB|JAB_S|JAB_S5|JAB_S503|Brick & Mortar|Open|Houston|TX
+JAB_0754|#0754Fairview Town Center|JAB|JAB_S|JAB_S5|JAB_S504|Brick & Mortar|Open|Fairview|TX
+JAB_0942|#0942The Shoppes At Longwood|JAB|JAB_N|JAB_N4|JAB_N406|Brick & Mortar|Open|Kennett Square|PA
+JAB_0414|#0414Chelsea Square|JAB|JAB_N|JAB_N2|JAB_N202|Brick & Mortar|Open|Lancaster|PA
+JAB_0817|#0817Deerfield Towne Center|JAB|JAB_S|JAB_S3|JAB_S301|Brick & Mortar|Open|Mason|OH
+JAB_0451|#0451Ross Park Mall|JAB|JAB_N|JAB_N1|JAB_N105|Brick & Mortar|Open|Pittsburgh|PA
+JAB_0859|#0859Gaston Mall|JAB|JAB_S|JAB_S1|JAB_S101|Brick & Mortar|Open|Gastonia|NC
+JAB_0318|#0318Vernon Hills Shopping Center|JAB|JAB_N|JAB_N0|JAB_N014|Brick & Mortar|Open|Scarsdale|NY
+JAB_0467|#0467Mayfaire Town Center|JAB|JAB_S|JAB_S1|JAB_S102|Brick & Mortar|Open|Wilmington|NC
+JAB_0424|#0424Shoppes At Union Hill|JAB|JAB_N|JAB_N4|JAB_N405|Brick & Mortar|Open|Denville|NJ
+JAB_0005|#0005Towson Gateway|JAB|JAB_N|JAB_N2|JAB_N205|Brick & Mortar|Open|Towson|MD
+JAB_0038|#0038The Mall At Green Hills|JAB|JAB_S|JAB_S3|JAB_S305|Brick & Mortar|Open|Nashville|TN
+JAB_0819|#0819Sea Girt Commons|JAB|JAB_N|JAB_N4|JAB_N401|Brick & Mortar|Open|Sea Girt|NJ
+JAB_0089|#0089Shops Of Western Plaza|JAB|JAB_S|JAB_S1|JAB_S105|Brick & Mortar|Open|Knoxville|TN
+JAB_0344|#0344Fashion Plaza Shopping Center|JAB|JAB_W|JAB_W3|JAB_W301|Brick & Mortar|Open|Murray|UT
+JAB_0474|#0474Patton Creek|JAB|JAB_S|JAB_S4|JAB_S401|Brick & Mortar|Open|Hoover|AL
+JAB_0033|#0033Williamsville Place|JAB|JAB_N|JAB_N3|JAB_N301|Brick & Mortar|Open|Williamsville|NY
+JAB_0065|#0065Town & Country|JAB|JAB_N|JAB_N1|JAB_N102|Brick & Mortar|Open|Kettering|OH
+JAB_0828|#0828Sycamore Square|JAB|JAB_S|JAB_S1|JAB_S104|Brick & Mortar|Open|Midlothian|VA
+JAB_0346|#0346Barracks Road Shopping Center|JAB|JAB_N|JAB_N2|JAB_N203|Brick & Mortar|Open|Charlottesville|VA
+JAB_0356|#0356South Hills|JAB|JAB_N|JAB_N1|JAB_N105|Brick & Mortar|Open|Mt Lebanon|PA
+JAB_0339|#0339 Westfield|JAB|JAB_N|JAB_N4|JAB_N407|Brick & Mortar|Open|Westfield|NJ
+JAB_0076|#0076 Jackson|JAB|JAB_S|JAB_S4|JAB_S405|Brick & Mortar|Open|Jackson|MS
+JAB_0450|#0450Glen Town Center|JAB|JAB_W|JAB_W4|JAB_W401|Brick & Mortar|Open|Glenview|IL
+JAB_0068|#0068Princeton Market Fair|JAB|JAB_N|JAB_N4|JAB_N401|Brick & Mortar|Open|Princeton|NJ
+JAB_0881|#0881The Plaza At Rockwall|JAB|JAB_S|JAB_S5|JAB_S502|Brick & Mortar|Open|Rockwall|TX
+JAB_0504|#0504Sugar Land Town Square|JAB|JAB_S|JAB_S5|JAB_S506|Brick & Mortar|Open|Sugar Land|TX
+JAB_0078|#0078 Zelda Place S/C|JAB|JAB_S|JAB_S4|JAB_S401|Brick & Mortar|Open|Montgomery|AL
+JAB_0498|#0498Blue Spruce Crossing|JAB|JAB_N|JAB_N2|JAB_N205|Brick & Mortar|Open|Bel Air|MD
+JAB_0784|#0784Promenade at Brickwalk|JAB|JAB_N|JAB_N4|JAB_N402|Brick & Mortar|Open|Fairfield|CT
+JAB_0309|#0309The Forum Shopping Center|JAB|JAB_N|JAB_N2|JAB_N203|Brick & Mortar|Open|Roanoke|VA
+JAB_0002|#0002 Philadelphia|JAB|JAB_N|JAB_N4|JAB_N406|Brick & Mortar|Open|Philadelphia|PA
+JAB_0064|#0064Greenville Crossing|JAB|JAB_N|JAB_N2|JAB_N205|Brick & Mortar|Open|Greenville|DE
+JAB_0393|#0393Geneva Commons|JAB|JAB_W|JAB_W4|JAB_W401|Brick & Mortar|Open|Geneva|IL
+JAB_0766|#0766Koppel Building|JAB|JAB_S|JAB_S5|JAB_S501|Brick & Mortar|Open|Austin|TX
+JAB_0385|#0385Southlake Town Square|JAB|JAB_S|JAB_S5|JAB_S504|Brick & Mortar|Open|Southlake|TX
+JAB_0080|#0080Annapolis Harbor Center|JAB|JAB_N|JAB_N2|JAB_N204|Brick & Mortar|Open|Annapolis|MD
+JAB_0362|#0362Town Square Center|JAB|JAB_S|JAB_S2|JAB_S205|Brick & Mortar|Open|Tampa|FL
+JAB_0391|#0391Fair Oaks Mall|JAB|JAB_N|JAB_N2|JAB_N206|Brick & Mortar|Open|Fairfax|VA
+JAB_0484|#0484Thruway Shopping Center|JAB|JAB_S|JAB_S1|JAB_S105|Brick & Mortar|Open|Winston Salem|NC
+JAB_0507|#0507Renaissance Center|JAB|JAB_S|JAB_S1|JAB_S102|Brick & Mortar|Open|Durham|NC
+JAB_0667|#0667Boynton Town Center|JAB|JAB_S|JAB_S2|JAB_S202|Brick & Mortar|Open|Boynton Beach|FL
+JAB_0674|#0674 60 Worcester Road|JAB|JAB_N|JAB_N3|JAB_N305|Brick & Mortar|Open|Framingham|MA
+JAB_0821|#0821Bridge Street Town Center|JAB|JAB_S|JAB_S4|JAB_S401|Brick & Mortar|Open|Huntsville|AL
+JAB_0340|#0340Shops at Somerset Square|JAB|JAB_N|JAB_N3|JAB_N303|Brick & Mortar|Open|Glastonbury|CT
+JAB_0360|#0360The Court at King Of Prussia|JAB|JAB_N|JAB_N4|JAB_N404|Brick & Mortar|Open|King Of Prussia|PA
+JAB_0051|#0051Laurel Park Place|JAB|JAB_N|JAB_N1|JAB_N101|Brick & Mortar|Open|Livonia|MI
+JAB_0462|#0462Bridgewater Towne Center|JAB|JAB_N|JAB_N4|JAB_N407|Brick & Mortar|Open|Bridgewater|NJ
+JAB_0093|#0093 Highland Avenue|JAB|JAB_S|JAB_S4|JAB_S402|Brick & Mortar|Open|Augusta|GA
+JAB_0508|#0508Clay Terrace|JAB|JAB_S|JAB_S3|JAB_S302|Brick & Mortar|Open|Carmel|IN
+JAB_0794|#0794Market At Preston Ridge|JAB|JAB_S|JAB_S5|JAB_S504|Brick & Mortar|Open|Frisco|TX
+JAB_0693|#0693Towne Place at Garden State Park|JAB|JAB_N|JAB_N4|JAB_N406|Brick & Mortar|Open|Cherry Hill|NJ
+JAB_0109|#0109 N Broadway|JAB|JAB_W|JAB_W1|JAB_W101|Brick & Mortar|Open|Walnut Creek|CA
+KNG_0038|#0038Abilene Market|KNG|KNG_R03|KNG_R03|KNG_R03_A|Brick & Mortar|Open|Aurora|CO
