@@ -1,3 +1,4 @@
+import { X } from 'lucide-react';
 import { 
   brands, 
   brandNames, 
@@ -26,12 +27,23 @@ export function FilterBar({ filter, onFilterChange }: FilterBarProps) {
     });
   };
 
+  const clearBrand = () => {
+    onFilterChange({});
+  };
+
   const handleZoneChange = (zone: string) => {
     onFilterChange({ 
       ...filter, 
       zone: zone === 'all' ? undefined : zone,
       region: undefined,
-      district: undefined
+      district: undefined,
+      storeId: undefined
+    });
+  };
+
+  const clearZone = () => {
+    onFilterChange({ 
+      brand: filter.brand 
     });
   };
 
@@ -39,7 +51,15 @@ export function FilterBar({ filter, onFilterChange }: FilterBarProps) {
     onFilterChange({ 
       ...filter, 
       region: region === 'all' ? undefined : region,
-      district: undefined
+      district: undefined,
+      storeId: undefined
+    });
+  };
+
+  const clearRegion = () => {
+    onFilterChange({ 
+      brand: filter.brand,
+      zone: filter.zone
     });
   };
 
@@ -51,10 +71,27 @@ export function FilterBar({ filter, onFilterChange }: FilterBarProps) {
     });
   };
 
+  const clearDistrict = () => {
+    onFilterChange({ 
+      brand: filter.brand,
+      zone: filter.zone,
+      region: filter.region
+    });
+  };
+
   const handleStoreChange = (storeId: string) => {
     onFilterChange({ 
       ...filter, 
       storeId: storeId === 'all' ? undefined : storeId
+    });
+  };
+
+  const clearStore = () => {
+    onFilterChange({ 
+      brand: filter.brand,
+      zone: filter.zone,
+      region: filter.region,
+      district: filter.district
     });
   };
 
@@ -75,6 +112,15 @@ export function FilterBar({ filter, onFilterChange }: FilterBarProps) {
             <option key={brand} value={brand}>{brandNames[brand]}</option>
           ))}
         </select>
+        {filter.brand && (
+          <button
+            onClick={clearBrand}
+            className="p-1 text-slate-400 hover:text-white hover:bg-slate-600 rounded"
+            title="Clear brand filter"
+          >
+            <X size={16} />
+          </button>
+        )}
       </div>
 
       {/* Zone - only show if brand selected */}
@@ -91,6 +137,15 @@ export function FilterBar({ filter, onFilterChange }: FilterBarProps) {
               <option key={zone} value={zone}>{zone}</option>
             ))}
           </select>
+          {filter.zone && (
+            <button
+              onClick={clearZone}
+              className="p-1 text-slate-400 hover:text-white hover:bg-slate-600 rounded"
+              title="Clear zone filter"
+            >
+              <X size={16} />
+            </button>
+          )}
         </div>
       )}
 
@@ -108,6 +163,15 @@ export function FilterBar({ filter, onFilterChange }: FilterBarProps) {
               <option key={region} value={region}>{region}</option>
             ))}
           </select>
+          {filter.region && (
+            <button
+              onClick={clearRegion}
+              className="p-1 text-slate-400 hover:text-white hover:bg-slate-600 rounded"
+              title="Clear region filter"
+            >
+              <X size={16} />
+            </button>
+          )}
         </div>
       )}
 
@@ -125,6 +189,15 @@ export function FilterBar({ filter, onFilterChange }: FilterBarProps) {
               <option key={district} value={district}>{district}</option>
             ))}
           </select>
+          {filter.district && (
+            <button
+              onClick={clearDistrict}
+              className="p-1 text-slate-400 hover:text-white hover:bg-slate-600 rounded"
+              title="Clear district filter"
+            >
+              <X size={16} />
+            </button>
+          )}
         </div>
       )}
 
@@ -142,6 +215,15 @@ export function FilterBar({ filter, onFilterChange }: FilterBarProps) {
               <option key={store.id} value={store.id}>{store.name} - {store.city}, {store.state}</option>
             ))}
           </select>
+          {filter.storeId && (
+            <button
+              onClick={clearStore}
+              className="p-1 text-slate-400 hover:text-white hover:bg-slate-600 rounded"
+              title="Clear store filter"
+            >
+              <X size={16} />
+            </button>
+          )}
         </div>
       )}
 
