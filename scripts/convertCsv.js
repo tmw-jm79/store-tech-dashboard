@@ -1,0 +1,193 @@
+const csvData = `STORECODE|STORENAME|BRAND|ZONE|REGION|DISTRICT|STORETYPE|STORESTATUS|CITY|STATE
+KNG_0605|#0605 Greensboro|KNG|KNG_R08|KNG_R08|KNG_R08_A|Brick & Mortar|Open|Greensboro|NC
+TMW_0999|#0999 Kng Head Office|TMW|TMW_R99|TMW_R99|TMW_R99_R99A|Brick & Mortar|Open|Atlanta|GA
+KNG_0030|#0030 Irving|KNG|KNG_R02|KNG_R02|KNG_R02_A|Brick & Mortar|Open|Irving|TX
+KNG_0112|#0112West Palm Beach|KNG|KNG_R01|KNG_R01|KNG_R01_A|Brick & Mortar|Open|West Palm Beach|FL
+KNG_0076|#0076 Flint|KNG|KNG_R04|KNG_R04|KNG_R04_A|Brick & Mortar|Open|Flint|MI
+KNG_0020|#0020 Woodbridge|KNG|KNG_R09|KNG_R09|KNG_R09_A|Brick & Mortar|Open|Woodbridge|NJ
+KNG_0708|#0708 Chicago|KNG|KNG_R03|KNG_R03|KNG_R03_A|Brick & Mortar|Open|Chicago|IL
+KNG_0080|#0080 Seattle|KNG|KNG_R03|KNG_R03|KNG_R03_A|Brick & Mortar|Open|Tukwila|WA
+TMW_7001|#7001 Bespoke Joseph Abboud(Custom App Uses This)|TMW|TMW_ZCO|TMW_ZCO|TMW_ZCO_ZCOM|Brick & Mortar|Open|Teaneck|NJ
+KNG_0023|#0023Meadows Business Park|KNG|KNG_R10|KNG_R10|KNG_R10_A|Brick & Mortar|Open|Baltimore|MD
+KNG_0101|#0101 Orlando|KNG|KNG_R01|KNG_R01|KNG_R01_A|Brick & Mortar|Open|Orlando|FL
+KNG_0064|#0064Saint Charles Towne Plaza|KNG|KNG_R10|KNG_R10|KNG_R10_A|Brick & Mortar|Open|Waldorf|MD
+KNG_0017|#0017Poplar Plaza Shopping Center|KNG|KNG_R08|KNG_R08|KNG_R08_A|Brick & Mortar|Open|Memphis|TN
+KNG_0705|#0705Place Mall Shopping Center|KNG|KNG_R03|KNG_R03|KNG_R03_A|Brick & Mortar|Open|Orland Park|IL
+KNG_0074|#0074Steelyard Commons|KNG|KNG_R04|KNG_R04|KNG_R04_A|Brick & Mortar|Open|Cleveland|OH
+KNG_0082|#0082 Tacoma|KNG|KNG_R03|KNG_R03|KNG_R03_A|Brick & Mortar|Open|Tacoma|WA
+KNG_0711|#0711Cermak Plaza Shopping Center|KNG|KNG_R03|KNG_R03|KNG_R03_A|Brick & Mortar|Open|Berwyn|IL
+KNG_0209|#0209 Deptford|KNG|KNG_R09|KNG_R09|KNG_R09_A|Brick & Mortar|Open|Woodbury|NJ
+KNG_0034|#0034Cooper Street Plaza|KNG|KNG_R02|KNG_R02|KNG_R02_A|Brick & Mortar|Open|Arlington|TX
+KNG_0011|#0011Mall Corners Shopping Center|KNG|KNG_R01|KNG_R01|KNG_R01_A|Brick & Mortar|Open|Duluth|GA
+JAB_1021|#1021 Business Outreach|JAB|JAB_Z|JAB_ZC|JAB_ZCOM|Brick & Mortar|Open|Houston|TX
+KNG_0316|#0316Manhattan Place|KNG|KNG_R08|KNG_R08|KNG_R08_A|Brick & Mortar|Open|Harvey|LA
+KNG_0319|#0319 Katy|KNG|KNG_R02|KNG_R02|KNG_R02_A|Brick & Mortar|Open|Katy|TX
+KNG_0304|#0304 Metairie|KNG|KNG_R08|KNG_R08|KNG_R08_A|Brick & Mortar|Open|Metairie|LA
+KNG_0018|#0018100 Oaks Mall|KNG|KNG_R08|KNG_R08|KNG_R08_A|Brick & Mortar|Open|Nashville|TN
+KNG_0063|#0063 Rockville Md|KNG|KNG_R10|KNG_R10|KNG_R10_A|Brick & Mortar|Open|Kensington|MD
+KNG_0308|#0308 Lewisville|KNG|KNG_R02|KNG_R02|KNG_R02_A|Brick & Mortar|Open|Lewisville|TX
+KNG_0014|#0014Southlake|KNG|KNG_R01|KNG_R01|KNG_R01_A|Brick & Mortar|Open|Morrow|GA
+KNG_0314|#0314Hammond Aire Plaza|KNG|KNG_R08|KNG_R08|KNG_R08_A|Brick & Mortar|Open|Baton Rouge|LA
+KNG_0608|#0608 Richmond|KNG|KNG_R10|KNG_R10|KNG_R10_A|Brick & Mortar|Open|Richmond|VA
+KNG_0215|#0215 Manchester|KNG|KNG_R09|KNG_R09|KNG_R09_A|Brick & Mortar|Open|Manchester|CT
+KNG_0909|#0909 Detroit|KNG|KNG_R04|KNG_R04|KNG_R04_A|Brick & Mortar|Open|Detroit|MI
+MSP_0102|#0102 Langley|MSP|MSP_C|MSP_C0|MSP_C010|Brick & Mortar|Open|Langley|BC
+MSP_0015|#0015 Vancouver - Downtown|MSP|MSP_C|MSP_C0|MSP_C010|Brick & Mortar|Open|Vancouver|BC
+MSP_0030|#0030 Regina|MSP|MSP_C|MSP_C0|MSP_C004|Brick & Mortar|Open|Regina|SK
+MSP_0003|#0003 Toronto North|MSP|MSP_C|MSP_C0|MSP_C003|Brick & Mortar|Open|Thornhill|ON
+MSP_0075|#0075 Montreal Downtown|MSP|MSP_C|MSP_C0|MSP_C006|Brick & Mortar|Open|Montreal|QC
+MSP_0123|#0123Park Place|MSP|MSP_C|MSP_C0|MSP_C008|Brick & Mortar|Open|Barrie|ON
+MSP_0127|#0127 Chatham, On|MSP|MSP_C|MSP_C0|MSP_C007|Brick & Mortar|Open|Chatham|ON
+MSP_0047|#0047 Oakville West|MSP|MSP_C|MSP_C0|MSP_C009|Brick & Mortar|Open|Oakville|ON
+MSP_0028|#0028 St. John's Nfld|MSP|MSP_C|MSP_C0|MSP_C001|Brick & Mortar|Open|St. John's|NL
+MSP_0107|#0107Aberdeen Village Centre|MSP|MSP_C|MSP_C0|MSP_C002|Brick & Mortar|Open|Kamloops|BC
+MSP_0062|#0062 Saint Leonard|MSP|MSP_C|MSP_C0|MSP_C006|Brick & Mortar|Open|Saint Leonard|QC
+MSP_0110|#0110 Warehouse Outlet|MSP|MSP_C|MSP_C0|MSP_C008|Brick & Mortar|Open|Etobicoke|ON
+MSP_0024|#0024Dartmouth Crossing|MSP|MSP_C|MSP_C0|MSP_C001|Brick & Mortar|Open|Dartmouth|NS
+MSP_0025|#0025 Newmarket|MSP|MSP_C|MSP_C0|MSP_C008|Brick & Mortar|Open|Newmarket|ON
+MSP_0023|#0023 Halifax - N.S.|MSP|MSP_C|MSP_C0|MSP_C001|Brick & Mortar|Open|Halifax|NS
+MSP_0004|#0004 Toronto Downtown|MSP|MSP_C|MSP_C0|MSP_C008|Brick & Mortar|Open|Toronto|ON
+MSP_0019|#0019 Richmond|MSP|MSP_C|MSP_C0|MSP_C010|Brick & Mortar|Open|Richmond|BC
+MSP_0006|#0006 Ottawa - East|MSP|MSP_C|MSP_C0|MSP_C005|Brick & Mortar|Open|Ottawa|ON
+MSP_0010|#0010 Burnaby|MSP|MSP_C|MSP_C0|MSP_C010|Brick & Mortar|Open|Burnaby|BC
+MSP_0051|#0051 Windsor|MSP|MSP_C|MSP_C0|MSP_C007|Brick & Mortar|Open|Windsor|ON
+MSP_0090|#0090 Woodbridge|MSP|MSP_C|MSP_C0|MSP_C008|Brick & Mortar|Open|Woodbridge|ON
+MSP_0098|#0098 Ajax|MSP|MSP_C|MSP_C0|MSP_C003|Brick & Mortar|Open|Ajax|ON
+MSP_0052|#0052 Red Deer|MSP|MSP_C|MSP_C0|MSP_C002|Brick & Mortar|Open|Red Deer|AB
+MSP_0119|#0119The Boardwalk|MSP|MSP_C|MSP_C0|MSP_C007|Brick & Mortar|Open|Kitchener|ON
+MSP_0053|#0053 Lethbridge|MSP|MSP_C|MSP_C0|MSP_C002|Brick & Mortar|Open|Lethbridge|AB
+MSP_0056|#0056 Lebourgneuf|MSP|MSP_C|MSP_C0|MSP_C006|Brick & Mortar|Open|Lebourgneuf|QC
+MSP_0060|#0060 Waterloo|MSP|MSP_C|MSP_C0|MSP_C007|Brick & Mortar|Open|Waterloo|ON
+MSP_0002|#0002 Scarbrough W Kennedy/401|MSP|MSP_C|MSP_C0|MSP_C003|Brick & Mortar|Open|Scarborough|ON
+MSP_0097|#0097Hyde Park Gate|MSP|MSP_C|MSP_C0|MSP_C009|Brick & Mortar|Open|Oakville|ON
+MSP_0041|#0041 Calgary North East|MSP|MSP_C|MSP_C0|MSP_C002|Brick & Mortar|Open|Calgary|AB
+MSP_0094|#0094 Chicoutimi - Pq|MSP|MSP_C|MSP_C0|MSP_C006|Brick & Mortar|Open|Chicoutimi|QC
+MSP_0037|#0037Southpoint Shopping Centre|MSP|MSP_C|MSP_C0|MSP_C004|Brick & Mortar|Open|Edmonton|AB
+MSP_0007|#0007 Ottawa|MSP|MSP_C|MSP_C0|MSP_C005|Brick & Mortar|Open|Ottawa|ON
+MSP_0026|#0026 Winnipeg West|MSP|MSP_C|MSP_C0|MSP_C004|Brick & Mortar|Open|Winnipeg|MB
+MSP_0044|#0044 Peterborough|MSP|MSP_C|MSP_C0|MSP_C003|Brick & Mortar|Open|Peterborough|ON
+MSP_0042|#0042Calgary Centre South|MSP|MSP_C|MSP_C0|MSP_C002|Brick & Mortar|Open|Calgary|AB
+MSP_0085|#0085 Saint Bruno|MSP|MSP_C|MSP_C0|MSP_C006|Brick & Mortar|Open|Saint Bruno|QC
+MSP_0001|Moores#0001 Mississauga East|MSP|MSP_C|MSP_C0|MSP_C008|Brick & Mortar|Open|Mississauga|ON
+MSP_0129|#0129 Vaudreuil, Qc|MSP|MSP_C|MSP_C0|MSP_C005|Brick & Mortar|Open|Vaudreuil|QC
+MSP_0038|#0038White Oaks Square|MSP|MSP_C|MSP_C0|MSP_C004|Brick & Mortar|Open|Edmonton|AB
+MSP_0105|#0105 Nanaimo|MSP|MSP_C|MSP_C0|MSP_C010|Brick & Mortar|Open|Nanaimo|BC
+MSP_0014|#0014 London South|MSP|MSP_C|MSP_C0|MSP_C007|Brick & Mortar|Open|London|ON
+MSP_0065|#0065 Pointe Claire|MSP|MSP_C|MSP_C0|MSP_C005|Brick & Mortar|Open|Pointe Claire|QC
+MSP_0083|#0083Eastgate Square|MSP|MSP_C|MSP_C0|MSP_C009|Brick & Mortar|Open|Stoney Creek|ON
+MSP_0022|#0022 Sudbury|MSP|MSP_C|MSP_C0|MSP_C005|Brick & Mortar|Open|Sudbury|ON
+MSP_0114|#0114 Brampton North|MSP|MSP_C|MSP_C0|MSP_C008|Brick & Mortar|Open|Brampton|ON
+MSP_0045|#0045 Kingston|MSP|MSP_C|MSP_C0|MSP_C003|Brick & Mortar|Open|Kingston|ON
+MSP_0048|#0048Westshore Town Centre|MSP|MSP_C|MSP_C0|MSP_C010|Brick & Mortar|Open|Victoria|BC
+MSP_0005|#0005Woodview Place|MSP|MSP_C|MSP_C0|MSP_C009|Brick & Mortar|Open|Burlington|ON
+MSP_0092|#0092 Brandon|MSP|MSP_C|MSP_C0|MSP_C004|Brick & Mortar|Open|Brandon|MB
+MSP_0081|#0081 - Abbotsford|MSP|MSP_C|MSP_C0|MSP_C010|Brick & Mortar|Open|Abbotsford|BC
+MSP_0039|#0039 Coquitlam|MSP|MSP_C|MSP_C0|MSP_C010|Brick & Mortar|Open|Coquitlam|BC
+MSP_0036|#0036West Point Centre North|MSP|MSP_C|MSP_C0|MSP_C004|Brick & Mortar|Open|Edmonton|AB
+MSP_0059|#0059Park & Tilford Shopping Centre|MSP|MSP_C|MSP_C0|MSP_C010|Brick & Mortar|Open|North Vancouver|BC
+MSP_0020|#0020 Markham - Toronto|MSP|MSP_C|MSP_C0|MSP_C003|Brick & Mortar|Open|Markham|ON
+MSP_0095|#0095 Dieppe - N.B.|MSP|MSP_C|MSP_C0|MSP_C001|Brick & Mortar|Open|Dieppe|NB
+MSP_0043|#0043 Saskatoon|MSP|MSP_C|MSP_C0|MSP_C004|Brick & Mortar|Open|Saskatoon|SK
+MSP_0079|#0079Bell-Front Shopping Centre|MSP|MSP_C|MSP_C0|MSP_C003|Brick & Mortar|Open|Belleville|ON
+MSP_0082|#0082 Sherbrooke|MSP|MSP_C|MSP_C0|MSP_C006|Brick & Mortar|Open|Sherbrooke|QC
+MSP_0031|#0031 Scarborough East|MSP|MSP_C|MSP_C0|MSP_C003|Brick & Mortar|Open|Scarborough|ON
+MSP_0078|#0078Uptown Centre|MSP|MSP_C|MSP_C0|MSP_C001|Brick & Mortar|Open|Fredericton|NB
+MSP_0071|#0071 Edmonton East|MSP|MSP_C|MSP_C0|MSP_C004|Brick & Mortar|Open|Edmonton|AB
+MSP_0021|#0021 Kitchener|MSP|MSP_C|MSP_C0|MSP_C007|Brick & Mortar|Open|Kitchener|ON
+MSP_0128|#0128 Cornwall, On|MSP|MSP_C|MSP_C0|MSP_C005|Brick & Mortar|Open|Cornwall|ON
+MSP_0091|#0091Galeries de la Capitale|MSP|MSP_C|MSP_C0|MSP_C006|Brick & Mortar|Open|Quebec|QC
+MSP_0069|#0069Heartland Town Centre|MSP|MSP_C|MSP_C0|MSP_C008|Brick & Mortar|Open|Mississauga|ON
+MSP_0027|#0027Crossroads Shopping Centre|MSP|MSP_C|MSP_C0|MSP_C004|Brick & Mortar|Open|Winnipeg|MB
+MSP_0066|#0066 Sainte Foy|MSP|MSP_C|MSP_C0|MSP_C006|Brick & Mortar|Open|Sainte Foy|QC
+MSP_0067|#0067Crowfoot Crossing|MSP|MSP_C|MSP_C0|MSP_C002|Brick & Mortar|Open|Calgary|AB
+MSP_0063|#0063 Laval|MSP|MSP_C|MSP_C0|MSP_C006|Brick & Mortar|Open|Laval|QC
+MSP_0049|#0049 Thunder Bay|MSP|MSP_C|MSP_C0|MSP_C005|Brick & Mortar|Open|Thunder Bay|ON
+MSP_0029|#0029 Sarnia|MSP|MSP_C|MSP_C0|MSP_C007|Brick & Mortar|Open|Sarnia|ON
+MSP_0103|#0103 Ottawa South|MSP|MSP_C|MSP_C0|MSP_C005|Brick & Mortar|Open|Ottawa|ON
+MSP_0061|#0061 Lasalle|MSP|MSP_C|MSP_C0|MSP_C006|Brick & Mortar|Open|Lasalle|QC
+MSP_0992|#0992 Tux Payments|MSP|MSP_Z|MSP_ZC|MSP_ZCOM|Brick & Mortar|Open|Etobicoke|ON
+MSP_0018|#0018 Oshawa|MSP|MSP_C|MSP_C0|MSP_C003|Brick & Mortar|Open|Oshawa|ON
+MSP_0111|#0111Shawnessy Towne Center|MSP|MSP_C|MSP_C0|MSP_C002|Brick & Mortar|Open|Calgary|AB
+MSP_0009|#0009 St. Catharines|MSP|MSP_C|MSP_C0|MSP_C009|Brick & Mortar|Open|St. Catharines|ON
+MSP_0068|#0068 Brantford|MSP|MSP_C|MSP_C0|MSP_C009|Brick & Mortar|Open|Brantford|ON
+MSP_0108|#0108 Charlottetown, P.E.I.|MSP|MSP_C|MSP_C0|MSP_C001|Brick & Mortar|Open|Charlottetown|PE
+MSP_0100|#0100 Halifax Power Centre,Ns|MSP|MSP_C|MSP_C0|MSP_C001|Brick & Mortar|Open|Halifax|NS
+MSP_0058|#0058Springwater Marketplace|MSP|MSP_C|MSP_C0|MSP_C008|Brick & Mortar|Open|Barrie|ON
+MSP_0126|#0126 North Bay|MSP|MSP_C|MSP_C0|MSP_C005|Brick & Mortar|Open|North Bay|ON
+MSP_0087|#0087Willow West Mall|MSP|MSP_C|MSP_C0|MSP_C007|Brick & Mortar|Open|Guelph|ON
+MSP_0013|#0013Burlington North|MSP|MSP_C|MSP_C0|MSP_C009|Brick & Mortar|Open|Burlington|ON
+MSP_0112|#0112Spruceland Shopping Centre|MSP|MSP_C|MSP_C0|MSP_C010|Brick & Mortar|Open|Prince George|BC
+MSP_0012|#0012 Hamilton|MSP|MSP_C|MSP_C0|MSP_C009|Brick & Mortar|Open|Hamilton|ON
+MSP_0073|#0073 Pickering|MSP|MSP_C|MSP_C0|MSP_C003|Brick & Mortar|Open|Pickering|ON
+MSP_0106|#0106 Niagara Falls|MSP|MSP_C|MSP_C0|MSP_C009|Brick & Mortar|Open|Niagara Falls|ON
+MSP_0117|#0117 Mascouche|MSP|MSP_C|MSP_C0|MSP_C006|Brick & Mortar|Open|Mascouche|QC
+MSP_0046|#0046 Sault St. Marie|MSP|MSP_C|MSP_C0|MSP_C005|Brick & Mortar|Open|Sault Ste. Marie|ON
+MSP_0057|#0057 Trois Rivieres|MSP|MSP_C|MSP_C0|MSP_C006|Brick & Mortar|Open|Trois Rivieres|QC
+MSP_0034|#0034St Vital Square|MSP|MSP_C|MSP_C0|MSP_C004|Brick & Mortar|Open|Winnipeg|MB
+MSP_0050|#0050 Victoria|MSP|MSP_C|MSP_C0|MSP_C010|Brick & Mortar|Open|Victoria|BC
+MSP_0011|#0011 Surrey|MSP|MSP_C|MSP_C0|MSP_C010|Brick & Mortar|Open|Surrey|BC
+MSP_0033|#0033Hylands Centre|MSP|MSP_C|MSP_C0|MSP_C007|Brick & Mortar|Open|London|ON
+MSP_0115|#0115 Mississauga West|MSP|MSP_C|MSP_C0|MSP_C009|Brick & Mortar|Open|Mississauga|ON
+MSP_0089|#0089-Kelowna|MSP|MSP_C|MSP_C0|MSP_C002|Brick & Mortar|Open|Kelowna|BC
+MSP_0096|#0096Meadowlands Power Centre|MSP|MSP_C|MSP_C0|MSP_C009|Brick & Mortar|Open|Ancaster|ON
+MSP_0086|#0086 Toronto - North York|MSP|MSP_C|MSP_C0|MSP_C008|Brick & Mortar|Open|Toronto|ON
+MSP_0064|#0064 Brossard|MSP|MSP_C|MSP_C0|MSP_C006|Brick & Mortar|Open|Brossard|QC
+MSP_0070|#0070 Orleans - Ottawa|MSP|MSP_C|MSP_C0|MSP_C005|Brick & Mortar|Open|Cumberland|ON
+MSP_0040|#0040 Saint John - Nb|MSP|MSP_C|MSP_C0|MSP_C001|Brick & Mortar|Open|Saint John|NB
+MSP_0084|#0084Calgary Center North|MSP|MSP_C|MSP_C0|MSP_C002|Brick & Mortar|Open|Calgary|AB
+MSP_0035|#0035SmartCentres Cambridge|MSP|MSP_C|MSP_C0|MSP_C007|Brick & Mortar|Open|Cambridge|ON
+MSP_0017|#0017 Ottawa - Downtown|MSP|MSP_C|MSP_C0|MSP_C005|Brick & Mortar|Open|Ottawa|ON
+MSP_0109|#0109 Medicine Hat|MSP|MSP_C|MSP_C0|MSP_C002|Brick & Mortar|Open|Medicine Hat|AB
+MSP_0125|#0125 Grande Prairie Alberta|MSP|MSP_C|MSP_C0|MSP_C004|Brick & Mortar|Open|Grande Prairie|AB
+KNG_0069|#0069Marple Crossroads Shopping Center|KNG|KNG_R10|KNG_R10|KNG_R10_A|Brick & Mortar|Open|Springfield|PA
+KNG_0106|#0106Regency Court|KNG|KNG_R01|KNG_R01|KNG_R01_A|Brick & Mortar|Open|Jacksonville|FL
+KNG_0062|#0062 New Carrolton|KNG|KNG_R10|KNG_R10|KNG_R10_A|Brick & Mortar|Open|New Carrollton|MD
+KNG_0510|#0510 Jackson|KNG|KNG_R08|KNG_R08|KNG_R08_A|Brick & Mortar|Open|Jackson|MS
+KNG_0205|#0205Carle Place|KNG|KNG_R09|KNG_R09|KNG_R09_A|Brick & Mortar|Open|Carle Place|NY
+KNG_0012|#0012 Kennesaw|KNG|KNG_R01|KNG_R01|KNG_R01_A|Brick & Mortar|Open|Kennesaw|GA
+KNG_0033|#0033 Kansas City|KNG|KNG_R03|KNG_R03|KNG_R03_A|Brick & Mortar|Open|Overland Park|KS
+KNG_0310|#0310 Mesquite|KNG|KNG_R02|KNG_R02|KNG_R02_A|Brick & Mortar|Open|Mesquite|TX
+KNG_0706|#0706 Lansing|KNG|KNG_R03|KNG_R03|KNG_R03_A|Brick & Mortar|Open|Lansing|IL
+KNG_0049|#0049 St. Louis Pk|KNG|KNG_R04|KNG_R04|KNG_R04_A|Brick & Mortar|Open|Brooklyn Center|MN
+KNG_0701|#0701 Evergreen|KNG|KNG_R03|KNG_R03|KNG_R03_A|Brick & Mortar|Open|Evergreen Park|IL
+KNG_0028|#0028Twin City Plaza|KNG|KNG_R09|KNG_R09|KNG_R09_A|Brick & Mortar|Open|Somerville|MA
+KNG_0311|#0311Capital Plaza|KNG|KNG_R02|KNG_R02|KNG_R02_A|Brick & Mortar|Open|Austin|TX
+KNG_0903|#0903 Tsw Dearborn|KNG|KNG_R04|KNG_R04|KNG_R04_A|Brick & Mortar|Open|Dearborn|MI
+KNG_0604|#0604Capital Crossing|KNG|KNG_R08|KNG_R08|KNG_R08_A|Brick & Mortar|Open|Raleigh|NC
+KNG_0303|#0303Houston 1960|KNG|KNG_R02|KNG_R02|KNG_R02_A|Brick & Mortar|Open|Houston|TX
+KNG_0206|#0206 Harlem|KNG|KNG_R09|KNG_R09|KNG_R09_A|Brick & Mortar|Open|New York|NY
+KNG_0071|#0071 Columbus|KNG|KNG_R04|KNG_R04|KNG_R04_A|Brick & Mortar|Open|Columbus|OH
+KNG_0108|#0108Wildwood Centre|KNG|KNG_R01|KNG_R01|KNG_R01_A|Brick & Mortar|Open|Homewood|AL
+KNG_0712|#0712Clocktower Place|KNG|KNG_R03|KNG_R03|KNG_R03_A|Brick & Mortar|Open|Florissant|MO
+KNG_0015|#0015 Stone Mtn|KNG|KNG_R01|KNG_R01|KNG_R01_A|Brick & Mortar|Open|Stone Mountain|GA
+KNG_0036|#0036Meyerland|KNG|KNG_R02|KNG_R02|KNG_R02_A|Brick & Mortar|Open|Houston|TX
+KNG_0105|#0105University Mall|KNG|KNG_R01|KNG_R01|KNG_R01_A|Brick & Mortar|Open|Tampa|FL
+KNG_0309|#0309 Duncanville|KNG|KNG_R02|KNG_R02|KNG_R02_A|Brick & Mortar|Open|Duncanville|TX
+KNG_0312|#0312 Humble|KNG|KNG_R02|KNG_R02|KNG_R02_A|Brick & Mortar|Open|Humble|TX
+KNG_0111|#0111 Margate|KNG|KNG_R01|KNG_R01|KNG_R01_A|Brick & Mortar|Open|Margate|FL
+KNG_0031|#0031 Plano|KNG|KNG_R02|KNG_R02|KNG_R02_A|Brick & Mortar|Open|Plano|TX
+KNG_0073|#0073Golden Gate Plaza|KNG|KNG_R04|KNG_R04|KNG_R04_A|Brick & Mortar|Open|Mayfield Heights|OH
+KNG_0066|#0066 Cherry Hill|KNG|KNG_R09|KNG_R09|KNG_R09_A|Brick & Mortar|Open|Cherry Hill|NJ
+KNG_0212|#0212 Wyncote|KNG|KNG_R10|KNG_R10|KNG_R10_A|Brick & Mortar|Open|Wyncote|PA`;
+
+// Parse CSV
+const lines = csvData.trim().split('\n');
+const headers = lines[0].split('|');
+const stores = [];
+
+for (let i = 1; i < lines.length; i++) {
+  const values = lines[i].split('|');
+  stores.push({
+    id: values[0],
+    name: values[1],
+    brand: values[2],
+    zone: values[3],
+    region: values[4],
+    district: values[5],
+    city: values[8],
+    state: values[9]
+  });
+}
+
+console.log(JSON.stringify(stores, null, 2));
+console.log(`\nTotal stores: ${stores.length}`);

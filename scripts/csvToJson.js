@@ -36,15 +36,17 @@ async function main() {
     }
   }
 
-  console.log(JSON.stringify(stores, null, 2));
-  console.error(`Converted ${stores.length} stores`);
+  // Output JSON to stdout
+  const output = JSON.stringify(stores, null, 2);
+  process.stdout.write(output);
   
-  // Count by brand
+  // Stats to stderr
+  process.stderr.write(`\nConverted ${stores.length} stores\n`);
   const brands = {};
   stores.forEach(s => {
     brands[s.brand] = (brands[s.brand] || 0) + 1;
   });
-  console.error('By brand:', JSON.stringify(brands));
+  process.stderr.write('By brand: ' + JSON.stringify(brands) + '\n');
 }
 
 main().catch(console.error);
