@@ -66,11 +66,16 @@ export function getDistrictsByRegion(region?: string): string[] {
   return [...new Set(filtered.map(s => s.district))].sort();
 }
 
+export function getStoresByDistrict(district?: string): Store[] {
+  return district ? stores.filter(s => s.district === district) : stores;
+}
+
 export interface HierarchyFilter {
   brand?: Brand;
   zone?: string;
   region?: string;
   district?: string;
+  storeId?: string;
 }
 
 export function getStoresByHierarchy(filter: HierarchyFilter): Store[] {
@@ -79,6 +84,7 @@ export function getStoresByHierarchy(filter: HierarchyFilter): Store[] {
     if (filter.zone && store.zone !== filter.zone) return false;
     if (filter.region && store.region !== filter.region) return false;
     if (filter.district && store.district !== filter.district) return false;
+    if (filter.storeId && store.id !== filter.storeId) return false;
     return true;
   });
 }
