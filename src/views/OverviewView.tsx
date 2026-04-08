@@ -9,7 +9,12 @@ interface OverviewViewProps {
     totalBrands: number;
     pos: { online: number; degraded: number; offline: number };
     network: { online: number; degraded: number; offline: number };
-    devices: { total: number; online: number };
+    devices: { 
+      totalNetworked: number;
+      networkedOnline: number;
+      totalPassive: number;
+      total: number;
+    };
   };
   brandSummaries: BrandSummary[];
   regionSummaries: RegionSummary[];
@@ -64,8 +69,8 @@ export function OverviewView({ stats, brandSummaries, regionSummaries, incidentC
         />
         <StatCard
           title="Devices Online"
-          value={`${Math.round((stats.devices.online / stats.devices.total) * 100)}%`}
-          subtitle={`${stats.devices.online.toLocaleString()} of ${stats.devices.total.toLocaleString()}`}
+          value={`${Math.round((stats.devices.networkedOnline / stats.devices.totalNetworked) * 100)}%`}
+          subtitle={`${stats.devices.networkedOnline.toLocaleString()} of ${stats.devices.totalNetworked.toLocaleString()} networked`}
           icon={<HardDrive size={24} />}
           color="purple"
         />

@@ -1,4 +1,4 @@
-import { Wifi, CheckCircle, AlertCircle, XCircle, Router } from 'lucide-react';
+import { Wifi, CheckCircle, AlertCircle, XCircle, Phone } from 'lucide-react';
 import { PieChart, Pie, Cell, ResponsiveContainer, AreaChart, Area, XAxis, YAxis, Tooltip } from 'recharts';
 import { StatCard } from '../components/StatCard';
 import { StatusBadge } from '../components/StatusBadge';
@@ -15,8 +15,9 @@ export function NetworkView({ stores, regionSummaries }: NetworkViewProps) {
   const offline = stores.filter(s => s.networkStatus === 'offline').length;
   const total = stores.length;
 
-  const totalSwitches = stores.reduce((acc, s) => acc + s.devices.networkSwitches, 0);
-  const switchesOnline = stores.reduce((acc, s) => acc + s.devices.networkSwitchesOnline, 0);
+  // Use VoIP phones as network indicator (they require network connectivity)
+  const totalPhones = stores.reduce((acc, s) => acc + s.devices.desktopPhones.total + s.devices.cordlessPhones.total, 0);
+  const phonesOnline = stores.reduce((acc, s) => acc + s.devices.desktopPhones.online + s.devices.cordlessPhones.online, 0);
 
   const pieData = [
     { name: 'Online', value: online, color: '#10b981' },
@@ -97,33 +98,33 @@ export function NetworkView({ stores, regionSummaries }: NetworkViewProps) {
         </div>
 
         <div className="bg-slate-800/50 rounded-xl p-6 border border-slate-700">
-          <h3 className="text-lg font-medium text-white mb-4">Network Switches</h3>
+          <h3 className="text-lg font-medium text-white mb-4">VoIP Phone Status</h3>
           <div className="space-y-4">
             <div className="grid grid-cols-2 gap-4">
               <div className="bg-slate-700/50 rounded-lg p-4">
                 <div className="flex items-center gap-2 mb-2">
-                  <Router size={20} className="text-blue-400" />
-                  <span className="text-slate-400">Total Switches</span>
+                  <Phone size={20} className="text-blue-400" />
+                  <span className="text-slate-400">Total Phones</span>
                 </div>
-                <span className="text-white text-2xl font-bold">{totalSwitches.toLocaleString()}</span>
+                <span className="text-white text-2xl font-bold">{totalPhones.toLocaleString()}</span>
               </div>
               <div className="bg-slate-700/50 rounded-lg p-4">
                 <div className="flex items-center gap-2 mb-2">
                   <CheckCircle size={20} className="text-emerald-400" />
                   <span className="text-slate-400">Online</span>
                 </div>
-                <span className="text-emerald-400 text-2xl font-bold">{switchesOnline.toLocaleString()}</span>
+                <span className="text-emerald-400 text-2xl font-bold">{phonesOnline.toLocaleString()}</span>
               </div>
             </div>
             <div>
               <div className="flex justify-between text-sm mb-2">
-                <span className="text-slate-400">Switch Health</span>
-                <span className="text-white">{Math.round((switchesOnline / totalSwitches) * 100)}%</span>
+                <span className="text-slate-400">Phone Connectivity</span>
+                <span className="text-white">{totalPhones > 0 ? Math.round((phonesOnline / totalPhones) * 100) : 0}%</span>
               </div>
               <div className="h-3 bg-slate-700 rounded-full overflow-hidden">
                 <div
                   className="h-full bg-gradient-to-r from-blue-500 to-blue-400 rounded-full"
-                  style={{ width: `${(switchesOnline / totalSwitches) * 100}%` }}
+                  style={{ width: totalPhones > 0 ? `${(phonesOnline / totalPhones) * 100}%` : '0%' }}
                 ></div>
               </div>
             </div>
@@ -169,7 +170,7 @@ export function NetworkView({ stores, regionSummaries }: NetworkViewProps) {
                 <th className="text-left py-3 px-4 text-slate-400 font-medium">Region</th>
                 <th className="text-left py-3 px-4 text-slate-400 font-medium">Location</th>
                 <th className="text-left py-3 px-4 text-slate-400 font-medium">Status</th>
-                <th className="text-right py-3 px-4 text-slate-400 font-medium">Switches</th>
+                <th className="text-right py-3 px-4 text-slate-400 font-medium">Phones</th>
                 <th className="text-left py-3 px-4 text-slate-400 font-medium">Last Updated</th>
               </tr>
             </thead>
@@ -188,7 +189,7 @@ export function NetworkView({ stores, regionSummaries }: NetworkViewProps) {
                     <StatusBadge status={store.networkStatus} />
                   </td>
                   <td className="py-3 px-4 text-right text-slate-300">
-                    {store.devices.networkSwitchesOnline}/{store.devices.networkSwitches}
+                    {store.devices.desktopPhones.online + store.devices.cordlessPhones.online}/{store.devices.desktopPhones.total + store.devices.cordlessPhones.total}
                   </td>
                   <td className="py-3 px-4 text-slate-400 text-sm">
                     {new Date(store.lastUpdated).toLocaleTimeString()}

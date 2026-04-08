@@ -14,8 +14,8 @@ export function POSView({ stores }: POSViewProps) {
   const offline = stores.filter(s => s.posStatus === 'offline').length;
   const total = stores.length;
 
-  const totalTerminals = stores.reduce((acc, s) => acc + s.devices.posTerminals, 0);
-  const terminalsOnline = stores.reduce((acc, s) => acc + s.devices.posOnline, 0);
+  const totalTerminals = stores.reduce((acc, s) => acc + s.devices.posComputers.total, 0);
+  const terminalsOnline = stores.reduce((acc, s) => acc + s.devices.posComputers.online, 0);
 
   const pieData = [
     { name: 'Online', value: online, color: '#10b981' },
@@ -152,7 +152,7 @@ export function POSView({ stores }: POSViewProps) {
                     <StatusBadge status={store.posStatus} />
                   </td>
                   <td className="py-3 px-4 text-right text-slate-300">
-                    {store.devices.posOnline}/{store.devices.posTerminals}
+                    {store.devices.posComputers.online}/{store.devices.posComputers.total}
                   </td>
                   <td className="py-3 px-4 text-slate-400 text-sm">
                     {new Date(store.lastUpdated).toLocaleTimeString()}

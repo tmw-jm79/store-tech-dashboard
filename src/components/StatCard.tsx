@@ -7,7 +7,7 @@ interface StatCardProps {
   trend?: 'up' | 'down' | 'neutral';
   trendValue?: string;
   icon?: React.ReactNode;
-  color?: 'blue' | 'green' | 'yellow' | 'red' | 'purple';
+  color?: 'blue' | 'green' | 'yellow' | 'red' | 'purple' | 'gray';
 }
 
 export function StatCard({ title, value, subtitle, trend, trendValue, icon, color = 'blue' }: StatCardProps) {
@@ -17,6 +17,7 @@ export function StatCard({ title, value, subtitle, trend, trendValue, icon, colo
     yellow: 'bg-yellow-500/10 border-yellow-500/20 text-yellow-400',
     red: 'bg-red-500/10 border-red-500/20 text-red-400',
     purple: 'bg-purple-500/10 border-purple-500/20 text-purple-400',
+    gray: 'bg-slate-500/10 border-slate-500/20 text-slate-400',
   };
 
   const trendColors = {

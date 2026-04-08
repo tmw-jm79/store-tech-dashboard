@@ -1,5 +1,6 @@
 import rawStoresData from './stores.json';
-import type { Store, Brand, SystemStatus, DeviceInventory, BrandSummary, RegionSummary, RawStore } from './types';
+import type { Store, Brand, SystemStatus, DeviceInventory, BrandSummary, RegionSummary, RawStore, NetworkedDevice, PassiveDevice } from './types';
+import { fleetTotalsByBrand, storeCountsByBrand } from './types';
 export * from './types';
 
 function generateStatus(): SystemStatus {
@@ -9,21 +10,52 @@ function generateStatus(): SystemStatus {
   return 'offline';
 }
 
-function generateDeviceInventory(): DeviceInventory {
-  const posTerminals = Math.floor(Math.random() * 6) + 2;
-  const scanners = Math.floor(Math.random() * 8) + 3;
-  const printers = Math.floor(Math.random() * 4) + 1;
-  const networkSwitches = Math.floor(Math.random() * 3) + 1;
+function generateNetworkedDevice(fleetTotal: number, storeCount: number): NetworkedDevice {
+  if (fleetTotal === 0) return { total: 0, online: 0 };
+  
+  const average = fleetTotal / storeCount;
+  // Add some variance: +/- 20% of average
+  const variance = average * 0.2;
+  const total = Math.max(0, Math.round(average + (Math.random() * 2 - 1) * variance));
+  
+  // Online percentage: 85% base + up to 10% variance, some degraded/offline
+  const onlinePercent = 0.85 + Math.random() * 0.1;
+  const online = Math.round(total * onlinePercent);
+  
+  return { total, online };
+}
+
+function generatePassiveDevice(fleetTotal: number, storeCount: number): PassiveDevice {
+  if (fleetTotal === 0) return { total: 0 };
+  
+  const average = fleetTotal / storeCount;
+  const variance = average * 0.2;
+  const total = Math.max(0, Math.round(average + (Math.random() * 2 - 1) * variance));
+  
+  return { total };
+}
+
+function generateDeviceInventory(brand: Brand): DeviceInventory {
+  const fleet = fleetTotalsByBrand[brand];
+  const storeCount = storeCountsByBrand[brand];
 
   return {
-    posTerminals,
-    posOnline: Math.floor(posTerminals * (0.8 + Math.random() * 0.2)),
-    scanners,
-    scannersOnline: Math.floor(scanners * (0.75 + Math.random() * 0.25)),
-    printers,
-    printersOnline: Math.floor(printers * (0.7 + Math.random() * 0.3)),
-    networkSwitches,
-    networkSwitchesOnline: Math.floor(networkSwitches * (0.85 + Math.random() * 0.15)),
+    // Networked devices
+    posComputers: generateNetworkedDevice(fleet.posComputers, storeCount),
+    iPads: generateNetworkedDevice(fleet.iPads, storeCount),
+    pinPads: generateNetworkedDevice(fleet.pinPads, storeCount),
+    receiptPrinters: generateNetworkedDevice(fleet.receiptPrinters, storeCount),
+    laserPrinters: generateNetworkedDevice(fleet.laserPrinters, storeCount),
+    chromebooks: generateNetworkedDevice(fleet.chromebooks, storeCount),
+    desktopPhones: generateNetworkedDevice(fleet.desktopPhones, storeCount),
+    cordlessPhones: generateNetworkedDevice(fleet.cordlessPhones, storeCount),
+    
+    // Passive devices
+    averyMarkdownScanners: generatePassiveDevice(fleet.averyMarkdownScanners, storeCount),
+    tailoringPrinters: generatePassiveDevice(fleet.tailoringPrinters, storeCount),
+    barcodeScanners: generatePassiveDevice(fleet.barcodeScanners, storeCount),
+    cashDrawers: generatePassiveDevice(fleet.cashDrawers, storeCount),
+    monitors: generatePassiveDevice(fleet.monitors, storeCount),
   };
 }
 
@@ -41,7 +73,7 @@ function generateStores(): Store[] {
     state: raw.state,
     posStatus: generateStatus(),
     networkStatus: generateStatus(),
-    devices: generateDeviceInventory(),
+    devices: generateDeviceInventory(raw.brand as Brand),
     lastUpdated: new Date(Date.now() - Math.random() * 300000).toISOString(),
   }));
 }
@@ -89,14 +121,51 @@ export function getStoresByHierarchy(filter: HierarchyFilter): Store[] {
   });
 }
 
+// Helper to sum all networked devices
+function sumNetworkedDevices(devices: DeviceInventory): { total: number; online: number } {
+  const networked = [
+    devices.posComputers,
+    devices.iPads,
+    devices.pinPads,
+    devices.receiptPrinters,
+    devices.laserPrinters,
+    devices.chromebooks,
+    devices.desktopPhones,
+    devices.cordlessPhones,
+  ];
+  return {
+    total: networked.reduce((acc, d) => acc + d.total, 0),
+    online: networked.reduce((acc, d) => acc + d.online, 0),
+  };
+}
+
+// Helper to sum all passive devices
+function sumPassiveDevices(devices: DeviceInventory): number {
+  const passive = [
+    devices.averyMarkdownScanners,
+    devices.tailoringPrinters,
+    devices.barcodeScanners,
+    devices.cashDrawers,
+    devices.monitors,
+  ];
+  return passive.reduce((acc, d) => acc + d.total, 0);
+}
+
 export function getBrandSummaries(): BrandSummary[] {
   const brandList: Brand[] = ['KNG', 'TMW', 'MSP', 'JAB'];
   return brandList.map(brand => {
     const brandStores = stores.filter(s => s.brand === brand);
-    const totalDevices = brandStores.reduce((acc, s) => 
-      acc + s.devices.posTerminals + s.devices.scanners + s.devices.printers + s.devices.networkSwitches, 0);
-    const devicesOnline = brandStores.reduce((acc, s) => 
-      acc + s.devices.posOnline + s.devices.scannersOnline + s.devices.printersOnline + s.devices.networkSwitchesOnline, 0);
+    
+    let totalNetworked = 0;
+    let networkedOnline = 0;
+    let totalPassive = 0;
+    
+    brandStores.forEach(s => {
+      const networked = sumNetworkedDevices(s.devices);
+      totalNetworked += networked.total;
+      networkedOnline += networked.online;
+      totalPassive += sumPassiveDevices(s.devices);
+    });
 
     return {
       brand,
@@ -107,8 +176,8 @@ export function getBrandSummaries(): BrandSummary[] {
       networkOnline: brandStores.filter(s => s.networkStatus === 'online').length,
       networkDegraded: brandStores.filter(s => s.networkStatus === 'degraded').length,
       networkOffline: brandStores.filter(s => s.networkStatus === 'offline').length,
-      totalDevices,
-      devicesOnline,
+      totalDevices: totalNetworked + totalPassive,
+      devicesOnline: networkedOnline,
     };
   });
 }
@@ -123,17 +192,21 @@ export function getRegionSummaries(): RegionSummary[] {
     const posOnline = regionStores.filter(s => s.posStatus === 'online').length;
     const networkOnline = regionStores.filter(s => s.networkStatus === 'online').length;
     
-    const totalDevices = regionStores.reduce((acc, s) => 
-      acc + s.devices.posTerminals + s.devices.scanners + s.devices.printers + s.devices.networkSwitches, 0);
-    const devicesOnline = regionStores.reduce((acc, s) => 
-      acc + s.devices.posOnline + s.devices.scannersOnline + s.devices.printersOnline + s.devices.networkSwitchesOnline, 0);
+    let totalNetworked = 0;
+    let networkedOnline = 0;
+    
+    regionStores.forEach(s => {
+      const networked = sumNetworkedDevices(s.devices);
+      totalNetworked += networked.total;
+      networkedOnline += networked.online;
+    });
 
     return {
       region,
       totalStores,
       posOnlinePercent: Math.round((posOnline / totalStores) * 100),
       networkOnlinePercent: Math.round((networkOnline / totalStores) * 100),
-      devicesOnlinePercent: totalDevices > 0 ? Math.round((devicesOnline / totalDevices) * 100) : 0,
+      devicesOnlinePercent: totalNetworked > 0 ? Math.round((networkedOnline / totalNetworked) * 100) : 0,
     };
   });
 }
@@ -147,32 +220,77 @@ export function getOverallStats() {
   const networkDegraded = stores.filter(s => s.networkStatus === 'degraded').length;
   const networkOffline = stores.filter(s => s.networkStatus === 'offline').length;
 
-  const totalDevices = stores.reduce((acc, s) => 
-    acc + s.devices.posTerminals + s.devices.scanners + s.devices.printers + s.devices.networkSwitches, 0);
-  const devicesOnline = stores.reduce((acc, s) => 
-    acc + s.devices.posOnline + s.devices.scannersOnline + s.devices.printersOnline + s.devices.networkSwitchesOnline, 0);
+  // Aggregate all device types
+  const deviceTotals = {
+    // Networked devices
+    posComputers: { total: 0, online: 0 },
+    iPads: { total: 0, online: 0 },
+    pinPads: { total: 0, online: 0 },
+    receiptPrinters: { total: 0, online: 0 },
+    laserPrinters: { total: 0, online: 0 },
+    chromebooks: { total: 0, online: 0 },
+    desktopPhones: { total: 0, online: 0 },
+    cordlessPhones: { total: 0, online: 0 },
+    // Passive devices
+    averyMarkdownScanners: { total: 0 },
+    tailoringPrinters: { total: 0 },
+    barcodeScanners: { total: 0 },
+    cashDrawers: { total: 0 },
+    monitors: { total: 0 },
+  };
 
-  const totalPosTerminals = stores.reduce((acc, s) => acc + s.devices.posTerminals, 0);
-  const posTerminalsOnline = stores.reduce((acc, s) => acc + s.devices.posOnline, 0);
-  const totalScanners = stores.reduce((acc, s) => acc + s.devices.scanners, 0);
-  const scannersOnline = stores.reduce((acc, s) => acc + s.devices.scannersOnline, 0);
-  const totalPrinters = stores.reduce((acc, s) => acc + s.devices.printers, 0);
-  const printersOnline = stores.reduce((acc, s) => acc + s.devices.printersOnline, 0);
-  const totalSwitches = stores.reduce((acc, s) => acc + s.devices.networkSwitches, 0);
-  const switchesOnline = stores.reduce((acc, s) => acc + s.devices.networkSwitchesOnline, 0);
+  stores.forEach(s => {
+    // Networked
+    deviceTotals.posComputers.total += s.devices.posComputers.total;
+    deviceTotals.posComputers.online += s.devices.posComputers.online;
+    deviceTotals.iPads.total += s.devices.iPads.total;
+    deviceTotals.iPads.online += s.devices.iPads.online;
+    deviceTotals.pinPads.total += s.devices.pinPads.total;
+    deviceTotals.pinPads.online += s.devices.pinPads.online;
+    deviceTotals.receiptPrinters.total += s.devices.receiptPrinters.total;
+    deviceTotals.receiptPrinters.online += s.devices.receiptPrinters.online;
+    deviceTotals.laserPrinters.total += s.devices.laserPrinters.total;
+    deviceTotals.laserPrinters.online += s.devices.laserPrinters.online;
+    deviceTotals.chromebooks.total += s.devices.chromebooks.total;
+    deviceTotals.chromebooks.online += s.devices.chromebooks.online;
+    deviceTotals.desktopPhones.total += s.devices.desktopPhones.total;
+    deviceTotals.desktopPhones.online += s.devices.desktopPhones.online;
+    deviceTotals.cordlessPhones.total += s.devices.cordlessPhones.total;
+    deviceTotals.cordlessPhones.online += s.devices.cordlessPhones.online;
+    // Passive
+    deviceTotals.averyMarkdownScanners.total += s.devices.averyMarkdownScanners.total;
+    deviceTotals.tailoringPrinters.total += s.devices.tailoringPrinters.total;
+    deviceTotals.barcodeScanners.total += s.devices.barcodeScanners.total;
+    deviceTotals.cashDrawers.total += s.devices.cashDrawers.total;
+    deviceTotals.monitors.total += s.devices.monitors.total;
+  });
+
+  const totalNetworked = 
+    deviceTotals.posComputers.total + deviceTotals.iPads.total + deviceTotals.pinPads.total +
+    deviceTotals.receiptPrinters.total + deviceTotals.laserPrinters.total + deviceTotals.chromebooks.total +
+    deviceTotals.desktopPhones.total + deviceTotals.cordlessPhones.total;
+  
+  const networkedOnline = 
+    deviceTotals.posComputers.online + deviceTotals.iPads.online + deviceTotals.pinPads.online +
+    deviceTotals.receiptPrinters.online + deviceTotals.laserPrinters.online + deviceTotals.chromebooks.online +
+    deviceTotals.desktopPhones.online + deviceTotals.cordlessPhones.online;
+
+  const totalPassive = 
+    deviceTotals.averyMarkdownScanners.total + deviceTotals.tailoringPrinters.total +
+    deviceTotals.barcodeScanners.total + deviceTotals.cashDrawers.total + deviceTotals.monitors.total;
 
   return {
     totalStores,
     totalBrands: 4,
     pos: { online: posOnline, degraded: posDegraded, offline: posOffline },
     network: { online: networkOnline, degraded: networkDegraded, offline: networkOffline },
-    devices: { total: totalDevices, online: devicesOnline },
-    deviceBreakdown: {
-      posTerminals: { total: totalPosTerminals, online: posTerminalsOnline },
-      scanners: { total: totalScanners, online: scannersOnline },
-      printers: { total: totalPrinters, online: printersOnline },
-      networkSwitches: { total: totalSwitches, online: switchesOnline },
+    devices: { 
+      totalNetworked, 
+      networkedOnline, 
+      totalPassive,
+      total: totalNetworked + totalPassive,
     },
+    deviceBreakdown: deviceTotals,
   };
 }
 

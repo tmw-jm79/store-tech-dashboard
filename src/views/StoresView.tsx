@@ -128,7 +128,8 @@ export function StoresView({ stores }: StoresViewProps) {
                     <StatusBadge status={store.networkStatus} size="sm" />
                   </td>
                   <td className="py-3 px-4 text-right text-slate-300">
-                    {store.devices.posTerminals + store.devices.scanners + store.devices.printers + store.devices.networkSwitches}
+                    {store.devices.posComputers.total + store.devices.iPads.total + store.devices.pinPads.total + 
+                     store.devices.receiptPrinters.total + store.devices.laserPrinters.total}
                   </td>
                 </tr>
               ))}

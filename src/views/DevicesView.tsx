@@ -1,47 +1,69 @@
-import { Monitor, Scan, Printer, Router, HardDrive } from 'lucide-react';
-import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, Legend, PieChart, Pie, Cell } from 'recharts';
+import { Monitor, Tablet, CreditCard, Receipt, Printer, Laptop, Phone, PhoneCall, Barcode, DollarSign, HardDrive, Wifi, WifiOff } from 'lucide-react';
+import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, Legend } from 'recharts';
 import { StatCard } from '../components/StatCard';
 import type { Store, BrandSummary } from '../data/storeService';
 
 interface DevicesViewProps {
   stores: Store[];
   stats: {
+    devices: {
+      totalNetworked: number;
+      networkedOnline: number;
+      totalPassive: number;
+      total: number;
+    };
     deviceBreakdown: {
-      posTerminals: { total: number; online: number };
-      scanners: { total: number; online: number };
-      printers: { total: number; online: number };
-      networkSwitches: { total: number; online: number };
+      posComputers: { total: number; online: number };
+      iPads: { total: number; online: number };
+      pinPads: { total: number; online: number };
+      receiptPrinters: { total: number; online: number };
+      laserPrinters: { total: number; online: number };
+      chromebooks: { total: number; online: number };
+      desktopPhones: { total: number; online: number };
+      cordlessPhones: { total: number; online: number };
+      averyMarkdownScanners: { total: number };
+      tailoringPrinters: { total: number };
+      barcodeScanners: { total: number };
+      cashDrawers: { total: number };
+      monitors: { total: number };
     };
   };
   brandSummaries: BrandSummary[];
 }
 
 export function DevicesView({ stores, stats, brandSummaries }: DevicesViewProps) {
-  const { deviceBreakdown } = stats;
-  const totalDevices = Object.values(deviceBreakdown).reduce((acc, d) => acc + d.total, 0);
-  const onlineDevices = Object.values(deviceBreakdown).reduce((acc, d) => acc + d.online, 0);
+  const { deviceBreakdown, devices } = stats;
 
-  const deviceTypes = [
-    { name: 'POS Terminals', icon: <Monitor size={20} />, ...deviceBreakdown.posTerminals, color: '#3b82f6' },
-    { name: 'Scanners', icon: <Scan size={20} />, ...deviceBreakdown.scanners, color: '#8b5cf6' },
-    { name: 'Printers', icon: <Printer size={20} />, ...deviceBreakdown.printers, color: '#ec4899' },
-    { name: 'Network Switches', icon: <Router size={20} />, ...deviceBreakdown.networkSwitches, color: '#14b8a6' },
+  // Networked devices (have online/offline status)
+  const networkedDevices = [
+    { name: 'POS Computers', key: 'posComputers', icon: <Monitor size={20} />, ...deviceBreakdown.posComputers, color: '#3b82f6' },
+    { name: 'iPads', key: 'iPads', icon: <Tablet size={20} />, ...deviceBreakdown.iPads, color: '#8b5cf6' },
+    { name: 'Pin Pads', key: 'pinPads', icon: <CreditCard size={20} />, ...deviceBreakdown.pinPads, color: '#ec4899' },
+    { name: 'Receipt Printers', key: 'receiptPrinters', icon: <Receipt size={20} />, ...deviceBreakdown.receiptPrinters, color: '#14b8a6' },
+    { name: 'Laser Printers', key: 'laserPrinters', icon: <Printer size={20} />, ...deviceBreakdown.laserPrinters, color: '#f97316' },
+    { name: 'Chromebooks', key: 'chromebooks', icon: <Laptop size={20} />, ...deviceBreakdown.chromebooks, color: '#06b6d4' },
+    { name: 'Desktop Phones', key: 'desktopPhones', icon: <Phone size={20} />, ...deviceBreakdown.desktopPhones, color: '#84cc16' },
+    { name: 'Cordless Phones', key: 'cordlessPhones', icon: <PhoneCall size={20} />, ...deviceBreakdown.cordlessPhones, color: '#a855f7' },
   ];
 
-  const pieData = deviceTypes.map(d => ({
-    name: d.name,
-    value: d.total,
-    color: d.color,
-  }));
+  // Passive devices (count only, no online/offline status)
+  const passiveDevices = [
+    { name: 'Avery Markdown Scanners', key: 'averyMarkdownScanners', icon: <Barcode size={20} />, total: deviceBreakdown.averyMarkdownScanners.total, color: '#64748b' },
+    { name: 'Tailoring Printers', key: 'tailoringPrinters', icon: <Printer size={20} />, total: deviceBreakdown.tailoringPrinters.total, color: '#78716c' },
+    { name: 'Barcode Scanners', key: 'barcodeScanners', icon: <Barcode size={20} />, total: deviceBreakdown.barcodeScanners.total, color: '#71717a' },
+    { name: 'Cash Drawers', key: 'cashDrawers', icon: <DollarSign size={20} />, total: deviceBreakdown.cashDrawers.total, color: '#737373' },
+    { name: 'Monitors', key: 'monitors', icon: <Monitor size={20} />, total: deviceBreakdown.monitors.total, color: '#6b7280' },
+  ];
 
+  // Brand device data for chart
   const brandDeviceData = brandSummaries.map(b => {
     const brandStores = stores.filter(s => s.brand === b.brand);
     return {
-      name: b.brand.split(' ')[0],
-      posTerminals: brandStores.reduce((acc, s) => acc + s.devices.posTerminals, 0),
-      scanners: brandStores.reduce((acc, s) => acc + s.devices.scanners, 0),
-      printers: brandStores.reduce((acc, s) => acc + s.devices.printers, 0),
-      switches: brandStores.reduce((acc, s) => acc + s.devices.networkSwitches, 0),
+      name: b.brand,
+      posComputers: brandStores.reduce((acc, s) => acc + s.devices.posComputers.total, 0),
+      iPads: brandStores.reduce((acc, s) => acc + s.devices.iPads.total, 0),
+      pinPads: brandStores.reduce((acc, s) => acc + s.devices.pinPads.total, 0),
+      phones: brandStores.reduce((acc, s) => acc + s.devices.desktopPhones.total + s.devices.cordlessPhones.total, 0),
     };
   });
 
@@ -49,84 +71,91 @@ export function DevicesView({ stores, stats, brandSummaries }: DevicesViewProps)
     <div className="space-y-6">
       <h2 className="text-xl font-semibold text-white">Device Inventory</h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
+      {/* Summary Cards */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         <StatCard
           title="Total Devices"
-          value={totalDevices.toLocaleString()}
-          subtitle={`${onlineDevices.toLocaleString()} online`}
+          value={devices.total.toLocaleString()}
+          subtitle="All device types"
           icon={<HardDrive size={24} />}
           color="blue"
         />
-        {deviceTypes.map(device => (
-          <StatCard
-            key={device.name}
-            title={device.name}
-            value={device.total.toLocaleString()}
-            subtitle={`${Math.round((device.online / device.total) * 100)}% online`}
-            icon={device.icon}
-            color={device.online / device.total >= 0.9 ? 'green' : device.online / device.total >= 0.8 ? 'yellow' : 'red'}
-          />
-        ))}
+        <StatCard
+          title="Networked Devices"
+          value={devices.totalNetworked.toLocaleString()}
+          subtitle={`${devices.networkedOnline.toLocaleString()} online (${Math.round((devices.networkedOnline / devices.totalNetworked) * 100)}%)`}
+          icon={<Wifi size={24} />}
+          color="green"
+        />
+        <StatCard
+          title="Passive Devices"
+          value={devices.totalPassive.toLocaleString()}
+          subtitle="No connectivity status"
+          icon={<WifiOff size={24} />}
+          color="gray"
+        />
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        <div className="bg-slate-800/50 rounded-xl p-6 border border-slate-700">
-          <h3 className="text-lg font-medium text-white mb-4">Device Distribution</h3>
-          <ResponsiveContainer width="100%" height={300}>
-            <PieChart>
-              <Pie
-                data={pieData}
-                cx="50%"
-                cy="50%"
-                outerRadius={100}
-                dataKey="value"
-                label={({ name, percent }) => `${(name ?? '').split(' ')[0]} ${((percent ?? 0) * 100).toFixed(0)}%`}
-                labelLine={true}
-              >
-                {pieData.map((entry, index) => (
-                  <Cell key={`cell-${index}`} fill={entry.color} />
-                ))}
-              </Pie>
-              <Tooltip
-                contentStyle={{ backgroundColor: '#1e293b', border: '1px solid #334155', borderRadius: '8px' }}
-                formatter={(value) => [Number(value).toLocaleString(), 'Devices']}
-              />
-            </PieChart>
-          </ResponsiveContainer>
-        </div>
-
-        <div className="bg-slate-800/50 rounded-xl p-6 border border-slate-700">
-          <h3 className="text-lg font-medium text-white mb-4">Device Health by Type</h3>
-          <div className="space-y-4">
-            {deviceTypes.map(device => (
-              <div key={device.name} className="space-y-2">
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-2">
-                    <span style={{ color: device.color }}>{device.icon}</span>
-                    <span className="text-slate-300">{device.name}</span>
-                  </div>
-                  <div className="text-right">
-                    <span className="text-white font-medium">{device.online.toLocaleString()}</span>
-                    <span className="text-slate-400"> / {device.total.toLocaleString()}</span>
-                  </div>
-                </div>
-                <div className="h-2 bg-slate-700 rounded-full overflow-hidden">
-                  <div
-                    className="h-full rounded-full transition-all"
-                    style={{
-                      width: `${(device.online / device.total) * 100}%`,
-                      backgroundColor: device.color,
-                    }}
-                  ></div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-
+      {/* Networked Devices Section */}
       <div className="bg-slate-800/50 rounded-xl p-6 border border-slate-700">
-        <h3 className="text-lg font-medium text-white mb-4">Devices by Brand</h3>
+        <h3 className="text-lg font-medium text-white mb-4 flex items-center gap-2">
+          <Wifi size={20} className="text-emerald-400" />
+          Networked Devices (Online/Offline Status)
+        </h3>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+          {networkedDevices.map(device => (
+            <div key={device.key} className="bg-slate-700/50 rounded-lg p-4">
+              <div className="flex items-center gap-2 mb-2">
+                <span style={{ color: device.color }}>{device.icon}</span>
+                <span className="text-white font-medium">{device.name}</span>
+              </div>
+              <div className="text-2xl font-bold text-white mb-1">
+                {device.total.toLocaleString()}
+              </div>
+              <div className="flex items-center justify-between text-sm">
+                <span className="text-emerald-400">{device.online.toLocaleString()} online</span>
+                <span className="text-slate-400">
+                  {device.total > 0 ? `${Math.round((device.online / device.total) * 100)}%` : '0%'}
+                </span>
+              </div>
+              <div className="h-2 bg-slate-600 rounded-full overflow-hidden mt-2">
+                <div
+                  className="h-full rounded-full transition-all"
+                  style={{
+                    width: device.total > 0 ? `${(device.online / device.total) * 100}%` : '0%',
+                    backgroundColor: device.color,
+                  }}
+                />
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Passive Devices Section */}
+      <div className="bg-slate-800/50 rounded-xl p-6 border border-slate-700">
+        <h3 className="text-lg font-medium text-white mb-4 flex items-center gap-2">
+          <WifiOff size={20} className="text-slate-400" />
+          Passive Devices (Count Only)
+        </h3>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
+          {passiveDevices.map(device => (
+            <div key={device.key} className="bg-slate-700/50 rounded-lg p-4">
+              <div className="flex items-center gap-2 mb-2">
+                <span style={{ color: device.color }}>{device.icon}</span>
+                <span className="text-white font-medium text-sm">{device.name}</span>
+              </div>
+              <div className="text-2xl font-bold text-white">
+                {device.total.toLocaleString()}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Devices by Brand Chart */}
+      <div className="bg-slate-800/50 rounded-xl p-6 border border-slate-700">
+        <h3 className="text-lg font-medium text-white mb-4">Key Devices by Brand</h3>
         <ResponsiveContainer width="100%" height={350}>
           <BarChart data={brandDeviceData}>
             <XAxis dataKey="name" stroke="#94a3b8" />
@@ -136,16 +165,17 @@ export function DevicesView({ stores, stats, brandSummaries }: DevicesViewProps)
               labelStyle={{ color: '#fff' }}
             />
             <Legend />
-            <Bar dataKey="posTerminals" name="POS Terminals" fill="#3b82f6" radius={[4, 4, 0, 0]} />
-            <Bar dataKey="scanners" name="Scanners" fill="#8b5cf6" radius={[4, 4, 0, 0]} />
-            <Bar dataKey="printers" name="Printers" fill="#ec4899" radius={[4, 4, 0, 0]} />
-            <Bar dataKey="switches" name="Switches" fill="#14b8a6" radius={[4, 4, 0, 0]} />
+            <Bar dataKey="posComputers" name="POS Computers" fill="#3b82f6" radius={[4, 4, 0, 0]} />
+            <Bar dataKey="iPads" name="iPads" fill="#8b5cf6" radius={[4, 4, 0, 0]} />
+            <Bar dataKey="pinPads" name="Pin Pads" fill="#ec4899" radius={[4, 4, 0, 0]} />
+            <Bar dataKey="phones" name="Phones" fill="#14b8a6" radius={[4, 4, 0, 0]} />
           </BarChart>
         </ResponsiveContainer>
       </div>
 
+      {/* Brand Summary Table */}
       <div className="bg-slate-800/50 rounded-xl p-6 border border-slate-700">
-        <h3 className="text-lg font-medium text-white mb-4">Device Summary by Store</h3>
+        <h3 className="text-lg font-medium text-white mb-4">Device Summary by Brand</h3>
         <div className="overflow-x-auto">
           <table className="w-full">
             <thead>
@@ -153,7 +183,7 @@ export function DevicesView({ stores, stats, brandSummaries }: DevicesViewProps)
                 <th className="text-left py-3 px-4 text-slate-400 font-medium">Brand</th>
                 <th className="text-right py-3 px-4 text-slate-400 font-medium">Stores</th>
                 <th className="text-right py-3 px-4 text-slate-400 font-medium">Total Devices</th>
-                <th className="text-right py-3 px-4 text-slate-400 font-medium">Online</th>
+                <th className="text-right py-3 px-4 text-slate-400 font-medium">Networked Online</th>
                 <th className="text-right py-3 px-4 text-slate-400 font-medium">Health %</th>
               </tr>
             </thead>
@@ -169,7 +199,7 @@ export function DevicesView({ stores, stats, brandSummaries }: DevicesViewProps)
                       brand.devicesOnline / brand.totalDevices >= 0.9 ? 'text-emerald-400' :
                       brand.devicesOnline / brand.totalDevices >= 0.8 ? 'text-yellow-400' : 'text-red-400'
                     }>
-                      {Math.round((brand.devicesOnline / brand.totalDevices) * 100)}%
+                      {brand.totalDevices > 0 ? Math.round((brand.devicesOnline / brand.totalDevices) * 100) : 0}%
                     </span>
                   </td>
                 </tr>
