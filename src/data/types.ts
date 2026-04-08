@@ -180,6 +180,8 @@ export type IncidentCategory =
 
 export type IncidentPriority = 'Critical' | 'High' | 'Medium' | 'Low';
 
+export type IncidentStatus = 'New' | 'In Progress' | 'Pending' | 'On Hold';
+
 export interface Incident {
   id: string;
   storeId: string;
@@ -189,6 +191,7 @@ export interface Incident {
   state: string;
   category: IncidentCategory;
   priority: IncidentPriority;
+  status: IncidentStatus;
   summary: string;
   createdAt: string;
   updatedAt: string;

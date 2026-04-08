@@ -1,7 +1,7 @@
-import { AlertTriangle, AlertCircle, XCircle, Clock, MapPin, Key, AppWindow, HardDrive, HelpCircle, Wifi, Shield, Code } from 'lucide-react';
+import { AlertTriangle, AlertCircle, XCircle, Key, AppWindow, HardDrive, HelpCircle, Wifi, Shield, Code } from 'lucide-react';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, Cell } from 'recharts';
 import { StatCard } from '../components/StatCard';
-import type { Incident, IncidentCategory, IncidentPriority } from '../data/storeService';
+import type { Incident, IncidentCategory, IncidentPriority, IncidentStatus } from '../data/storeService';
 
 interface IncidentsViewProps {
   incidents: Incident[];
@@ -46,6 +46,13 @@ const priorityIcons: Record<IncidentPriority, React.ReactNode> = {
   Low: <AlertCircle size={14} />,
 };
 
+const statusColors: Record<IncidentStatus, string> = {
+  'New': 'bg-blue-500/20 text-blue-400',
+  'In Progress': 'bg-emerald-500/20 text-emerald-400',
+  'Pending': 'bg-yellow-500/20 text-yellow-400',
+  'On Hold': 'bg-slate-500/20 text-slate-400',
+};
+
 export function IncidentsView({ incidents, incidentStats }: IncidentsViewProps) {
   const { byCategory, byPriority } = incidentStats;
 
@@ -54,18 +61,6 @@ export function IncidentsView({ incidents, incidentStats }: IncidentsViewProps) 
     count: item.count,
     color: categoryColors[item.category],
   }));
-
-  const formatTimeAgo = (dateStr: string) => {
-    const date = new Date(dateStr);
-    const now = new Date();
-    const diffMs = now.getTime() - date.getTime();
-    const diffHours = Math.floor(diffMs / (1000 * 60 * 60));
-    const diffDays = Math.floor(diffHours / 24);
-    
-    if (diffDays > 0) return `${diffDays}d ago`;
-    if (diffHours > 0) return `${diffHours}h ago`;
-    return 'Just now';
-  };
 
   return (
     <div className="space-y-6">
@@ -154,26 +149,24 @@ export function IncidentsView({ incidents, incidentStats }: IncidentsViewProps) 
         </div>
       </div>
 
-      {/* Incident list */}
+      {/* Incident grid */}
       <div className="bg-slate-800/50 rounded-xl p-6 border border-slate-700">
         <h3 className="text-lg font-medium text-white mb-4">Incident List</h3>
         <div className="overflow-x-auto">
           <table className="w-full">
             <thead>
               <tr className="border-b border-slate-700">
-                <th className="text-left py-3 px-4 text-slate-400 font-medium">ID</th>
+                <th className="text-left py-3 px-4 text-slate-400 font-medium">Store ID</th>
+                <th className="text-left py-3 px-4 text-slate-400 font-medium">Incident Summary</th>
                 <th className="text-left py-3 px-4 text-slate-400 font-medium">Priority</th>
-                <th className="text-left py-3 px-4 text-slate-400 font-medium">Category</th>
-                <th className="text-left py-3 px-4 text-slate-400 font-medium">Store</th>
-                <th className="text-left py-3 px-4 text-slate-400 font-medium">Location</th>
-                <th className="text-left py-3 px-4 text-slate-400 font-medium">Summary</th>
-                <th className="text-left py-3 px-4 text-slate-400 font-medium">Created</th>
+                <th className="text-left py-3 px-4 text-slate-400 font-medium">Status</th>
               </tr>
             </thead>
             <tbody>
               {incidents.slice(0, 50).map(incident => (
                 <tr key={incident.id} className="border-b border-slate-700/50 hover:bg-slate-700/30">
-                  <td className="py-3 px-4 text-white font-mono text-sm">{incident.id}</td>
+                  <td className="py-3 px-4 text-white font-medium">{incident.storeId}</td>
+                  <td className="py-3 px-4 text-slate-300">{incident.summary}</td>
                   <td className="py-3 px-4">
                     <span className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-sm font-medium ${priorityColors[incident.priority]}`}>
                       {priorityIcons[incident.priority]}
@@ -181,33 +174,9 @@ export function IncidentsView({ incidents, incidentStats }: IncidentsViewProps) 
                     </span>
                   </td>
                   <td className="py-3 px-4">
-                    <div className="flex items-center gap-2">
-                      <span style={{ color: categoryColors[incident.category] }}>
-                        {categoryIcons[incident.category]}
-                      </span>
-                      <span className="text-slate-300 text-sm">{incident.category}</span>
-                    </div>
-                  </td>
-                  <td className="py-3 px-4">
-                    <div>
-                      <span className="text-white font-medium">{incident.storeId}</span>
-                      <span className="text-slate-500 text-sm ml-2">({incident.brand})</span>
-                    </div>
-                  </td>
-                  <td className="py-3 px-4">
-                    <div className="flex items-center gap-1 text-slate-300 text-sm">
-                      <MapPin size={14} className="text-slate-500" />
-                      {incident.city}, {incident.state}
-                    </div>
-                  </td>
-                  <td className="py-3 px-4 text-slate-300 text-sm max-w-[250px] truncate">
-                    {incident.summary}
-                  </td>
-                  <td className="py-3 px-4">
-                    <div className="flex items-center gap-1 text-slate-400 text-sm">
-                      <Clock size={14} />
-                      {formatTimeAgo(incident.createdAt)}
-                    </div>
+                    <span className={`inline-flex items-center px-2.5 py-1 rounded-full text-sm font-medium ${statusColors[incident.status]}`}>
+                      {incident.status}
+                    </span>
                   </td>
                 </tr>
               ))}

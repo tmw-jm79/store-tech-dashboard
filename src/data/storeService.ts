@@ -1,5 +1,5 @@
 import rawStoresData from './stores.json';
-import type { Store, Brand, SystemStatus, DeviceInventory, BrandSummary, RegionSummary, RawStore, NetworkedDevice, PassiveDevice, Incident, IncidentCategory, IncidentPriority } from './types';
+import type { Store, Brand, SystemStatus, DeviceInventory, BrandSummary, RegionSummary, RawStore, NetworkedDevice, PassiveDevice, Incident, IncidentCategory, IncidentPriority, IncidentStatus } from './types';
 import { fleetTotalsByBrand, storeCountsByBrand, incidentCategories } from './types';
 export * from './types';
 
@@ -158,6 +158,14 @@ function generateIncidents(): Incident[] {
     else if (priorityRand < 0.6) priority = 'Medium';
     else priority = 'Low';
     
+    // Status distribution
+    const statusRand = Math.random();
+    let status: IncidentStatus;
+    if (statusRand < 0.2) status = 'New';
+    else if (statusRand < 0.5) status = 'In Progress';
+    else if (statusRand < 0.8) status = 'Pending';
+    else status = 'On Hold';
+    
     const createdAt = new Date(Date.now() - Math.random() * 7 * 24 * 60 * 60 * 1000); // Within last 7 days
     const updatedAt = new Date(createdAt.getTime() + Math.random() * (Date.now() - createdAt.getTime()));
     
@@ -170,6 +178,7 @@ function generateIncidents(): Incident[] {
       state: store.state,
       category,
       priority,
+      status,
       summary,
       createdAt: createdAt.toISOString(),
       updatedAt: updatedAt.toISOString(),
