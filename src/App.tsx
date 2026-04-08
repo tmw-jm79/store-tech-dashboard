@@ -14,7 +14,6 @@ import {
   getOverallStats,
   getStoresByHierarchy,
   incidents,
-  getIncidentStats,
   type HierarchyFilter,
 } from './data/storeService';
 
@@ -28,11 +27,37 @@ function App() {
   }, []);
 
   const filteredStores = getStoresByHierarchy(filter);
+  
+  // Filter incidents based on hierarchy
+  const filteredIncidents = incidents.filter(incident => {
+    if (filter.brand && incident.brand !== filter.brand) return false;
+    // For zone/region/district/store filtering, we need to check against store data
+    if (filter.storeId && incident.storeId !== filter.storeId) return false;
+    if (filter.zone || filter.region || filter.district) {
+      const store = filteredStores.find(s => s.id === incident.storeId);
+      if (!store) return false;
+    }
+    return true;
+  });
 
   const stats = getOverallStats();
   const brandSummaries = getBrandSummaries();
   const regionSummaries = getRegionSummaries();
-  const incidentStats = getIncidentStats();
+  
+  // Calculate incident stats based on filtered incidents
+  const filteredIncidentStats = {
+    total: filteredIncidents.length,
+    byCategory: (['Accounts and Access', 'Application', 'Hardware', 'Miscellaneous', 'Network', 'Security', 'Software'] as const).map(category => ({
+      category,
+      count: filteredIncidents.filter(i => i.category === category).length,
+    })),
+    byPriority: {
+      Critical: filteredIncidents.filter(i => i.priority === 'Critical').length,
+      High: filteredIncidents.filter(i => i.priority === 'High').length,
+      Medium: filteredIncidents.filter(i => i.priority === 'Medium').length,
+      Low: filteredIncidents.filter(i => i.priority === 'Low').length,
+    },
+  };
 
   const renderView = () => {
     switch (currentView) {
@@ -52,7 +77,7 @@ function App() {
       case 'devices':
         return <DevicesView stores={filteredStores} stats={stats} brandSummaries={brandSummaries} />;
       case 'incidents':
-        return <IncidentsView incidents={incidents} incidentStats={incidentStats} />;
+        return <IncidentsView incidents={filteredIncidents} incidentStats={filteredIncidentStats} />;
       case 'stores':
         return <StoresView stores={filteredStores} />;
       default:
@@ -70,7 +95,7 @@ function App() {
           incidentCount={incidents.length}
         />
         <main className="flex-1 p-6">
-          {currentView !== 'overview' && currentView !== 'incidents' && (
+          {currentView !== 'overview' && (
             <div className="mb-6">
               <FilterBar
                 filter={filter}
