@@ -1,165 +1,222 @@
-import { AlertTriangle, AlertCircle, XCircle, Clock, MapPin } from 'lucide-react';
+import { AlertTriangle, AlertCircle, XCircle, Clock, MapPin, Key, AppWindow, HardDrive, HelpCircle, Wifi, Shield, Code } from 'lucide-react';
+import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, Cell } from 'recharts';
 import { StatCard } from '../components/StatCard';
-import { StatusBadge } from '../components/StatusBadge';
-import type { Store } from '../data/storeService';
+import type { Incident, IncidentCategory, IncidentPriority } from '../data/storeService';
 
 interface IncidentsViewProps {
-  incidentStores: Store[];
+  incidents: Incident[];
+  incidentStats: {
+    total: number;
+    byCategory: { category: IncidentCategory; count: number }[];
+    byPriority: Record<IncidentPriority, number>;
+  };
 }
 
-export function IncidentsView({ incidentStores }: IncidentsViewProps) {
-  const criticalCount = incidentStores.filter(s => s.posStatus === 'offline' || s.networkStatus === 'offline').length;
-  const warningCount = incidentStores.filter(s => 
-    (s.posStatus === 'degraded' && s.networkStatus !== 'offline') || 
-    (s.networkStatus === 'degraded' && s.posStatus !== 'offline')
-  ).length;
+const categoryIcons: Record<IncidentCategory, React.ReactNode> = {
+  'Accounts and Access': <Key size={20} />,
+  'Application': <AppWindow size={20} />,
+  'Hardware': <HardDrive size={20} />,
+  'Miscellaneous': <HelpCircle size={20} />,
+  'Network': <Wifi size={20} />,
+  'Security': <Shield size={20} />,
+  'Software': <Code size={20} />,
+};
 
-  const posOffline = incidentStores.filter(s => s.posStatus === 'offline').length;
-  const networkOffline = incidentStores.filter(s => s.networkStatus === 'offline').length;
-  const bothOffline = incidentStores.filter(s => s.posStatus === 'offline' && s.networkStatus === 'offline').length;
+const categoryColors: Record<IncidentCategory, string> = {
+  'Accounts and Access': '#3b82f6',
+  'Application': '#8b5cf6',
+  'Hardware': '#f97316',
+  'Miscellaneous': '#6b7280',
+  'Network': '#06b6d4',
+  'Security': '#ef4444',
+  'Software': '#84cc16',
+};
 
-  const getSeverity = (store: Store): 'critical' | 'warning' => {
-    if (store.posStatus === 'offline' || store.networkStatus === 'offline') return 'critical';
-    return 'warning';
-  };
+const priorityColors: Record<IncidentPriority, string> = {
+  Critical: 'bg-red-500/20 text-red-400',
+  High: 'bg-orange-500/20 text-orange-400',
+  Medium: 'bg-yellow-500/20 text-yellow-400',
+  Low: 'bg-blue-500/20 text-blue-400',
+};
 
-  const getIssueDescription = (store: Store): string => {
-    const issues: string[] = [];
-    if (store.posStatus === 'offline') issues.push('POS Offline');
-    else if (store.posStatus === 'degraded') issues.push('POS Degraded');
-    if (store.networkStatus === 'offline') issues.push('Network Offline');
-    else if (store.networkStatus === 'degraded') issues.push('Network Degraded');
-    return issues.join(', ');
+const priorityIcons: Record<IncidentPriority, React.ReactNode> = {
+  Critical: <XCircle size={14} />,
+  High: <AlertTriangle size={14} />,
+  Medium: <AlertCircle size={14} />,
+  Low: <AlertCircle size={14} />,
+};
+
+export function IncidentsView({ incidents, incidentStats }: IncidentsViewProps) {
+  const { byCategory, byPriority } = incidentStats;
+
+  const chartData = byCategory.map(item => ({
+    name: item.category.replace('Accounts and Access', 'Access'),
+    count: item.count,
+    color: categoryColors[item.category],
+  }));
+
+  const formatTimeAgo = (dateStr: string) => {
+    const date = new Date(dateStr);
+    const now = new Date();
+    const diffMs = now.getTime() - date.getTime();
+    const diffHours = Math.floor(diffMs / (1000 * 60 * 60));
+    const diffDays = Math.floor(diffHours / 24);
+    
+    if (diffDays > 0) return `${diffDays}d ago`;
+    if (diffHours > 0) return `${diffHours}h ago`;
+    return 'Just now';
   };
 
   return (
     <div className="space-y-6">
-      <h2 className="text-xl font-semibold text-white">Active Incidents</h2>
+      <h2 className="text-xl font-semibold text-white">Open Incidents</h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+      {/* Priority summary cards */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
         <StatCard
-          title="Total Incidents"
-          value={incidentStores.length}
-          subtitle="Stores affected"
+          title="Total Open"
+          value={incidentStats.total}
+          subtitle="All categories"
           icon={<AlertTriangle size={24} />}
-          color="red"
+          color="blue"
         />
         <StatCard
           title="Critical"
-          value={criticalCount}
-          subtitle="Systems offline"
+          value={byPriority.Critical}
+          subtitle="Immediate attention"
           icon={<XCircle size={24} />}
           color="red"
         />
         <StatCard
-          title="Warnings"
-          value={warningCount}
-          subtitle="Degraded performance"
-          icon={<AlertCircle size={24} />}
+          title="High"
+          value={byPriority.High}
+          subtitle="Urgent priority"
+          icon={<AlertTriangle size={24} />}
           color="yellow"
         />
         <StatCard
-          title="Both Systems Down"
-          value={bothOffline}
-          subtitle="POS + Network offline"
-          icon={<AlertTriangle size={24} />}
-          color="red"
+          title="Medium"
+          value={byPriority.Medium}
+          subtitle="Standard priority"
+          icon={<AlertCircle size={24} />}
+          color="purple"
+        />
+        <StatCard
+          title="Low"
+          value={byPriority.Low}
+          subtitle="When available"
+          icon={<AlertCircle size={24} />}
+          color="green"
         />
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
-        <div className="bg-red-500/10 border border-red-500/20 rounded-xl p-6">
-          <div className="flex items-center gap-3 mb-4">
-            <XCircle className="text-red-400" size={24} />
-            <h3 className="text-lg font-medium text-white">POS Offline</h3>
-          </div>
-          <p className="text-4xl font-bold text-red-400">{posOffline}</p>
-          <p className="text-slate-400 mt-2">Stores unable to process transactions</p>
+      {/* Category breakdown */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div className="bg-slate-800/50 rounded-xl p-6 border border-slate-700">
+          <h3 className="text-lg font-medium text-white mb-4">Incidents by Category</h3>
+          <ResponsiveContainer width="100%" height={280}>
+            <BarChart data={chartData} layout="vertical">
+              <XAxis type="number" stroke="#94a3b8" />
+              <YAxis type="category" dataKey="name" stroke="#94a3b8" width={80} />
+              <Tooltip
+                contentStyle={{ backgroundColor: '#1e293b', border: '1px solid #334155', borderRadius: '8px' }}
+                labelStyle={{ color: '#fff' }}
+              />
+              <Bar dataKey="count" radius={[0, 4, 4, 0]}>
+                {chartData.map((entry, index) => (
+                  <Cell key={`cell-${index}`} fill={entry.color} />
+                ))}
+              </Bar>
+            </BarChart>
+          </ResponsiveContainer>
         </div>
-        <div className="bg-red-500/10 border border-red-500/20 rounded-xl p-6">
-          <div className="flex items-center gap-3 mb-4">
-            <XCircle className="text-red-400" size={24} />
-            <h3 className="text-lg font-medium text-white">Network Offline</h3>
+
+        <div className="bg-slate-800/50 rounded-xl p-6 border border-slate-700">
+          <h3 className="text-lg font-medium text-white mb-4">Category Summary</h3>
+          <div className="space-y-3">
+            {byCategory.map(item => (
+              <div key={item.category} className="flex items-center justify-between p-3 bg-slate-700/30 rounded-lg">
+                <div className="flex items-center gap-3">
+                  <span style={{ color: categoryColors[item.category] }}>
+                    {categoryIcons[item.category]}
+                  </span>
+                  <span className="text-slate-300">{item.category}</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="text-white font-semibold">{item.count}</span>
+                  <span className="text-slate-500 text-sm">
+                    ({Math.round((item.count / incidentStats.total) * 100)}%)
+                  </span>
+                </div>
+              </div>
+            ))}
           </div>
-          <p className="text-4xl font-bold text-red-400">{networkOffline}</p>
-          <p className="text-slate-400 mt-2">Stores with no connectivity</p>
-        </div>
-        <div className="bg-purple-500/10 border border-purple-500/20 rounded-xl p-6">
-          <div className="flex items-center gap-3 mb-4">
-            <AlertTriangle className="text-purple-400" size={24} />
-            <h3 className="text-lg font-medium text-white">Full Outage</h3>
-          </div>
-          <p className="text-4xl font-bold text-purple-400">{bothOffline}</p>
-          <p className="text-slate-400 mt-2">Both systems completely down</p>
         </div>
       </div>
 
+      {/* Incident list */}
       <div className="bg-slate-800/50 rounded-xl p-6 border border-slate-700">
         <h3 className="text-lg font-medium text-white mb-4">Incident List</h3>
         <div className="overflow-x-auto">
           <table className="w-full">
             <thead>
               <tr className="border-b border-slate-700">
-                <th className="text-left py-3 px-4 text-slate-400 font-medium">Severity</th>
+                <th className="text-left py-3 px-4 text-slate-400 font-medium">ID</th>
+                <th className="text-left py-3 px-4 text-slate-400 font-medium">Priority</th>
+                <th className="text-left py-3 px-4 text-slate-400 font-medium">Category</th>
                 <th className="text-left py-3 px-4 text-slate-400 font-medium">Store</th>
-                <th className="text-left py-3 px-4 text-slate-400 font-medium">Brand</th>
                 <th className="text-left py-3 px-4 text-slate-400 font-medium">Location</th>
-                <th className="text-left py-3 px-4 text-slate-400 font-medium">Issue</th>
-                <th className="text-left py-3 px-4 text-slate-400 font-medium">POS</th>
-                <th className="text-left py-3 px-4 text-slate-400 font-medium">Network</th>
-                <th className="text-left py-3 px-4 text-slate-400 font-medium">Last Updated</th>
+                <th className="text-left py-3 px-4 text-slate-400 font-medium">Summary</th>
+                <th className="text-left py-3 px-4 text-slate-400 font-medium">Created</th>
               </tr>
             </thead>
             <tbody>
-              {incidentStores.slice(0, 50).map(store => {
-                const severity = getSeverity(store);
-                return (
-                  <tr key={store.id} className="border-b border-slate-700/50 hover:bg-slate-700/30">
-                    <td className="py-3 px-4">
-                      <span className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-sm font-medium ${
-                        severity === 'critical' 
-                          ? 'bg-red-500/20 text-red-400' 
-                          : 'bg-yellow-500/20 text-yellow-400'
-                      }`}>
-                        {severity === 'critical' ? <XCircle size={14} /> : <AlertCircle size={14} />}
-                        {severity === 'critical' ? 'Critical' : 'Warning'}
+              {incidents.slice(0, 50).map(incident => (
+                <tr key={incident.id} className="border-b border-slate-700/50 hover:bg-slate-700/30">
+                  <td className="py-3 px-4 text-white font-mono text-sm">{incident.id}</td>
+                  <td className="py-3 px-4">
+                    <span className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-sm font-medium ${priorityColors[incident.priority]}`}>
+                      {priorityIcons[incident.priority]}
+                      {incident.priority}
+                    </span>
+                  </td>
+                  <td className="py-3 px-4">
+                    <div className="flex items-center gap-2">
+                      <span style={{ color: categoryColors[incident.category] }}>
+                        {categoryIcons[incident.category]}
                       </span>
-                    </td>
-                    <td className="py-3 px-4">
-                      <div>
-                        <span className="text-white font-medium">{store.id}</span>
-                        <p className="text-slate-400 text-sm truncate max-w-[200px]">{store.name}</p>
-                      </div>
-                    </td>
-                    <td className="py-3 px-4 text-slate-300">{store.brand}</td>
-                    <td className="py-3 px-4">
-                      <div className="flex items-center gap-1 text-slate-300">
-                        <MapPin size={14} className="text-slate-500" />
-                        {store.city}, {store.state}
-                      </div>
-                    </td>
-                    <td className="py-3 px-4 text-slate-300 text-sm">{getIssueDescription(store)}</td>
-                    <td className="py-3 px-4">
-                      <StatusBadge status={store.posStatus} size="sm" />
-                    </td>
-                    <td className="py-3 px-4">
-                      <StatusBadge status={store.networkStatus} size="sm" />
-                    </td>
-                    <td className="py-3 px-4">
-                      <div className="flex items-center gap-1 text-slate-400 text-sm">
-                        <Clock size={14} />
-                        {new Date(store.lastUpdated).toLocaleTimeString()}
-                      </div>
-                    </td>
-                  </tr>
-                );
-              })}
+                      <span className="text-slate-300 text-sm">{incident.category}</span>
+                    </div>
+                  </td>
+                  <td className="py-3 px-4">
+                    <div>
+                      <span className="text-white font-medium">{incident.storeId}</span>
+                      <span className="text-slate-500 text-sm ml-2">({incident.brand})</span>
+                    </div>
+                  </td>
+                  <td className="py-3 px-4">
+                    <div className="flex items-center gap-1 text-slate-300 text-sm">
+                      <MapPin size={14} className="text-slate-500" />
+                      {incident.city}, {incident.state}
+                    </div>
+                  </td>
+                  <td className="py-3 px-4 text-slate-300 text-sm max-w-[250px] truncate">
+                    {incident.summary}
+                  </td>
+                  <td className="py-3 px-4">
+                    <div className="flex items-center gap-1 text-slate-400 text-sm">
+                      <Clock size={14} />
+                      {formatTimeAgo(incident.createdAt)}
+                    </div>
+                  </td>
+                </tr>
+              ))}
             </tbody>
           </table>
         </div>
-        {incidentStores.length > 50 && (
+        {incidents.length > 50 && (
           <p className="text-slate-400 text-sm mt-4 text-center">
-            Showing 50 of {incidentStores.length} incidents
+            Showing 50 of {incidents.length} open incidents
           </p>
         )}
       </div>

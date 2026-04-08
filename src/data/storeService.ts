@@ -1,6 +1,6 @@
 import rawStoresData from './stores.json';
-import type { Store, Brand, SystemStatus, DeviceInventory, BrandSummary, RegionSummary, RawStore, NetworkedDevice, PassiveDevice } from './types';
-import { fleetTotalsByBrand, storeCountsByBrand } from './types';
+import type { Store, Brand, SystemStatus, DeviceInventory, BrandSummary, RegionSummary, RawStore, NetworkedDevice, PassiveDevice, Incident, IncidentCategory, IncidentPriority } from './types';
+import { fleetTotalsByBrand, storeCountsByBrand, incidentCategories } from './types';
 export * from './types';
 
 function generateStatus(): SystemStatus {
@@ -84,6 +84,145 @@ function generateStores(): Store[] {
 export const stores = generateStores();
 
 export const regions = [...new Set(stores.map(s => s.region))].sort();
+
+// Incident generation
+const incidentSummaries: Record<IncidentCategory, string[]> = {
+  'Accounts and Access': [
+    'User unable to login to POS system',
+    'Password reset required for store manager',
+    'New employee account setup needed',
+    'Access permissions issue for inventory system',
+    'SSO authentication failing',
+  ],
+  'Application': [
+    'POS application crashing intermittently',
+    'Inventory management app not syncing',
+    'Mobile checkout app frozen',
+    'Report generation failing',
+    'Application timeout errors',
+  ],
+  'Hardware': [
+    'Receipt printer paper jam',
+    'Pin pad not responding',
+    'Barcode scanner malfunction',
+    'POS terminal screen flickering',
+    'Cash drawer stuck closed',
+    'iPad not charging',
+    'Laser printer offline',
+  ],
+  'Miscellaneous': [
+    'General technical support request',
+    'Training request for new system',
+    'Equipment relocation assistance',
+    'Store renovation IT coordination',
+  ],
+  'Network': [
+    'Internet connectivity intermittent',
+    'WiFi access point offline',
+    'VoIP phone quality issues',
+    'Network switch failure',
+    'Slow network performance',
+    'VPN connection dropping',
+  ],
+  'Security': [
+    'Suspicious login attempt detected',
+    'Security camera offline',
+    'Badge reader malfunction',
+    'Security software update required',
+    'PCI compliance scan failed',
+  ],
+  'Software': [
+    'Software update failed',
+    'Operating system patch needed',
+    'Driver update required',
+    'Antivirus definition outdated',
+    'Database sync error',
+  ],
+};
+
+function generateIncidents(): Incident[] {
+  const incidents: Incident[] = [];
+  const numIncidents = Math.floor(Math.random() * 80) + 40; // 40-120 incidents
+  
+  for (let i = 0; i < numIncidents; i++) {
+    const store = stores[Math.floor(Math.random() * stores.length)];
+    const category = incidentCategories[Math.floor(Math.random() * incidentCategories.length)];
+    const summaries = incidentSummaries[category];
+    const summary = summaries[Math.floor(Math.random() * summaries.length)];
+    
+    // Weight priorities: more medium/low, fewer critical
+    const priorityRand = Math.random();
+    let priority: IncidentPriority;
+    if (priorityRand < 0.1) priority = 'Critical';
+    else if (priorityRand < 0.3) priority = 'High';
+    else if (priorityRand < 0.6) priority = 'Medium';
+    else priority = 'Low';
+    
+    const createdAt = new Date(Date.now() - Math.random() * 7 * 24 * 60 * 60 * 1000); // Within last 7 days
+    const updatedAt = new Date(createdAt.getTime() + Math.random() * (Date.now() - createdAt.getTime()));
+    
+    incidents.push({
+      id: `INC${String(100000 + i).slice(1)}`,
+      storeId: store.id,
+      storeName: store.name,
+      brand: store.brand,
+      city: store.city,
+      state: store.state,
+      category,
+      priority,
+      summary,
+      createdAt: createdAt.toISOString(),
+      updatedAt: updatedAt.toISOString(),
+    });
+  }
+  
+  // Sort by priority (Critical first) then by created date (newest first)
+  const priorityOrder: Record<IncidentPriority, number> = { Critical: 0, High: 1, Medium: 2, Low: 3 };
+  return incidents.sort((a, b) => {
+    if (priorityOrder[a.priority] !== priorityOrder[b.priority]) {
+      return priorityOrder[a.priority] - priorityOrder[b.priority];
+    }
+    return new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime();
+  });
+}
+
+export const incidents = generateIncidents();
+
+export function getIncidentsByCategory(): Record<IncidentCategory, Incident[]> {
+  const byCategory: Record<IncidentCategory, Incident[]> = {
+    'Accounts and Access': [],
+    'Application': [],
+    'Hardware': [],
+    'Miscellaneous': [],
+    'Network': [],
+    'Security': [],
+    'Software': [],
+  };
+  
+  incidents.forEach(incident => {
+    byCategory[incident.category].push(incident);
+  });
+  
+  return byCategory;
+}
+
+export function getIncidentStats() {
+  const byCategory = getIncidentsByCategory();
+  const byPriority: Record<IncidentPriority, number> = { Critical: 0, High: 0, Medium: 0, Low: 0 };
+  
+  incidents.forEach(incident => {
+    byPriority[incident.priority]++;
+  });
+  
+  return {
+    total: incidents.length,
+    byCategory: Object.entries(byCategory).map(([category, items]) => ({
+      category: category as IncidentCategory,
+      count: items.length,
+    })),
+    byPriority,
+  };
+}
 
 // Hierarchy helpers: Brand → Zone → Region → District → Store
 export function getZonesByBrand(brand?: Brand): string[] {

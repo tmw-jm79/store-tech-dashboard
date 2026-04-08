@@ -167,3 +167,39 @@ export const brandNames: Record<Brand, string> = {
   'MSP': 'Moores',
   'JAB': 'JoS. A. Bank'
 };
+
+// Incident types
+export type IncidentCategory = 
+  | 'Accounts and Access'
+  | 'Application'
+  | 'Hardware'
+  | 'Miscellaneous'
+  | 'Network'
+  | 'Security'
+  | 'Software';
+
+export type IncidentPriority = 'Critical' | 'High' | 'Medium' | 'Low';
+
+export interface Incident {
+  id: string;
+  storeId: string;
+  storeName: string;
+  brand: Brand;
+  city: string;
+  state: string;
+  category: IncidentCategory;
+  priority: IncidentPriority;
+  summary: string;
+  createdAt: string;
+  updatedAt: string;
+}
+
+export const incidentCategories: IncidentCategory[] = [
+  'Accounts and Access',
+  'Application',
+  'Hardware',
+  'Miscellaneous',
+  'Network',
+  'Security',
+  'Software',
+];

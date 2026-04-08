@@ -12,8 +12,9 @@ import {
   getBrandSummaries,
   getRegionSummaries,
   getOverallStats,
-  getIncidentStores,
   getStoresByHierarchy,
+  incidents,
+  getIncidentStats,
   type HierarchyFilter,
 } from './data/storeService';
 
@@ -31,7 +32,7 @@ function App() {
   const stats = getOverallStats();
   const brandSummaries = getBrandSummaries();
   const regionSummaries = getRegionSummaries();
-  const incidentStores = getIncidentStores();
+  const incidentStats = getIncidentStats();
 
   const renderView = () => {
     switch (currentView) {
@@ -41,7 +42,7 @@ function App() {
             stats={stats}
             brandSummaries={brandSummaries}
             regionSummaries={regionSummaries}
-            incidentCount={incidentStores.length}
+            incidentCount={incidents.length}
           />
         );
       case 'pos':
@@ -51,7 +52,7 @@ function App() {
       case 'devices':
         return <DevicesView stores={filteredStores} stats={stats} brandSummaries={brandSummaries} />;
       case 'incidents':
-        return <IncidentsView incidentStores={incidentStores} />;
+        return <IncidentsView incidents={incidents} incidentStats={incidentStats} />;
       case 'stores':
         return <StoresView stores={filteredStores} />;
       default:
@@ -66,7 +67,7 @@ function App() {
         <Sidebar
           currentView={currentView}
           onViewChange={setCurrentView}
-          incidentCount={incidentStores.length}
+          incidentCount={incidents.length}
         />
         <main className="flex-1 p-6">
           {currentView !== 'overview' && currentView !== 'incidents' && (
