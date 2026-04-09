@@ -57,7 +57,7 @@ export function IncidentsView({ incidents, incidentStats }: IncidentsViewProps) 
   const { byCategory, byPriority } = incidentStats;
 
   const chartData = byCategory.map(item => ({
-    name: item.category.replace('Accounts and Access', 'Access'),
+    name: item.category,
     count: item.count,
     color: categoryColors[item.category],
   }));
@@ -111,8 +111,8 @@ export function IncidentsView({ incidents, incidentStats }: IncidentsViewProps) 
           <h3 className="text-lg font-medium text-white mb-4">Incidents by Category</h3>
           <ResponsiveContainer width="100%" height={280}>
             <BarChart data={chartData} layout="vertical">
-              <XAxis type="number" stroke="#94a3b8" />
-              <YAxis type="category" dataKey="name" stroke="#94a3b8" width={80} />
+              <XAxis type="number" stroke="#94a3b8" allowDecimals={false} />
+              <YAxis type="category" dataKey="name" stroke="#94a3b8" width={120} />
               <Tooltip
                 contentStyle={{ backgroundColor: '#1e293b', border: '1px solid #334155', borderRadius: '8px' }}
                 labelStyle={{ color: '#fff' }}
