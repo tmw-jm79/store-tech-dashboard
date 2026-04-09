@@ -22,6 +22,7 @@ function App() {
   const [currentView, setCurrentView] = useState<View>('overview');
   const [filter, setFilter] = useState<HierarchyFilter>({});
   const [lastUpdated, setLastUpdated] = useState(new Date().toISOString());
+  const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
 
   const handleRefresh = useCallback(() => {
     setLastUpdated(new Date().toISOString());
@@ -96,6 +97,8 @@ function App() {
           currentView={currentView}
           onViewChange={setCurrentView}
           incidentCount={incidents.length}
+          collapsed={sidebarCollapsed}
+          onToggleCollapse={() => setSidebarCollapsed(!sidebarCollapsed)}
         />
         <main className="flex-1 p-6">
           {currentView !== 'overview' && (
