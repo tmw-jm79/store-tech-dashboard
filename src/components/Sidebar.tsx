@@ -1,6 +1,6 @@
-import { LayoutDashboard, Monitor, Wifi, HardDrive, AlertTriangle, Store } from 'lucide-react';
+import { LayoutDashboard, Monitor, Wifi, HardDrive, AlertTriangle, Store, Map } from 'lucide-react';
 
-type View = 'overview' | 'pos' | 'network' | 'devices' | 'incidents' | 'stores';
+type View = 'overview' | 'pos' | 'network' | 'devices' | 'incidents' | 'stores' | 'map';
 
 interface SidebarProps {
   currentView: View;
@@ -16,6 +16,7 @@ export function Sidebar({ currentView, onViewChange, incidentCount }: SidebarPro
     { id: 'devices', label: 'Device Inventory', icon: <HardDrive size={20} /> },
     { id: 'incidents', label: 'Incidents', icon: <AlertTriangle size={20} /> },
     { id: 'stores', label: 'All Stores', icon: <Store size={20} /> },
+    { id: 'map', label: 'Store Map', icon: <Map size={20} /> },
   ];
 
   return (

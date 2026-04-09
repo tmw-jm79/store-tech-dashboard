@@ -8,6 +8,7 @@ import { NetworkView } from './views/NetworkView';
 import { DevicesView } from './views/DevicesView';
 import { IncidentsView } from './views/IncidentsView';
 import { StoresView } from './views/StoresView';
+import { MapView } from './views/MapView';
 import {
   getBrandSummaries,
   getRegionSummaries,
@@ -80,6 +81,8 @@ function App() {
         return <IncidentsView incidents={filteredIncidents} incidentStats={filteredIncidentStats} />;
       case 'stores':
         return <StoresView stores={filteredStores} />;
+      case 'map':
+        return <MapView stores={filteredStores} />;
       default:
         return null;
     }
