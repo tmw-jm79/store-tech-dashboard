@@ -105,7 +105,10 @@ function App() {
       <div className="flex">
         <Sidebar
           currentView={currentView}
-          onViewChange={setCurrentView}
+          onViewChange={(view) => {
+            setCurrentView(view);
+            setSelectedStoreId(null);
+          }}
           incidentCount={incidents.length}
           collapsed={sidebarCollapsed}
           onToggleCollapse={() => setSidebarCollapsed(!sidebarCollapsed)}
