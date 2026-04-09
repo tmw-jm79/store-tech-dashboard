@@ -7,6 +7,7 @@ import 'leaflet/dist/leaflet.css';
 
 interface MapViewProps {
   stores: Store[];
+  onSelectStore?: (storeId: string) => void;
 }
 
 // Component to handle map bounds based on visible stores
@@ -43,7 +44,7 @@ function getStatusLabel(store: Store): string {
   return 'Healthy';
 }
 
-export function MapView({ stores }: MapViewProps) {
+export function MapView({ stores, onSelectStore }: MapViewProps) {
   // Filter stores with valid coordinates
   const storesWithCoords = stores.filter(s => s.latitude !== 0 && s.longitude !== 0);
 
@@ -130,7 +131,7 @@ export function MapView({ stores }: MapViewProps) {
                       {store.posStatus}
                     </span>
                   </div>
-                  <div className="text-sm">
+                  <div className="text-sm mb-3">
                     <span className="font-medium">Network:</span>{' '}
                     <span className={
                       store.networkStatus === 'online' ? 'text-green-600' :
@@ -139,6 +140,14 @@ export function MapView({ stores }: MapViewProps) {
                       {store.networkStatus}
                     </span>
                   </div>
+                  {onSelectStore && (
+                    <button
+                      onClick={() => onSelectStore(store.id)}
+                      className="w-full bg-blue-500 hover:bg-blue-600 text-white text-sm py-1 px-2 rounded"
+                    >
+                      View Details
+                    </button>
+                  )}
                 </div>
               </Popup>
             </CircleMarker>

@@ -9,11 +9,13 @@ import { DevicesView } from './views/DevicesView';
 import { IncidentsView } from './views/IncidentsView';
 import { StoresView } from './views/StoresView';
 import { MapView } from './views/MapView';
+import { StoreDetailView } from './views/StoreDetailView';
 import {
   getBrandSummaries,
   getRegionSummaries,
   getOverallStats,
   getStoresByHierarchy,
+  stores,
   incidents,
   type HierarchyFilter,
 } from './data/storeService';
@@ -24,6 +26,7 @@ function App() {
   const [lastUpdated, setLastUpdated] = useState(new Date().toISOString());
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
   const [darkMode, setDarkMode] = useState(true);
+  const [selectedStoreId, setSelectedStoreId] = useState<string | null>(null);
 
   const handleRefresh = useCallback(() => {
     setLastUpdated(new Date().toISOString());
@@ -82,9 +85,9 @@ function App() {
       case 'incidents':
         return <IncidentsView incidents={filteredIncidents} incidentStats={filteredIncidentStats} />;
       case 'stores':
-        return <StoresView stores={filteredStores} />;
+        return <StoresView stores={filteredStores} onSelectStore={setSelectedStoreId} />;
       case 'map':
-        return <MapView stores={filteredStores} />;
+        return <MapView stores={filteredStores} onSelectStore={setSelectedStoreId} />;
       default:
         return null;
     }
@@ -108,16 +111,26 @@ function App() {
           darkMode={darkMode}
         />
         <main className="flex-1 p-6">
-          {currentView !== 'overview' && (
-            <div className="mb-6">
-              <FilterBar
-                filter={filter}
-                onFilterChange={setFilter}
-                darkMode={darkMode}
-              />
-            </div>
+          {selectedStoreId ? (
+            <StoreDetailView
+              store={stores.find(s => s.id === selectedStoreId)!}
+              incidents={incidents}
+              onBack={() => setSelectedStoreId(null)}
+            />
+          ) : (
+            <>
+              {currentView !== 'overview' && (
+                <div className="mb-6">
+                  <FilterBar
+                    filter={filter}
+                    onFilterChange={setFilter}
+                    darkMode={darkMode}
+                  />
+                </div>
+              )}
+              {renderView()}
+            </>
           )}
-          {renderView()}
         </main>
       </div>
     </div>

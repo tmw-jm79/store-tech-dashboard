@@ -5,9 +5,10 @@ import type { Store } from '../data/storeService';
 
 interface StoresViewProps {
   stores: Store[];
+  onSelectStore?: (storeId: string) => void;
 }
 
-export function StoresView({ stores }: StoresViewProps) {
+export function StoresView({ stores, onSelectStore }: StoresViewProps) {
   const [search, setSearch] = useState('');
   const [page, setPage] = useState(1);
   const [sortBy, setSortBy] = useState<'id' | 'name' | 'brand' | 'region'>('id');
@@ -115,8 +116,12 @@ export function StoresView({ stores }: StoresViewProps) {
             </thead>
             <tbody>
               {paginatedStores.map(store => (
-                <tr key={store.id} className="border-b border-slate-700/50 hover:bg-slate-700/30">
-                  <td className="py-3 px-4 text-white font-mono">{store.id}</td>
+                <tr 
+                  key={store.id} 
+                  className={`border-b border-slate-700/50 hover:bg-slate-700/30 ${onSelectStore ? 'cursor-pointer' : ''}`}
+                  onClick={() => onSelectStore?.(store.id)}
+                >
+                  <td className="py-3 px-4 text-blue-400 font-mono hover:text-blue-300">{store.id}</td>
                   <td className="py-3 px-4 text-slate-300 max-w-[200px] truncate">{store.name}</td>
                   <td className="py-3 px-4 text-slate-300">{store.brand}</td>
                   <td className="py-3 px-4 text-slate-300">{store.region}</td>
