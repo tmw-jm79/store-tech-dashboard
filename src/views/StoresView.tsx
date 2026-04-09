@@ -6,9 +6,20 @@ import type { Store } from '../data/storeService';
 interface StoresViewProps {
   stores: Store[];
   onSelectStore?: (storeId: string) => void;
+  darkMode?: boolean;
 }
 
-export function StoresView({ stores, onSelectStore }: StoresViewProps) {
+export function StoresView({ stores, onSelectStore, darkMode = true }: StoresViewProps) {
+  const cardBg = darkMode ? 'bg-slate-800/50 border-slate-700' : 'bg-white border-gray-200 shadow-sm';
+  const textPrimary = darkMode ? 'text-white' : 'text-gray-900';
+  const textSecondary = darkMode ? 'text-slate-300' : 'text-gray-600';
+  const textMuted = darkMode ? 'text-slate-400' : 'text-gray-500';
+  const borderColor = darkMode ? 'border-slate-700' : 'border-gray-200';
+  const hoverBg = darkMode ? 'hover:bg-slate-700/30' : 'hover:bg-gray-50';
+  const inputBg = darkMode ? 'bg-slate-800 border-slate-700' : 'bg-white border-gray-300';
+  const headerBg = darkMode ? 'bg-slate-800' : 'bg-gray-50';
+  const btnBg = darkMode ? 'bg-slate-700 hover:bg-slate-600' : 'bg-gray-100 hover:bg-gray-200';
+
   const [search, setSearch] = useState('');
   const [page, setPage] = useState(1);
   const [sortBy, setSortBy] = useState<'id' | 'name' | 'brand' | 'region'>('id');
@@ -66,13 +77,13 @@ export function StoresView({ stores, onSelectStore }: StoresViewProps) {
 
   const SortHeader = ({ column, label }: { column: typeof sortBy; label: string }) => (
     <th 
-      className="text-left py-3 px-4 text-slate-400 font-medium cursor-pointer hover:text-white"
+      className={`text-left py-3 px-4 ${textMuted} font-medium cursor-pointer ${darkMode ? 'hover:text-white' : 'hover:text-gray-900'}`}
       onClick={() => handleSort(column)}
     >
       <span className="flex items-center gap-1">
         {label}
         {sortBy === column && (
-          <span className="text-blue-400">{sortOrder === 'asc' ? '↑' : '↓'}</span>
+          <span className="text-blue-500">{sortOrder === 'asc' ? '↑' : '↓'}</span>
         )}
       </span>
     </th>
@@ -81,12 +92,12 @@ export function StoresView({ stores, onSelectStore }: StoresViewProps) {
   return (
     <div className="space-y-6">
       <div className="flex items-center justify-between">
-        <h2 className="text-xl font-semibold text-white">All Stores</h2>
-        <span className="text-slate-400">{filteredStores.length.toLocaleString()} stores</span>
+        <h2 className={`text-xl font-semibold ${textPrimary}`}>All Stores</h2>
+        <span className={textMuted}>{filteredStores.length.toLocaleString()} stores</span>
       </div>
 
       <div className="relative">
-        <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" size={20} />
+        <Search className={`absolute left-3 top-1/2 -translate-y-1/2 ${textMuted}`} size={20} />
         <input
           type="text"
           placeholder="Search by ID, name, brand, city, state, or region..."
@@ -95,44 +106,44 @@ export function StoresView({ stores, onSelectStore }: StoresViewProps) {
             setSearch(e.target.value);
             setPage(1);
           }}
-          className="w-full bg-slate-800 text-white rounded-lg pl-10 pr-4 py-3 border border-slate-700 focus:border-blue-500 focus:outline-none"
+          className={`w-full ${inputBg} ${textPrimary} rounded-lg pl-10 pr-4 py-3 border focus:border-blue-500 focus:outline-none`}
         />
       </div>
 
-      <div className="bg-slate-800/50 rounded-xl border border-slate-700 overflow-hidden">
+      <div className={`rounded-xl border ${cardBg} overflow-hidden`}>
         <div className="overflow-x-auto">
           <table className="w-full">
-            <thead className="bg-slate-800">
-              <tr className="border-b border-slate-700">
+            <thead className={headerBg}>
+              <tr className={`border-b ${borderColor}`}>
                 <SortHeader column="id" label="Store ID" />
                 <SortHeader column="name" label="Name" />
                 <SortHeader column="brand" label="Brand" />
                 <SortHeader column="region" label="Region" />
-                <th className="text-left py-3 px-4 text-slate-400 font-medium">Location</th>
-                <th className="text-left py-3 px-4 text-slate-400 font-medium">POS</th>
-                <th className="text-left py-3 px-4 text-slate-400 font-medium">Network</th>
-                <th className="text-right py-3 px-4 text-slate-400 font-medium">Devices</th>
+                <th className={`text-left py-3 px-4 ${textMuted} font-medium`}>Location</th>
+                <th className={`text-left py-3 px-4 ${textMuted} font-medium`}>POS</th>
+                <th className={`text-left py-3 px-4 ${textMuted} font-medium`}>Network</th>
+                <th className={`text-right py-3 px-4 ${textMuted} font-medium`}>Devices</th>
               </tr>
             </thead>
             <tbody>
               {paginatedStores.map(store => (
                 <tr 
                   key={store.id} 
-                  className={`border-b border-slate-700/50 hover:bg-slate-700/30 ${onSelectStore ? 'cursor-pointer' : ''}`}
+                  className={`border-b ${borderColor}/50 ${hoverBg} ${onSelectStore ? 'cursor-pointer' : ''}`}
                   onClick={() => onSelectStore?.(store.id)}
                 >
-                  <td className="py-3 px-4 text-blue-400 font-mono hover:text-blue-300">{store.id}</td>
-                  <td className="py-3 px-4 text-slate-300 max-w-[200px] truncate">{store.name}</td>
-                  <td className="py-3 px-4 text-slate-300">{store.brand}</td>
-                  <td className="py-3 px-4 text-slate-300">{store.region}</td>
-                  <td className="py-3 px-4 text-slate-300">{store.city}, {store.state}</td>
+                  <td className="py-3 px-4 text-blue-500 font-mono hover:text-blue-400">{store.id}</td>
+                  <td className={`py-3 px-4 ${textSecondary} max-w-[200px] truncate`}>{store.name}</td>
+                  <td className={`py-3 px-4 ${textSecondary}`}>{store.brand}</td>
+                  <td className={`py-3 px-4 ${textSecondary}`}>{store.region}</td>
+                  <td className={`py-3 px-4 ${textSecondary}`}>{store.city}, {store.state}</td>
                   <td className="py-3 px-4">
                     <StatusBadge status={store.posStatus} size="sm" />
                   </td>
                   <td className="py-3 px-4">
                     <StatusBadge status={store.networkStatus} size="sm" />
                   </td>
-                  <td className="py-3 px-4 text-right text-slate-300">
+                  <td className={`py-3 px-4 text-right ${textSecondary}`}>
                     {store.devices.posComputers.total + store.devices.iPads.total + store.devices.pinPads.total + 
                      store.devices.receiptPrinters.total + store.devices.laserPrinters.total}
                   </td>
@@ -142,25 +153,25 @@ export function StoresView({ stores, onSelectStore }: StoresViewProps) {
           </table>
         </div>
 
-        <div className="flex items-center justify-between px-4 py-3 bg-slate-800 border-t border-slate-700">
-          <span className="text-slate-400 text-sm">
+        <div className={`flex items-center justify-between px-4 py-3 ${headerBg} border-t ${borderColor}`}>
+          <span className={`${textMuted} text-sm`}>
             Showing {((page - 1) * pageSize) + 1} - {Math.min(page * pageSize, filteredStores.length)} of {filteredStores.length.toLocaleString()}
           </span>
           <div className="flex items-center gap-2">
             <button
               onClick={() => setPage(p => Math.max(1, p - 1))}
               disabled={page === 1}
-              className="p-2 rounded-lg bg-slate-700 text-white disabled:opacity-50 disabled:cursor-not-allowed hover:bg-slate-600"
+              className={`p-2 rounded-lg ${btnBg} ${textPrimary} disabled:opacity-50 disabled:cursor-not-allowed`}
             >
               <ChevronLeft size={20} />
             </button>
-            <span className="text-white px-3">
+            <span className={`${textPrimary} px-3`}>
               Page {page} of {totalPages}
             </span>
             <button
               onClick={() => setPage(p => Math.min(totalPages, p + 1))}
               disabled={page === totalPages}
-              className="p-2 rounded-lg bg-slate-700 text-white disabled:opacity-50 disabled:cursor-not-allowed hover:bg-slate-600"
+              className={`p-2 rounded-lg ${btnBg} ${textPrimary} disabled:opacity-50 disabled:cursor-not-allowed`}
             >
               <ChevronRight size={20} />
             </button>

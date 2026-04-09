@@ -10,6 +10,7 @@ interface IncidentsViewProps {
     byCategory: { category: IncidentCategory; count: number }[];
     byPriority: Record<IncidentPriority, number>;
   };
+  darkMode?: boolean;
 }
 
 const categoryIcons: Record<IncidentCategory, React.ReactNode> = {
@@ -33,10 +34,10 @@ const categoryColors: Record<IncidentCategory, string> = {
 };
 
 const priorityColors: Record<IncidentPriority, string> = {
-  Critical: 'bg-red-500/20 text-red-400',
-  High: 'bg-orange-500/20 text-orange-400',
-  Medium: 'bg-yellow-500/20 text-yellow-400',
-  Low: 'bg-blue-500/20 text-blue-400',
+  Critical: 'bg-red-500/20 text-red-500',
+  High: 'bg-orange-500/20 text-orange-500',
+  Medium: 'bg-yellow-500/20 text-yellow-600',
+  Low: 'bg-blue-500/20 text-blue-500',
 };
 
 const priorityIcons: Record<IncidentPriority, React.ReactNode> = {
@@ -47,13 +48,22 @@ const priorityIcons: Record<IncidentPriority, React.ReactNode> = {
 };
 
 const statusColors: Record<IncidentStatus, string> = {
-  'New': 'bg-blue-500/20 text-blue-400',
-  'In Progress': 'bg-emerald-500/20 text-emerald-400',
-  'Pending': 'bg-yellow-500/20 text-yellow-400',
-  'On Hold': 'bg-slate-500/20 text-slate-400',
+  'New': 'bg-blue-500/20 text-blue-500',
+  'In Progress': 'bg-emerald-500/20 text-emerald-500',
+  'Pending': 'bg-yellow-500/20 text-yellow-600',
+  'On Hold': 'bg-slate-500/20 text-slate-500',
 };
 
-export function IncidentsView({ incidents, incidentStats }: IncidentsViewProps) {
+export function IncidentsView({ incidents, incidentStats, darkMode = true }: IncidentsViewProps) {
+  const cardBg = darkMode ? 'bg-slate-800/50 border-slate-700' : 'bg-white border-gray-200 shadow-sm';
+  const innerCardBg = darkMode ? 'bg-slate-700/30' : 'bg-gray-50';
+  const textPrimary = darkMode ? 'text-white' : 'text-gray-900';
+  const textSecondary = darkMode ? 'text-slate-300' : 'text-gray-600';
+  const textMuted = darkMode ? 'text-slate-400' : 'text-gray-500';
+  const borderColor = darkMode ? 'border-slate-700' : 'border-gray-200';
+  const hoverBg = darkMode ? 'hover:bg-slate-700/30' : 'hover:bg-gray-50';
+  const axisColor = darkMode ? '#94a3b8' : '#6b7280';
+
   const { byCategory, byPriority } = incidentStats;
 
   const chartData = byCategory.map(item => ({
@@ -64,84 +74,43 @@ export function IncidentsView({ incidents, incidentStats }: IncidentsViewProps) 
 
   return (
     <div className="space-y-6">
-      <h2 className="text-xl font-semibold text-white">Open Incidents</h2>
+      <h2 className={`text-xl font-semibold ${textPrimary}`}>Open Incidents</h2>
 
-      {/* Priority summary cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
-        <StatCard
-          title="Total Open"
-          value={incidentStats.total}
-          subtitle="All categories"
-          icon={<AlertTriangle size={24} />}
-          color="blue"
-        />
-        <StatCard
-          title="Critical"
-          value={byPriority.Critical}
-          subtitle="Immediate attention"
-          icon={<XCircle size={24} />}
-          color="red"
-        />
-        <StatCard
-          title="High"
-          value={byPriority.High}
-          subtitle="Urgent priority"
-          icon={<AlertTriangle size={24} />}
-          color="yellow"
-        />
-        <StatCard
-          title="Medium"
-          value={byPriority.Medium}
-          subtitle="Standard priority"
-          icon={<AlertCircle size={24} />}
-          color="purple"
-        />
-        <StatCard
-          title="Low"
-          value={byPriority.Low}
-          subtitle="When available"
-          icon={<AlertCircle size={24} />}
-          color="green"
-        />
+        <StatCard title="Total Open" value={incidentStats.total} subtitle="All categories" icon={<AlertTriangle size={24} />} color="blue" darkMode={darkMode} />
+        <StatCard title="Critical" value={byPriority.Critical} subtitle="Immediate attention" icon={<XCircle size={24} />} color="red" darkMode={darkMode} />
+        <StatCard title="High" value={byPriority.High} subtitle="Urgent priority" icon={<AlertTriangle size={24} />} color="yellow" darkMode={darkMode} />
+        <StatCard title="Medium" value={byPriority.Medium} subtitle="Standard priority" icon={<AlertCircle size={24} />} color="purple" darkMode={darkMode} />
+        <StatCard title="Low" value={byPriority.Low} subtitle="When available" icon={<AlertCircle size={24} />} color="green" darkMode={darkMode} />
       </div>
 
-      {/* Category breakdown */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        <div className="bg-slate-800/50 rounded-xl p-6 border border-slate-700">
-          <h3 className="text-lg font-medium text-white mb-4">Incidents by Category</h3>
+        <div className={`rounded-xl p-6 border ${cardBg}`}>
+          <h3 className={`text-lg font-medium ${textPrimary} mb-4`}>Incidents by Category</h3>
           <ResponsiveContainer width="100%" height={280}>
             <BarChart data={chartData} layout="vertical">
-              <XAxis type="number" stroke="#94a3b8" allowDecimals={false} />
-              <YAxis type="category" dataKey="name" stroke="#94a3b8" width={120} />
-              <Tooltip
-                contentStyle={{ backgroundColor: '#1e293b', border: '1px solid #334155', borderRadius: '8px' }}
-                labelStyle={{ color: '#fff' }}
-              />
+              <XAxis type="number" stroke={axisColor} allowDecimals={false} />
+              <YAxis type="category" dataKey="name" stroke={axisColor} width={120} />
+              <Tooltip contentStyle={{ backgroundColor: darkMode ? '#1e293b' : '#ffffff', border: `1px solid ${darkMode ? '#334155' : '#e5e7eb'}`, borderRadius: '8px', color: darkMode ? '#fff' : '#111827' }} labelStyle={{ color: darkMode ? '#fff' : '#111827' }} />
               <Bar dataKey="count" radius={[0, 4, 4, 0]}>
-                {chartData.map((entry, index) => (
-                  <Cell key={`cell-${index}`} fill={entry.color} />
-                ))}
+                {chartData.map((entry, index) => (<Cell key={`cell-${index}`} fill={entry.color} />))}
               </Bar>
             </BarChart>
           </ResponsiveContainer>
         </div>
 
-        <div className="bg-slate-800/50 rounded-xl p-6 border border-slate-700">
-          <h3 className="text-lg font-medium text-white mb-4">Category Summary</h3>
+        <div className={`rounded-xl p-6 border ${cardBg}`}>
+          <h3 className={`text-lg font-medium ${textPrimary} mb-4`}>Category Summary</h3>
           <div className="space-y-3">
             {byCategory.map(item => (
-              <div key={item.category} className="flex items-center justify-between p-3 bg-slate-700/30 rounded-lg">
+              <div key={item.category} className={`flex items-center justify-between p-3 ${innerCardBg} rounded-lg`}>
                 <div className="flex items-center gap-3">
-                  <span style={{ color: categoryColors[item.category] }}>
-                    {categoryIcons[item.category]}
-                  </span>
-                  <span className="text-slate-300">{item.category}</span>
+                  <span style={{ color: categoryColors[item.category] }}>{categoryIcons[item.category]}</span>
+                  <span className={textSecondary}>{item.category}</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="text-white font-semibold">{item.count}</span>
-                  <span className="text-slate-500 text-sm">
-                    ({Math.round((item.count / incidentStats.total) * 100)}%)
-                  </span>
+                  <span className={`${textPrimary} font-semibold`}>{item.count}</span>
+                  <span className={`${textMuted} text-sm`}>({Math.round((item.count / incidentStats.total) * 100)}%)</span>
                 </div>
               </div>
             ))}
@@ -149,26 +118,25 @@ export function IncidentsView({ incidents, incidentStats }: IncidentsViewProps) 
         </div>
       </div>
 
-      {/* Incident grid */}
-      <div className="bg-slate-800/50 rounded-xl p-6 border border-slate-700">
-        <h3 className="text-lg font-medium text-white mb-4">Incident List</h3>
+      <div className={`rounded-xl p-6 border ${cardBg}`}>
+        <h3 className={`text-lg font-medium ${textPrimary} mb-4`}>Incident List</h3>
         <div className="overflow-x-auto">
           <table className="w-full">
             <thead>
-              <tr className="border-b border-slate-700">
-                <th className="text-left py-3 px-4 text-slate-400 font-medium">Store ID</th>
-                <th className="text-left py-3 px-4 text-slate-400 font-medium">Incident ID</th>
-                <th className="text-left py-3 px-4 text-slate-400 font-medium">Incident Summary</th>
-                <th className="text-left py-3 px-4 text-slate-400 font-medium">Priority</th>
-                <th className="text-left py-3 px-4 text-slate-400 font-medium">Status</th>
+              <tr className={`border-b ${borderColor}`}>
+                <th className={`text-left py-3 px-4 ${textMuted} font-medium`}>Store ID</th>
+                <th className={`text-left py-3 px-4 ${textMuted} font-medium`}>Incident ID</th>
+                <th className={`text-left py-3 px-4 ${textMuted} font-medium`}>Incident Summary</th>
+                <th className={`text-left py-3 px-4 ${textMuted} font-medium`}>Priority</th>
+                <th className={`text-left py-3 px-4 ${textMuted} font-medium`}>Status</th>
               </tr>
             </thead>
             <tbody>
               {incidents.slice(0, 50).map(incident => (
-                <tr key={incident.id} className="border-b border-slate-700/50 hover:bg-slate-700/30">
-                  <td className="py-3 px-4 text-white font-medium">{incident.storeId}</td>
-                  <td className="py-3 px-4 text-slate-300 font-mono text-sm">{incident.id}</td>
-                  <td className="py-3 px-4 text-slate-300">{incident.summary}</td>
+                <tr key={incident.id} className={`border-b ${borderColor}/50 ${hoverBg}`}>
+                  <td className={`py-3 px-4 ${textPrimary} font-medium`}>{incident.storeId}</td>
+                  <td className={`py-3 px-4 ${textSecondary} font-mono text-sm`}>{incident.id}</td>
+                  <td className={`py-3 px-4 ${textSecondary}`}>{incident.summary}</td>
                   <td className="py-3 px-4">
                     <span className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-sm font-medium ${priorityColors[incident.priority]}`}>
                       {priorityIcons[incident.priority]}
@@ -186,9 +154,7 @@ export function IncidentsView({ incidents, incidentStats }: IncidentsViewProps) 
           </table>
         </div>
         {incidents.length > 50 && (
-          <p className="text-slate-400 text-sm mt-4 text-center">
-            Showing 50 of {incidents.length} open incidents
-          </p>
+          <p className={`${textMuted} text-sm mt-4 text-center`}>Showing 50 of {incidents.length} open incidents</p>
         )}
       </div>
     </div>

@@ -19,9 +19,16 @@ interface OverviewViewProps {
   brandSummaries: BrandSummary[];
   regionSummaries: RegionSummary[];
   incidentCount: number;
+  darkMode?: boolean;
 }
 
-export function OverviewView({ stats, brandSummaries, regionSummaries, incidentCount }: OverviewViewProps) {
+export function OverviewView({ stats, brandSummaries, regionSummaries, incidentCount, darkMode = true }: OverviewViewProps) {
+  const cardBg = darkMode ? 'bg-slate-800/50 border-slate-700' : 'bg-white border-gray-200 shadow-sm';
+  const textPrimary = darkMode ? 'text-white' : 'text-gray-900';
+  const textSecondary = darkMode ? 'text-slate-300' : 'text-gray-600';
+  const textMuted = darkMode ? 'text-slate-400' : 'text-gray-500';
+  const borderColor = darkMode ? 'border-slate-700' : 'border-gray-200';
+  const hoverBg = darkMode ? 'hover:bg-slate-700/30' : 'hover:bg-gray-50';
   const posData = [
     { name: 'Online', value: stats.pos.online, color: '#10b981' },
     { name: 'Degraded', value: stats.pos.degraded, color: '#eab308' },
@@ -43,7 +50,7 @@ export function OverviewView({ stats, brandSummaries, regionSummaries, incidentC
 
   return (
     <div className="space-y-6">
-      <h2 className="text-xl font-semibold text-white">Operations Overview</h2>
+      <h2 className={`text-xl font-semibold ${textPrimary}`}>Operations Overview</h2>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
         <StatCard
@@ -52,6 +59,7 @@ export function OverviewView({ stats, brandSummaries, regionSummaries, incidentC
           subtitle={`${stats.totalBrands} brands`}
           icon={<Store size={24} />}
           color="blue"
+          darkMode={darkMode}
         />
         <StatCard
           title="POS Online"
@@ -59,6 +67,7 @@ export function OverviewView({ stats, brandSummaries, regionSummaries, incidentC
           subtitle={`${stats.pos.online.toLocaleString()} stores`}
           icon={<Monitor size={24} />}
           color="green"
+          darkMode={darkMode}
         />
         <StatCard
           title="Network Online"
@@ -66,6 +75,7 @@ export function OverviewView({ stats, brandSummaries, regionSummaries, incidentC
           subtitle={`${stats.network.online.toLocaleString()} stores`}
           icon={<Wifi size={24} />}
           color="green"
+          darkMode={darkMode}
         />
         <StatCard
           title="Devices Online"
@@ -73,6 +83,7 @@ export function OverviewView({ stats, brandSummaries, regionSummaries, incidentC
           subtitle={`${stats.devices.networkedOnline.toLocaleString()} of ${stats.devices.totalNetworked.toLocaleString()} networked`}
           icon={<HardDrive size={24} />}
           color="purple"
+          darkMode={darkMode}
         />
         <StatCard
           title="Active Incidents"
@@ -80,12 +91,13 @@ export function OverviewView({ stats, brandSummaries, regionSummaries, incidentC
           subtitle="Requires attention"
           icon={<AlertTriangle size={24} />}
           color={incidentCount > 50 ? 'red' : incidentCount > 20 ? 'yellow' : 'green'}
+          darkMode={darkMode}
         />
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        <div className="bg-slate-800/50 rounded-xl p-6 border border-slate-700">
-          <h3 className="text-lg font-medium text-white mb-4">POS System Status</h3>
+        <div className={`rounded-xl p-6 border ${cardBg}`}>
+          <h3 className={`text-lg font-medium ${textPrimary} mb-4`}>POS System Status</h3>
           <div className="flex items-center">
             <ResponsiveContainer width="50%" height={200}>
               <PieChart>
@@ -107,16 +119,16 @@ export function OverviewView({ stats, brandSummaries, regionSummaries, incidentC
               {posData.map(item => (
                 <div key={item.name} className="flex items-center gap-3">
                   <div className="w-3 h-3 rounded-full" style={{ backgroundColor: item.color }}></div>
-                  <span className="text-slate-300">{item.name}</span>
-                  <span className="text-white font-semibold">{item.value.toLocaleString()}</span>
+                  <span className={textSecondary}>{item.name}</span>
+                  <span className={`${textPrimary} font-semibold`}>{item.value.toLocaleString()}</span>
                 </div>
               ))}
             </div>
           </div>
         </div>
 
-        <div className="bg-slate-800/50 rounded-xl p-6 border border-slate-700">
-          <h3 className="text-lg font-medium text-white mb-4">Network Status</h3>
+        <div className={`rounded-xl p-6 border ${cardBg}`}>
+          <h3 className={`text-lg font-medium ${textPrimary} mb-4`}>Network Status</h3>
           <div className="flex items-center">
             <ResponsiveContainer width="50%" height={200}>
               <PieChart>
@@ -138,8 +150,8 @@ export function OverviewView({ stats, brandSummaries, regionSummaries, incidentC
               {networkData.map(item => (
                 <div key={item.name} className="flex items-center gap-3">
                   <div className="w-3 h-3 rounded-full" style={{ backgroundColor: item.color }}></div>
-                  <span className="text-slate-300">{item.name}</span>
-                  <span className="text-white font-semibold">{item.value.toLocaleString()}</span>
+                  <span className={textSecondary}>{item.name}</span>
+                  <span className={`${textPrimary} font-semibold`}>{item.value.toLocaleString()}</span>
                 </div>
               ))}
             </div>
@@ -147,15 +159,20 @@ export function OverviewView({ stats, brandSummaries, regionSummaries, incidentC
         </div>
       </div>
 
-      <div className="bg-slate-800/50 rounded-xl p-6 border border-slate-700">
-        <h3 className="text-lg font-medium text-white mb-4">Health by Brand</h3>
+      <div className={`rounded-xl p-6 border ${cardBg}`}>
+        <h3 className={`text-lg font-medium ${textPrimary} mb-4`}>Health by Brand</h3>
         <ResponsiveContainer width="100%" height={300}>
           <BarChart data={brandChartData}>
-            <XAxis dataKey="name" stroke="#94a3b8" />
-            <YAxis stroke="#94a3b8" />
+            <XAxis dataKey="name" stroke={darkMode ? '#94a3b8' : '#6b7280'} />
+            <YAxis stroke={darkMode ? '#94a3b8' : '#6b7280'} />
             <Tooltip
-              contentStyle={{ backgroundColor: '#1e293b', border: '1px solid #334155', borderRadius: '8px' }}
-              labelStyle={{ color: '#fff' }}
+              contentStyle={{ 
+                backgroundColor: darkMode ? '#1e293b' : '#ffffff', 
+                border: `1px solid ${darkMode ? '#334155' : '#e5e7eb'}`, 
+                borderRadius: '8px',
+                color: darkMode ? '#fff' : '#111827'
+              }}
+              labelStyle={{ color: darkMode ? '#fff' : '#111827' }}
             />
             <Legend />
             <Bar dataKey="posOnline" name="POS Online %" fill="#3b82f6" radius={[4, 4, 0, 0]} />
@@ -164,36 +181,36 @@ export function OverviewView({ stats, brandSummaries, regionSummaries, incidentC
         </ResponsiveContainer>
       </div>
 
-      <div className="bg-slate-800/50 rounded-xl p-6 border border-slate-700">
-        <h3 className="text-lg font-medium text-white mb-4">Regional Performance</h3>
+      <div className={`rounded-xl p-6 border ${cardBg}`}>
+        <h3 className={`text-lg font-medium ${textPrimary} mb-4`}>Regional Performance</h3>
         <div className="overflow-x-auto">
           <table className="w-full">
             <thead>
-              <tr className="border-b border-slate-700">
-                <th className="text-left py-3 px-4 text-slate-400 font-medium">Region</th>
-                <th className="text-right py-3 px-4 text-slate-400 font-medium">Stores</th>
-                <th className="text-right py-3 px-4 text-slate-400 font-medium">POS Online</th>
-                <th className="text-right py-3 px-4 text-slate-400 font-medium">Network Online</th>
-                <th className="text-right py-3 px-4 text-slate-400 font-medium">Devices Online</th>
+              <tr className={`border-b ${borderColor}`}>
+                <th className={`text-left py-3 px-4 ${textMuted} font-medium`}>Region</th>
+                <th className={`text-right py-3 px-4 ${textMuted} font-medium`}>Stores</th>
+                <th className={`text-right py-3 px-4 ${textMuted} font-medium`}>POS Online</th>
+                <th className={`text-right py-3 px-4 ${textMuted} font-medium`}>Network Online</th>
+                <th className={`text-right py-3 px-4 ${textMuted} font-medium`}>Devices Online</th>
               </tr>
             </thead>
             <tbody>
               {regionSummaries.map(region => (
-                <tr key={region.region} className="border-b border-slate-700/50 hover:bg-slate-700/30">
-                  <td className="py-3 px-4 text-white">{region.region}</td>
-                  <td className="py-3 px-4 text-right text-slate-300">{region.totalStores}</td>
+                <tr key={region.region} className={`border-b ${borderColor}/50 ${hoverBg}`}>
+                  <td className={`py-3 px-4 ${textPrimary}`}>{region.region}</td>
+                  <td className={`py-3 px-4 text-right ${textSecondary}`}>{region.totalStores}</td>
                   <td className="py-3 px-4 text-right">
-                    <span className={region.posOnlinePercent >= 90 ? 'text-emerald-400' : region.posOnlinePercent >= 80 ? 'text-yellow-400' : 'text-red-400'}>
+                    <span className={region.posOnlinePercent >= 90 ? 'text-emerald-500' : region.posOnlinePercent >= 80 ? 'text-yellow-500' : 'text-red-500'}>
                       {region.posOnlinePercent}%
                     </span>
                   </td>
                   <td className="py-3 px-4 text-right">
-                    <span className={region.networkOnlinePercent >= 90 ? 'text-emerald-400' : region.networkOnlinePercent >= 80 ? 'text-yellow-400' : 'text-red-400'}>
+                    <span className={region.networkOnlinePercent >= 90 ? 'text-emerald-500' : region.networkOnlinePercent >= 80 ? 'text-yellow-500' : 'text-red-500'}>
                       {region.networkOnlinePercent}%
                     </span>
                   </td>
                   <td className="py-3 px-4 text-right">
-                    <span className={region.devicesOnlinePercent >= 90 ? 'text-emerald-400' : region.devicesOnlinePercent >= 80 ? 'text-yellow-400' : 'text-red-400'}>
+                    <span className={region.devicesOnlinePercent >= 90 ? 'text-emerald-500' : region.devicesOnlinePercent >= 80 ? 'text-yellow-500' : 'text-red-500'}>
                       {region.devicesOnlinePercent}%
                     </span>
                   </td>

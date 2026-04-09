@@ -8,6 +8,7 @@ import 'leaflet/dist/leaflet.css';
 interface MapViewProps {
   stores: Store[];
   onSelectStore?: (storeId: string) => void;
+  darkMode?: boolean;
 }
 
 // Component to handle map bounds based on visible stores
@@ -44,7 +45,15 @@ function getStatusLabel(store: Store): string {
   return 'Healthy';
 }
 
-export function MapView({ stores, onSelectStore }: MapViewProps) {
+export function MapView({ stores, onSelectStore, darkMode = true }: MapViewProps) {
+  const cardBg = darkMode ? 'bg-slate-800/50 border-slate-700' : 'bg-white border-gray-200 shadow-sm';
+  const textPrimary = darkMode ? 'text-white' : 'text-gray-900';
+  const textSecondary = darkMode ? 'text-slate-300' : 'text-gray-600';
+  const textMuted = darkMode ? 'text-slate-500' : 'text-gray-400';
+  const tileUrl = darkMode 
+    ? "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png"
+    : "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png";
+
   // Filter stores with valid coordinates
   const storesWithCoords = stores.filter(s => s.latitude !== 0 && s.longitude !== 0);
 
@@ -59,31 +68,31 @@ export function MapView({ stores, onSelectStore }: MapViewProps) {
 
   return (
     <div className="space-y-6">
-      <h2 className="text-xl font-semibold text-white">Store Map</h2>
+      <h2 className={`text-xl font-semibold ${textPrimary}`}>Store Map</h2>
       
       {/* Legend */}
-      <div className="bg-slate-800/50 rounded-lg p-4 flex flex-wrap gap-6 items-center">
+      <div className={`${cardBg} rounded-lg p-4 flex flex-wrap gap-6 items-center border`}>
         <div className="flex items-center gap-2">
           <div className="w-4 h-4 rounded-full bg-emerald-500"></div>
-          <span className="text-slate-300">Healthy ({healthyCount})</span>
+          <span className={textSecondary}>Healthy ({healthyCount})</span>
         </div>
         <div className="flex items-center gap-2">
           <div className="w-4 h-4 rounded-full bg-yellow-500"></div>
-          <span className="text-slate-300">Warning ({warningCount})</span>
+          <span className={textSecondary}>Warning ({warningCount})</span>
         </div>
         <div className="flex items-center gap-2">
           <div className="w-4 h-4 rounded-full bg-red-500"></div>
-          <span className="text-slate-300">Critical ({criticalCount})</span>
+          <span className={textSecondary}>Critical ({criticalCount})</span>
         </div>
         {unmappedCount > 0 && (
-          <div className="text-slate-500 text-sm">
+          <div className={`${textMuted} text-sm`}>
             ({unmappedCount} stores not shown - coordinates unavailable)
           </div>
         )}
       </div>
 
       {/* Map */}
-      <div className="bg-slate-800/50 rounded-xl border border-slate-700 overflow-hidden" style={{ height: '600px' }}>
+      <div className={`${cardBg} rounded-xl border overflow-hidden`} style={{ height: '600px' }}>
         <MapContainer
           center={defaultCenter}
           zoom={defaultZoom}
@@ -92,7 +101,7 @@ export function MapView({ stores, onSelectStore }: MapViewProps) {
         >
           <TileLayer
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
-            url="https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png"
+            url={tileUrl}
           />
           {storesWithCoords.length > 0 && <MapBounds stores={storesWithCoords} />}
           {storesWithCoords.map(store => (

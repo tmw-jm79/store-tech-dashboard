@@ -74,20 +74,21 @@ function App() {
             brandSummaries={brandSummaries}
             regionSummaries={regionSummaries}
             incidentCount={incidents.length}
+            darkMode={darkMode}
           />
         );
       case 'pos':
-        return <POSView stores={filteredStores} />;
+        return <POSView stores={filteredStores} darkMode={darkMode} />;
       case 'network':
-        return <NetworkView stores={filteredStores} regionSummaries={regionSummaries} />;
+        return <NetworkView stores={filteredStores} regionSummaries={regionSummaries} darkMode={darkMode} />;
       case 'devices':
-        return <DevicesView stores={filteredStores} brandSummaries={brandSummaries} />;
+        return <DevicesView stores={filteredStores} brandSummaries={brandSummaries} darkMode={darkMode} />;
       case 'incidents':
-        return <IncidentsView incidents={filteredIncidents} incidentStats={filteredIncidentStats} />;
+        return <IncidentsView incidents={filteredIncidents} incidentStats={filteredIncidentStats} darkMode={darkMode} />;
       case 'stores':
-        return <StoresView stores={filteredStores} onSelectStore={setSelectedStoreId} />;
+        return <StoresView stores={filteredStores} onSelectStore={setSelectedStoreId} darkMode={darkMode} />;
       case 'map':
-        return <MapView stores={filteredStores} onSelectStore={setSelectedStoreId} />;
+        return <MapView stores={filteredStores} onSelectStore={setSelectedStoreId} darkMode={darkMode} />;
       default:
         return null;
     }
@@ -116,6 +117,7 @@ function App() {
               store={stores.find(s => s.id === selectedStoreId)!}
               incidents={incidents}
               onBack={() => setSelectedStoreId(null)}
+              darkMode={darkMode}
             />
           ) : (
             <>
