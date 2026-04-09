@@ -9,11 +9,14 @@ export function Header({ lastUpdated, onRefresh }: HeaderProps) {
   return (
     <header className="bg-slate-900 border-b border-slate-700 px-6 py-4">
       <div className="flex items-center justify-between">
-        <div>
-          <h1 className="text-2xl font-bold text-white">Store Technologies Dashboard</h1>
-          <p className="text-slate-400 text-sm mt-1">
-            Real-time operations monitoring across all brands and locations
-          </p>
+        <div className="flex items-center gap-4">
+          <img src="/logo.png" alt="Logo" className="h-12" />
+          <div>
+            <h1 className="text-2xl font-bold text-white">Store Technologies Dashboard</h1>
+            <p className="text-slate-400 text-sm mt-1">
+              Real-time operations monitoring across all brands and locations
+            </p>
+          </div>
         </div>
         <div className="flex items-center gap-4">
           <span className="text-slate-400 text-sm">
