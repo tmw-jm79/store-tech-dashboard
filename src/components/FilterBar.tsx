@@ -13,9 +13,10 @@ import {
 interface FilterBarProps {
   filter: HierarchyFilter;
   onFilterChange: (filter: HierarchyFilter) => void;
+  darkMode?: boolean;
 }
 
-export function FilterBar({ filter, onFilterChange }: FilterBarProps) {
+export function FilterBar({ filter, onFilterChange, darkMode = true }: FilterBarProps) {
   const zones = filter.brand ? getZonesByBrand(filter.brand) : [];
   const regions = filter.zone ? getRegionsByZone(filter.zone) : [];
   const districts = filter.region ? getDistrictsByRegion(filter.region) : [];
@@ -97,15 +98,23 @@ export function FilterBar({ filter, onFilterChange }: FilterBarProps) {
 
   const hasFilters = filter.brand || filter.zone || filter.region || filter.district || filter.storeId;
 
+  const selectClass = darkMode 
+    ? "bg-slate-700 text-white border-slate-600" 
+    : "bg-white text-gray-900 border-gray-300";
+  const labelClass = darkMode ? "text-slate-400" : "text-gray-600";
+  const clearBtnClass = darkMode 
+    ? "text-slate-400 hover:text-white hover:bg-slate-600" 
+    : "text-gray-400 hover:text-gray-700 hover:bg-gray-200";
+
   return (
-    <div className="bg-slate-800/50 rounded-lg p-4 flex flex-wrap gap-4 items-center">
+    <div className={`${darkMode ? 'bg-slate-800/50' : 'bg-white shadow-sm border border-gray-200'} rounded-lg p-4 flex flex-wrap gap-4 items-center`}>
       {/* Brand */}
       <div className="flex items-center gap-2">
-        <label className="text-slate-400 text-sm font-medium">Brand:</label>
+        <label className={`${labelClass} text-sm font-medium`}>Brand:</label>
         <select
           value={filter.brand || 'all'}
           onChange={(e) => handleBrandChange(e.target.value)}
-          className="bg-slate-700 text-white rounded-lg px-3 py-2 text-sm border border-slate-600 focus:border-blue-500 focus:outline-none"
+          className={`${selectClass} rounded-lg px-3 py-2 text-sm border focus:border-blue-500 focus:outline-none`}
         >
           <option value="all">All Brands</option>
           {brands.map(brand => (
@@ -115,7 +124,7 @@ export function FilterBar({ filter, onFilterChange }: FilterBarProps) {
         {filter.brand && (
           <button
             onClick={clearBrand}
-            className="p-1 text-slate-400 hover:text-white hover:bg-slate-600 rounded"
+            className={`p-1 ${clearBtnClass} rounded`}
             title="Clear brand filter"
           >
             <X size={16} />
@@ -126,11 +135,11 @@ export function FilterBar({ filter, onFilterChange }: FilterBarProps) {
       {/* Zone - only show if brand selected */}
       {filter.brand && zones.length > 0 && (
         <div className="flex items-center gap-2">
-          <label className="text-slate-400 text-sm font-medium">Zone:</label>
+          <label className={`${labelClass} text-sm font-medium`}>Zone:</label>
           <select
             value={filter.zone || 'all'}
             onChange={(e) => handleZoneChange(e.target.value)}
-            className="bg-slate-700 text-white rounded-lg px-3 py-2 text-sm border border-slate-600 focus:border-blue-500 focus:outline-none"
+            className={`${selectClass} rounded-lg px-3 py-2 text-sm border focus:border-blue-500 focus:outline-none`}
           >
             <option value="all">All Zones</option>
             {zones.map(zone => (
@@ -140,7 +149,7 @@ export function FilterBar({ filter, onFilterChange }: FilterBarProps) {
           {filter.zone && (
             <button
               onClick={clearZone}
-              className="p-1 text-slate-400 hover:text-white hover:bg-slate-600 rounded"
+              className={`p-1 ${clearBtnClass} rounded`}
               title="Clear zone filter"
             >
               <X size={16} />
@@ -152,11 +161,11 @@ export function FilterBar({ filter, onFilterChange }: FilterBarProps) {
       {/* Region - only show if zone selected */}
       {filter.zone && regions.length > 0 && (
         <div className="flex items-center gap-2">
-          <label className="text-slate-400 text-sm font-medium">Region:</label>
+          <label className={`${labelClass} text-sm font-medium`}>Region:</label>
           <select
             value={filter.region || 'all'}
             onChange={(e) => handleRegionChange(e.target.value)}
-            className="bg-slate-700 text-white rounded-lg px-3 py-2 text-sm border border-slate-600 focus:border-blue-500 focus:outline-none"
+            className={`${selectClass} rounded-lg px-3 py-2 text-sm border focus:border-blue-500 focus:outline-none`}
           >
             <option value="all">All Regions</option>
             {regions.map(region => (
@@ -166,7 +175,7 @@ export function FilterBar({ filter, onFilterChange }: FilterBarProps) {
           {filter.region && (
             <button
               onClick={clearRegion}
-              className="p-1 text-slate-400 hover:text-white hover:bg-slate-600 rounded"
+              className={`p-1 ${clearBtnClass} rounded`}
               title="Clear region filter"
             >
               <X size={16} />
@@ -178,11 +187,11 @@ export function FilterBar({ filter, onFilterChange }: FilterBarProps) {
       {/* District - only show if region selected */}
       {filter.region && districts.length > 0 && (
         <div className="flex items-center gap-2">
-          <label className="text-slate-400 text-sm font-medium">District:</label>
+          <label className={`${labelClass} text-sm font-medium`}>District:</label>
           <select
             value={filter.district || 'all'}
             onChange={(e) => handleDistrictChange(e.target.value)}
-            className="bg-slate-700 text-white rounded-lg px-3 py-2 text-sm border border-slate-600 focus:border-blue-500 focus:outline-none"
+            className={`${selectClass} rounded-lg px-3 py-2 text-sm border focus:border-blue-500 focus:outline-none`}
           >
             <option value="all">All Districts</option>
             {districts.map(district => (
@@ -192,7 +201,7 @@ export function FilterBar({ filter, onFilterChange }: FilterBarProps) {
           {filter.district && (
             <button
               onClick={clearDistrict}
-              className="p-1 text-slate-400 hover:text-white hover:bg-slate-600 rounded"
+              className={`p-1 ${clearBtnClass} rounded`}
               title="Clear district filter"
             >
               <X size={16} />
@@ -204,11 +213,11 @@ export function FilterBar({ filter, onFilterChange }: FilterBarProps) {
       {/* Store - only show if district selected */}
       {filter.district && storesInDistrict.length > 0 && (
         <div className="flex items-center gap-2">
-          <label className="text-slate-400 text-sm font-medium">Store:</label>
+          <label className={`${labelClass} text-sm font-medium`}>Store:</label>
           <select
             value={filter.storeId || 'all'}
             onChange={(e) => handleStoreChange(e.target.value)}
-            className="bg-slate-700 text-white rounded-lg px-3 py-2 text-sm border border-slate-600 focus:border-blue-500 focus:outline-none"
+            className={`${selectClass} rounded-lg px-3 py-2 text-sm border focus:border-blue-500 focus:outline-none`}
           >
             <option value="all">All Stores ({storesInDistrict.length})</option>
             {storesInDistrict.map(store => (
@@ -218,7 +227,7 @@ export function FilterBar({ filter, onFilterChange }: FilterBarProps) {
           {filter.storeId && (
             <button
               onClick={clearStore}
-              className="p-1 text-slate-400 hover:text-white hover:bg-slate-600 rounded"
+              className={`p-1 ${clearBtnClass} rounded`}
               title="Clear store filter"
             >
               <X size={16} />

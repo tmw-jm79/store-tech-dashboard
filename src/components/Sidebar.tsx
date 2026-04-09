@@ -8,9 +8,10 @@ interface SidebarProps {
   incidentCount: number;
   collapsed: boolean;
   onToggleCollapse: () => void;
+  darkMode: boolean;
 }
 
-export function Sidebar({ currentView, onViewChange, incidentCount, collapsed, onToggleCollapse }: SidebarProps) {
+export function Sidebar({ currentView, onViewChange, incidentCount, collapsed, onToggleCollapse, darkMode }: SidebarProps) {
   const navItems: { id: View; label: string; icon: React.ReactNode }[] = [
     { id: 'overview', label: 'Overview', icon: <LayoutDashboard size={20} /> },
     { id: 'pos', label: 'POS Systems', icon: <Monitor size={20} /> },
@@ -22,10 +23,14 @@ export function Sidebar({ currentView, onViewChange, incidentCount, collapsed, o
   ];
 
   return (
-    <aside className={`${collapsed ? 'w-16' : 'w-64'} bg-slate-900 border-r border-slate-700 min-h-screen transition-all duration-300 relative`}>
+    <aside className={`${collapsed ? 'w-16' : 'w-64'} ${darkMode ? 'bg-slate-900 border-slate-700' : 'bg-gray-50 border-gray-200'} border-r min-h-screen transition-all duration-300 relative`}>
       <button
         onClick={onToggleCollapse}
-        className="absolute -right-3 top-6 bg-slate-700 hover:bg-slate-600 text-white p-1 rounded-full border border-slate-600 z-10"
+        className={`absolute -right-3 top-6 p-1 rounded-full z-10 ${
+          darkMode 
+            ? 'bg-slate-700 hover:bg-slate-600 text-white border-slate-600' 
+            : 'bg-white hover:bg-gray-100 text-gray-600 border-gray-300 shadow-sm'
+        } border`}
         title={collapsed ? 'Expand sidebar' : 'Collapse sidebar'}
       >
         {collapsed ? <ChevronRight size={16} /> : <ChevronLeft size={16} />}
@@ -39,7 +44,9 @@ export function Sidebar({ currentView, onViewChange, incidentCount, collapsed, o
                 className={`w-full flex items-center ${collapsed ? 'justify-center px-2' : 'gap-3 px-4'} py-3 rounded-lg transition-colors ${
                   currentView === item.id
                     ? 'bg-blue-600 text-white'
-                    : 'text-slate-300 hover:bg-slate-800 hover:text-white'
+                    : darkMode 
+                      ? 'text-slate-300 hover:bg-slate-800 hover:text-white'
+                      : 'text-gray-600 hover:bg-gray-200 hover:text-gray-900'
                 }`}
                 title={collapsed ? item.label : undefined}
               >

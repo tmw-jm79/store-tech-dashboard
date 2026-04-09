@@ -23,6 +23,7 @@ function App() {
   const [filter, setFilter] = useState<HierarchyFilter>({});
   const [lastUpdated, setLastUpdated] = useState(new Date().toISOString());
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
+  const [darkMode, setDarkMode] = useState(true);
 
   const handleRefresh = useCallback(() => {
     setLastUpdated(new Date().toISOString());
@@ -90,8 +91,13 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-950">
-      <Header lastUpdated={lastUpdated} onRefresh={handleRefresh} />
+    <div className={`min-h-screen ${darkMode ? 'bg-slate-950' : 'bg-gray-100'}`}>
+      <Header 
+        lastUpdated={lastUpdated} 
+        onRefresh={handleRefresh} 
+        darkMode={darkMode}
+        onToggleDarkMode={() => setDarkMode(!darkMode)}
+      />
       <div className="flex">
         <Sidebar
           currentView={currentView}
@@ -99,6 +105,7 @@ function App() {
           incidentCount={incidents.length}
           collapsed={sidebarCollapsed}
           onToggleCollapse={() => setSidebarCollapsed(!sidebarCollapsed)}
+          darkMode={darkMode}
         />
         <main className="flex-1 p-6">
           {currentView !== 'overview' && (
@@ -106,6 +113,7 @@ function App() {
               <FilterBar
                 filter={filter}
                 onFilterChange={setFilter}
+                darkMode={darkMode}
               />
             </div>
           )}
