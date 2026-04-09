@@ -5,8 +5,14 @@ export interface RawStore {
   zone: string;
   region: string;
   district: string;
+  storeType: string;
+  storeStatus: string;
+  managerShortName: string | null;
+  managerName: string | null;
   city: string;
   state: string;
+  latitude: number;
+  longitude: number;
 }
 
 export interface Store {
@@ -18,8 +24,12 @@ export interface Store {
   district: string;
   storeType: string;
   storeStatus: string;
+  managerShortName: string | null;
+  managerName: string | null;
   city: string;
   state: string;
+  latitude: number;
+  longitude: number;
   posStatus: SystemStatus;
   networkStatus: SystemStatus;
   devices: DeviceInventory;

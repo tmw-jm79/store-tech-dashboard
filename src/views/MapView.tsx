@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { MapContainer, TileLayer, CircleMarker, Popup, useMap } from 'react-leaflet';
 import type { Store } from '../data/storeService';
-import { getCoordinates, defaultCenter, defaultZoom } from '../data/coordinates';
+import { defaultCenter, defaultZoom } from '../data/coordinates';
 
 import 'leaflet/dist/leaflet.css';
 
@@ -10,12 +10,12 @@ interface MapViewProps {
 }
 
 // Component to handle map bounds based on visible stores
-function MapBounds({ stores }: { stores: { lat: number; lng: number }[] }) {
+function MapBounds({ stores }: { stores: Store[] }) {
   const map = useMap();
   
   useEffect(() => {
     if (stores.length > 0) {
-      const bounds = stores.map(s => [s.lat, s.lng] as [number, number]);
+      const bounds = stores.map(s => [s.latitude, s.longitude] as [number, number]);
       map.fitBounds(bounds, { padding: [50, 50] });
     }
   }, [stores, map]);
@@ -44,18 +44,8 @@ function getStatusLabel(store: Store): string {
 }
 
 export function MapView({ stores }: MapViewProps) {
-  // Map stores to coordinates
-  const storesWithCoords = stores
-    .map(store => {
-      const coords = getCoordinates(store.city, store.state);
-      if (!coords) return null;
-      return {
-        ...store,
-        lat: coords[0],
-        lng: coords[1],
-      };
-    })
-    .filter((s): s is Store & { lat: number; lng: number } => s !== null);
+  // Filter stores with valid coordinates
+  const storesWithCoords = stores.filter(s => s.latitude !== 0 && s.longitude !== 0);
 
   // Count stores by status
   const healthyCount = stores.filter(s => s.posStatus === 'online' && s.networkStatus === 'online').length;
@@ -107,7 +97,7 @@ export function MapView({ stores }: MapViewProps) {
           {storesWithCoords.map(store => (
             <CircleMarker
               key={store.id}
-              center={[store.lat, store.lng]}
+              center={[store.latitude, store.longitude]}
               radius={8}
               fillColor={getStatusColor(store)}
               color={getStatusColor(store)}

@@ -20,6 +20,7 @@ export const cityCoordinates: Record<string, [number, number]> = {
   "Gilbert, AZ": [33.3528, -111.7890],
   "Tempe, AZ": [33.4255, -111.9400],
   "Peoria, AZ": [33.5806, -112.2374],
+  "Yuma, AZ": [32.6927, -114.6277],
   
   // Arkansas
   "Little Rock, AR": [34.7465, -92.2896],
@@ -466,6 +467,8 @@ export const cityCoordinates: Record<string, [number, number]> = {
   "New Iberia, LA": [30.0035, -91.8187],
   "Laplace, LA": [30.0663, -90.4801],
   "Slidell, LA": [30.2752, -89.7812],
+  "Metairie, LA": [29.9841, -90.1528],
+  "Mandeville, LA": [30.3580, -90.0656],
   "Central, LA": [30.5544, -91.0368],
   "Ruston, LA": [32.5232, -92.6379],
   "Sulphur, LA": [30.2366, -93.3774],
@@ -795,6 +798,7 @@ export const cityCoordinates: Record<string, [number, number]> = {
   "Binghamton, NY": [42.0987, -75.9180],
   "Freeport, NY": [40.6576, -73.5832],
   "Valley Stream, NY": [40.6643, -73.7085],
+  "Riverhead, NY": [40.9170, -72.6620],
   
   // North Carolina
   "Charlotte, NC": [35.2271, -80.8431],
@@ -864,6 +868,7 @@ export const cityCoordinates: Record<string, [number, number]> = {
   "Pinehurst, NC": [35.1957, -79.4695],
   "Southern Pines, NC": [35.1740, -79.3922],
   "Aberdeen, NC": [35.1315, -79.4295],
+  "Selma, NC": [35.5368, -78.2842],
   
   // North Dakota
   "Fargo, ND": [46.8772, -96.7898],
@@ -1213,6 +1218,7 @@ export const cityCoordinates: Record<string, [number, number]> = {
   "Friendswood, TX": [29.5294, -95.2010],
   "Weslaco, TX": [26.1595, -97.9908],
   "Socorro, TX": [31.6545, -106.3031],
+  "Humble, TX": [29.9988, -95.2622],
   
   // Utah
   "Salt Lake City, UT": [40.7608, -111.8910],
