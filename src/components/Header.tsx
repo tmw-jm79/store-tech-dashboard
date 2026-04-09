@@ -12,7 +12,7 @@ export function Header({ lastUpdated, onRefresh }: HeaderProps) {
         <div className="flex items-center gap-4">
           <img src="/logo.png" alt="Logo" className="h-12" />
           <div>
-            <h1 className="text-2xl font-bold text-white">Store Technologies Dashboard</h1>
+            <h1 className="text-2xl font-bold text-white">Store Tech Operations Dashboard</h1>
             <p className="text-slate-400 text-sm mt-1">
               Real-time operations monitoring across all brands and locations
             </p>
