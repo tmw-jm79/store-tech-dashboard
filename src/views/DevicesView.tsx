@@ -5,34 +5,71 @@ import type { Store, BrandSummary } from '../data/storeService';
 
 interface DevicesViewProps {
   stores: Store[];
-  stats: {
-    devices: {
-      totalNetworked: number;
-      networkedOnline: number;
-      totalPassive: number;
-      total: number;
-    };
-    deviceBreakdown: {
-      posComputers: { total: number; online: number };
-      iPads: { total: number; online: number };
-      pinPads: { total: number; online: number };
-      receiptPrinters: { total: number; online: number };
-      laserPrinters: { total: number; online: number };
-      chromebooks: { total: number; online: number };
-      desktopPhones: { total: number; online: number };
-      cordlessPhones: { total: number; online: number };
-      averyMarkdownScanners: { total: number };
-      tailoringPrinters: { total: number };
-      barcodeScanners: { total: number };
-      cashDrawers: { total: number };
-      monitors: { total: number };
-    };
-  };
   brandSummaries: BrandSummary[];
 }
 
-export function DevicesView({ stores, stats, brandSummaries }: DevicesViewProps) {
-  const { deviceBreakdown, devices } = stats;
+export function DevicesView({ stores, brandSummaries }: DevicesViewProps) {
+  // Calculate device stats from filtered stores
+  const deviceBreakdown = {
+    posComputers: { total: 0, online: 0 },
+    iPads: { total: 0, online: 0 },
+    pinPads: { total: 0, online: 0 },
+    receiptPrinters: { total: 0, online: 0 },
+    laserPrinters: { total: 0, online: 0 },
+    chromebooks: { total: 0, online: 0 },
+    desktopPhones: { total: 0, online: 0 },
+    cordlessPhones: { total: 0, online: 0 },
+    averyMarkdownScanners: { total: 0 },
+    tailoringPrinters: { total: 0 },
+    barcodeScanners: { total: 0 },
+    cashDrawers: { total: 0 },
+    monitors: { total: 0 },
+  };
+
+  stores.forEach(s => {
+    deviceBreakdown.posComputers.total += s.devices.posComputers.total;
+    deviceBreakdown.posComputers.online += s.devices.posComputers.online;
+    deviceBreakdown.iPads.total += s.devices.iPads.total;
+    deviceBreakdown.iPads.online += s.devices.iPads.online;
+    deviceBreakdown.pinPads.total += s.devices.pinPads.total;
+    deviceBreakdown.pinPads.online += s.devices.pinPads.online;
+    deviceBreakdown.receiptPrinters.total += s.devices.receiptPrinters.total;
+    deviceBreakdown.receiptPrinters.online += s.devices.receiptPrinters.online;
+    deviceBreakdown.laserPrinters.total += s.devices.laserPrinters.total;
+    deviceBreakdown.laserPrinters.online += s.devices.laserPrinters.online;
+    deviceBreakdown.chromebooks.total += s.devices.chromebooks.total;
+    deviceBreakdown.chromebooks.online += s.devices.chromebooks.online;
+    deviceBreakdown.desktopPhones.total += s.devices.desktopPhones.total;
+    deviceBreakdown.desktopPhones.online += s.devices.desktopPhones.online;
+    deviceBreakdown.cordlessPhones.total += s.devices.cordlessPhones.total;
+    deviceBreakdown.cordlessPhones.online += s.devices.cordlessPhones.online;
+    deviceBreakdown.averyMarkdownScanners.total += s.devices.averyMarkdownScanners.total;
+    deviceBreakdown.tailoringPrinters.total += s.devices.tailoringPrinters.total;
+    deviceBreakdown.barcodeScanners.total += s.devices.barcodeScanners.total;
+    deviceBreakdown.cashDrawers.total += s.devices.cashDrawers.total;
+    deviceBreakdown.monitors.total += s.devices.monitors.total;
+  });
+
+  const totalNetworked = 
+    deviceBreakdown.posComputers.total + deviceBreakdown.iPads.total + deviceBreakdown.pinPads.total +
+    deviceBreakdown.receiptPrinters.total + deviceBreakdown.laserPrinters.total + deviceBreakdown.chromebooks.total +
+    deviceBreakdown.desktopPhones.total + deviceBreakdown.cordlessPhones.total;
+  
+  const networkedOnline = 
+    deviceBreakdown.posComputers.online + deviceBreakdown.iPads.online + deviceBreakdown.pinPads.online +
+    deviceBreakdown.receiptPrinters.online + deviceBreakdown.laserPrinters.online + deviceBreakdown.chromebooks.online +
+    deviceBreakdown.desktopPhones.online + deviceBreakdown.cordlessPhones.online;
+
+  const totalPassive = 
+    deviceBreakdown.averyMarkdownScanners.total + deviceBreakdown.tailoringPrinters.total +
+    deviceBreakdown.barcodeScanners.total + deviceBreakdown.cashDrawers.total + deviceBreakdown.monitors.total;
+
+  const devices = {
+    totalNetworked,
+    networkedOnline,
+    totalPassive,
+    total: totalNetworked + totalPassive,
+  };
 
   // Networked devices (have online/offline status) - excludes network switches and phones (shown in Network Health)
   const networkedDevices = [

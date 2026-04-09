@@ -75,7 +75,7 @@ function App() {
       case 'network':
         return <NetworkView stores={filteredStores} regionSummaries={regionSummaries} />;
       case 'devices':
-        return <DevicesView stores={filteredStores} stats={stats} brandSummaries={brandSummaries} />;
+        return <DevicesView stores={filteredStores} brandSummaries={brandSummaries} />;
       case 'incidents':
         return <IncidentsView incidents={filteredIncidents} incidentStats={filteredIncidentStats} />;
       case 'stores':
