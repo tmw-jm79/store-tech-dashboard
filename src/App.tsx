@@ -101,6 +101,9 @@ function App() {
         onRefresh={handleRefresh} 
         darkMode={darkMode}
         onToggleDarkMode={() => setDarkMode(!darkMode)}
+        stores={stores}
+        incidents={incidents}
+        onSelectStore={setSelectedStoreId}
       />
       <div className="flex">
         <Sidebar

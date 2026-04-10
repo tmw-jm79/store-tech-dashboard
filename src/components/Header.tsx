@@ -1,13 +1,18 @@
 import { RefreshCw, Bell, Settings, Sun, Moon } from 'lucide-react';
+import { GlobalSearch } from './GlobalSearch';
+import type { Store, Incident } from '../data/storeService';
 
 interface HeaderProps {
   lastUpdated: string;
   onRefresh: () => void;
   darkMode: boolean;
   onToggleDarkMode: () => void;
+  stores: Store[];
+  incidents: Incident[];
+  onSelectStore: (storeId: string) => void;
 }
 
-export function Header({ lastUpdated, onRefresh, darkMode, onToggleDarkMode }: HeaderProps) {
+export function Header({ lastUpdated, onRefresh, darkMode, onToggleDarkMode, stores, incidents, onSelectStore }: HeaderProps) {
   return (
     <header className={`${darkMode ? 'bg-slate-900 border-slate-700' : 'bg-white border-gray-200'} border-b px-6 py-4`}>
       <div className="flex items-center justify-between">
@@ -21,6 +26,12 @@ export function Header({ lastUpdated, onRefresh, darkMode, onToggleDarkMode }: H
           </div>
         </div>
         <div className="flex items-center gap-4">
+          <GlobalSearch 
+            stores={stores} 
+            incidents={incidents} 
+            onSelectStore={onSelectStore}
+            darkMode={darkMode}
+          />
           <span className={`text-sm ${darkMode ? 'text-slate-400' : 'text-gray-500'}`}>
             Last updated: {new Date(lastUpdated).toLocaleTimeString()}
           </span>
