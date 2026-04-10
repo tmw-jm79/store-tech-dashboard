@@ -1,4 +1,5 @@
-import { AlertTriangle, AlertCircle, XCircle, Key, AppWindow, HardDrive, HelpCircle, Wifi, Shield, Code } from 'lucide-react';
+import { useState } from 'react';
+import { AlertTriangle, AlertCircle, XCircle, Key, AppWindow, HardDrive, HelpCircle, Wifi, Shield, Code, ChevronLeft, ChevronRight } from 'lucide-react';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, Cell } from 'recharts';
 import { StatCard } from '../components/StatCard';
 import type { Incident, IncidentCategory, IncidentPriority, IncidentStatus } from '../data/storeService';
@@ -55,6 +56,9 @@ const statusColors: Record<IncidentStatus, string> = {
 };
 
 export function IncidentsView({ incidents, incidentStats, darkMode = true }: IncidentsViewProps) {
+  const [page, setPage] = useState(1);
+  const pageSize = 25;
+
   const cardBg = darkMode ? 'bg-slate-800/50 border-slate-700' : 'bg-white border-gray-200 shadow-sm';
   const innerCardBg = darkMode ? 'bg-slate-700/30' : 'bg-gray-50';
   const textPrimary = darkMode ? 'text-white' : 'text-gray-900';
@@ -63,8 +67,13 @@ export function IncidentsView({ incidents, incidentStats, darkMode = true }: Inc
   const borderColor = darkMode ? 'border-slate-700' : 'border-gray-200';
   const hoverBg = darkMode ? 'hover:bg-slate-700/30' : 'hover:bg-gray-50';
   const axisColor = darkMode ? '#94a3b8' : '#6b7280';
+  const headerBg = darkMode ? 'bg-slate-800' : 'bg-gray-50';
+  const btnBg = darkMode ? 'bg-slate-700 hover:bg-slate-600' : 'bg-gray-100 hover:bg-gray-200';
 
   const { byCategory, byPriority } = incidentStats;
+
+  const totalPages = Math.ceil(incidents.length / pageSize);
+  const paginatedIncidents = incidents.slice((page - 1) * pageSize, page * pageSize);
 
   const chartData = byCategory.map(item => ({
     name: item.category,
@@ -132,7 +141,7 @@ export function IncidentsView({ incidents, incidentStats, darkMode = true }: Inc
               </tr>
             </thead>
             <tbody>
-              {incidents.slice(0, 50).map(incident => (
+              {paginatedIncidents.map(incident => (
                 <tr key={incident.id} className={`border-b ${borderColor}/50 ${hoverBg}`}>
                   <td className={`py-3 px-4 ${textPrimary} font-medium`}>{incident.storeId}</td>
                   <td className={`py-3 px-4 ${textSecondary} font-mono text-sm`}>{incident.id}</td>
@@ -153,9 +162,31 @@ export function IncidentsView({ incidents, incidentStats, darkMode = true }: Inc
             </tbody>
           </table>
         </div>
-        {incidents.length > 50 && (
-          <p className={`${textMuted} text-sm mt-4 text-center`}>Showing 50 of {incidents.length} open incidents</p>
-        )}
+        
+        <div className={`flex items-center justify-between px-4 py-3 ${headerBg} border-t ${borderColor} rounded-b-lg -mx-6 -mb-6 mt-4`}>
+          <span className={`${textMuted} text-sm`}>
+            Showing {((page - 1) * pageSize) + 1} - {Math.min(page * pageSize, incidents.length)} of {incidents.length} incidents
+          </span>
+          <div className="flex items-center gap-2">
+            <button
+              onClick={() => setPage(p => Math.max(1, p - 1))}
+              disabled={page === 1}
+              className={`p-2 rounded-lg ${btnBg} ${textPrimary} disabled:opacity-50 disabled:cursor-not-allowed`}
+            >
+              <ChevronLeft size={20} />
+            </button>
+            <span className={`${textPrimary} px-3`}>
+              Page {page} of {totalPages}
+            </span>
+            <button
+              onClick={() => setPage(p => Math.min(totalPages, p + 1))}
+              disabled={page === totalPages}
+              className={`p-2 rounded-lg ${btnBg} ${textPrimary} disabled:opacity-50 disabled:cursor-not-allowed`}
+            >
+              <ChevronRight size={20} />
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   );
