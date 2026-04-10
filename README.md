@@ -270,45 +270,120 @@ For real-time data integration with device management systems:
        │                  │                  │
        ▼                  ▼                  ▼
 ┌─────────────────────────────────────────────────────┐
-│   Cloud Functions / Cloud Run Jobs                  │
-│   - Polls APIs every 1-5 min                        │
+│   Cloud Run Jobs                                    │
+│   - Polls Intune/MobileIron APIs every 1-5 min      │
 │   - Syncs Ivanti incidents every 5-15 min           │
 │   - Normalizes & maps to stores                     │
 └───────────────────────┬─────────────────────────────┘
                         │
                         ▼
 ┌─────────────────────────────────────────────────────┐
-│   Firestore or Cloud SQL                            │
-│   - Device status storage                           │
-│   - Incident data                                   │
-│   - Store/brand mapping                             │
+│   Cloud SQL (PostgreSQL)                            │
+│   - stores: Store master data                       │
+│   - devices: Device status & inventory              │
+│   - incidents: Open/historical incidents            │
+│   - device_status_history: Time-series data         │
 └───────────────────────┬─────────────────────────────┘
                         │
                         ▼
 ┌─────────────────────────────────────────────────────┐
 │   Cloud Run (API Service)                           │
+│   GET /api/stores                                   │
+│   GET /api/stores/:id                               │
 │   GET /api/devices/status                           │
-│   GET /api/devices/by-store                         │
+│   GET /api/devices/by-store/:storeId                │
 │   GET /api/incidents                                │
+│   GET /api/incidents/by-store/:storeId              │
 └───────────────────────┬─────────────────────────────┘
                         │
                         ▼
 ┌─────────────────────────────────────────────────────┐
-│   React Dashboard                                   │
-│   - Firebase Hosting / Cloud Run                    │
+│   React Dashboard (Cloud Run)                       │
 │   - Polls API every 30-60 sec                       │
+│   - WebSocket for real-time updates (future)        │
 └─────────────────────────────────────────────────────┘
+```
+
+### Cloud SQL Schema
+
+```sql
+-- Stores table
+CREATE TABLE stores (
+    id VARCHAR(20) PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    brand VARCHAR(10) NOT NULL,
+    zone VARCHAR(20),
+    region VARCHAR(20),
+    district VARCHAR(20),
+    store_type VARCHAR(50),
+    store_status VARCHAR(20),
+    manager_short_name VARCHAR(20),
+    manager_name VARCHAR(100),
+    city VARCHAR(100),
+    state VARCHAR(10),
+    latitude DECIMAL(10, 6),
+    longitude DECIMAL(10, 6),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Devices table
+CREATE TABLE devices (
+    id SERIAL PRIMARY KEY,
+    store_id VARCHAR(20) REFERENCES stores(id),
+    device_type VARCHAR(50) NOT NULL,
+    device_name VARCHAR(100),
+    serial_number VARCHAR(100),
+    status VARCHAR(20) DEFAULT 'unknown',
+    last_seen TIMESTAMP,
+    source VARCHAR(20), -- 'intune', 'mobileiron'
+    source_id VARCHAR(100),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Incidents table
+CREATE TABLE incidents (
+    id VARCHAR(20) PRIMARY KEY,
+    store_id VARCHAR(20) REFERENCES stores(id),
+    summary TEXT,
+    category VARCHAR(50),
+    priority VARCHAR(20),
+    status VARCHAR(30),
+    created_at TIMESTAMP,
+    updated_at TIMESTAMP,
+    resolved_at TIMESTAMP,
+    source VARCHAR(20) DEFAULT 'ivanti',
+    source_id VARCHAR(100)
+);
+
+-- Device status history (for trends)
+CREATE TABLE device_status_history (
+    id SERIAL PRIMARY KEY,
+    store_id VARCHAR(20) REFERENCES stores(id),
+    device_type VARCHAR(50),
+    total_count INT,
+    online_count INT,
+    recorded_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Indexes
+CREATE INDEX idx_devices_store_id ON devices(store_id);
+CREATE INDEX idx_devices_status ON devices(status);
+CREATE INDEX idx_incidents_store_id ON incidents(store_id);
+CREATE INDEX idx_incidents_status ON incidents(status);
+CREATE INDEX idx_device_history_store_date ON device_status_history(store_id, recorded_at);
 ```
 
 ### Ivanti Integration (BI Reporting Server)
 
 For incident data from Ivanti:
-- Connect to BI Reporting SQL Server database
+- Connect to BI Reporting SQL Server database via Cloud SQL Proxy or VPN
 - Query incident tables on a scheduled basis (every 5-15 min)
 - Map store IDs to dashboard store data
-- Sync open incidents to cloud database
+- Sync open incidents to Cloud SQL
 
-Required fields:
+Required fields from Ivanti:
 - Incident Number
 - Summary/Subject
 - Status
@@ -322,13 +397,40 @@ Required fields:
 
 | Component | Service | Purpose |
 |-----------|---------|---------|
-| Data Ingestion | Cloud Functions | Poll Intune/MobileIron APIs |
-| Incident Sync | Cloud Run Jobs | Sync from Ivanti BI database |
-| Scheduler | Cloud Scheduler | Trigger sync jobs |
-| Database | Firestore/Cloud SQL | Store device status & incidents |
-| API | Cloud Run | Serve data to dashboard |
-| Hosting | Firebase Hosting | Host React app |
-| Caching | Memorystore (Redis) | Optional fast reads |
+| Database | Cloud SQL (PostgreSQL) | Primary data store for stores, devices, incidents |
+| Data Sync | Cloud Run Jobs | Poll Intune/MobileIron/Ivanti on schedule |
+| Scheduler | Cloud Scheduler | Trigger sync jobs every 1-15 min |
+| API | Cloud Run | REST API serving dashboard |
+| Dashboard | Cloud Run | Host React application |
+| Secrets | Secret Manager | Store API keys and DB credentials |
+| Networking | VPC / Cloud SQL Proxy | Secure connection to Ivanti BI server |
+| Monitoring | Cloud Monitoring | Alerts and dashboards for system health |
+| Logging | Cloud Logging | Centralized logs for debugging |
+
+### Environment Configuration
+
+```bash
+# Cloud SQL connection
+DB_HOST=/cloudsql/project:region:instance
+DB_NAME=store_tech_ops
+DB_USER=api_service
+DB_PASSWORD=<from Secret Manager>
+
+# Intune API
+INTUNE_TENANT_ID=<tenant-id>
+INTUNE_CLIENT_ID=<client-id>
+INTUNE_CLIENT_SECRET=<from Secret Manager>
+
+# MobileIron API
+MOBILEIRON_URL=https://mobileiron.company.com/api
+MOBILEIRON_API_KEY=<from Secret Manager>
+
+# Ivanti BI Server
+IVANTI_DB_HOST=ivanti-bi-server.company.com
+IVANTI_DB_NAME=ServiceManager
+IVANTI_DB_USER=readonly_user
+IVANTI_DB_PASSWORD=<from Secret Manager>
+```
 
 ## License
 
