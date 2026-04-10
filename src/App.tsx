@@ -80,7 +80,7 @@ function App() {
       case 'pos':
         return <POSView stores={filteredStores} darkMode={darkMode} />;
       case 'network':
-        return <NetworkView stores={filteredStores} regionSummaries={regionSummaries} darkMode={darkMode} />;
+        return <NetworkView stores={filteredStores} darkMode={darkMode} />;
       case 'devices':
         return <DevicesView stores={filteredStores} brandSummaries={brandSummaries} darkMode={darkMode} />;
       case 'incidents':

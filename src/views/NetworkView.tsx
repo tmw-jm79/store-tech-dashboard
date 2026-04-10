@@ -2,15 +2,14 @@ import { Wifi, CheckCircle, AlertCircle, XCircle, Phone, Router } from 'lucide-r
 import { PieChart, Pie, Cell, ResponsiveContainer, AreaChart, Area, XAxis, YAxis, Tooltip } from 'recharts';
 import { StatCard } from '../components/StatCard';
 import { StatusBadge } from '../components/StatusBadge';
-import type { Store, RegionSummary } from '../data/storeService';
+import type { Store } from '../data/storeService';
 
 interface NetworkViewProps {
   stores: Store[];
-  regionSummaries: RegionSummary[];
   darkMode?: boolean;
 }
 
-export function NetworkView({ stores, regionSummaries, darkMode = true }: NetworkViewProps) {
+export function NetworkView({ stores, darkMode = true }: NetworkViewProps) {
   const cardBg = darkMode ? 'bg-slate-800/50 border-slate-700' : 'bg-white border-gray-200 shadow-sm';
   const innerCardBg = darkMode ? 'bg-slate-700/50' : 'bg-gray-50';
   const textPrimary = darkMode ? 'text-white' : 'text-gray-900';
@@ -38,10 +37,16 @@ export function NetworkView({ stores, regionSummaries, darkMode = true }: Networ
     { name: 'Offline', value: offline, color: '#ef4444' },
   ];
 
-  const regionData = regionSummaries.map(r => ({
-    name: r.region.replace('Canada ', 'CA '),
-    health: r.networkOnlinePercent,
-  }));
+  // Calculate region summaries from filtered stores
+  const regions = [...new Set(stores.map(s => s.region))].sort();
+  const regionData = regions.map(region => {
+    const regionStores = stores.filter(s => s.region === region);
+    const regionOnline = regionStores.filter(s => s.networkStatus === 'online').length;
+    return {
+      name: region.replace('Canada ', 'CA '),
+      health: regionStores.length > 0 ? Math.round((regionOnline / regionStores.length) * 100) : 0,
+    };
+  });
 
   const problemStores = stores
     .filter(s => s.networkStatus !== 'online')
