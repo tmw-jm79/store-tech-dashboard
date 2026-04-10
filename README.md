@@ -430,7 +430,191 @@ IVANTI_DB_HOST=ivanti-bi-server.company.com
 IVANTI_DB_NAME=ServiceManager
 IVANTI_DB_USER=readonly_user
 IVANTI_DB_PASSWORD=<from Secret Manager>
+
+# Okta SSO
+OKTA_ISSUER=https://<your-domain>.okta.com/oauth2/default
+OKTA_CLIENT_ID=<client-id>
+OKTA_CLIENT_SECRET=<from Secret Manager>
+OKTA_AUDIENCE=api://store-tech-ops
 ```
+
+## Access Control
+
+### Overview
+
+- **Authentication:** Okta SSO (OIDC)
+- **Authorization:** Azure AD group membership
+- **Access Model:** All authenticated users with group membership get full access
+
+### Authentication Flow
+
+```
+┌─────────────┐     ┌─────────────┐     ┌─────────────┐
+│    User     │────▶│    Okta     │────▶│  Azure AD   │
+│  (Browser)  │     │    SSO      │     │   (Groups)  │
+└─────────────┘     └──────┬──────┘     └─────────────┘
+                           │
+                           ▼
+                    ┌─────────────┐
+                    │ ID Token    │
+                    │ + Groups    │
+                    └──────┬──────┘
+                           │
+                           ▼
+┌─────────────────────────────────────────────────────┐
+│   Cloud Run (API)                                   │
+│   - Validates Okta JWT token                        │
+│   - Checks group claim for authorization            │
+│   - Returns 401 if not authenticated                │
+│   - Returns 403 if not in authorized group          │
+└─────────────────────────────────────────────────────┘
+```
+
+### How It Works
+
+1. User navigates to dashboard
+2. If not authenticated, redirected to Okta login
+3. User authenticates with Okta (which federates to Azure AD)
+4. Okta issues ID token with group claims
+5. Dashboard sends token with API requests
+6. API validates token and checks group membership
+7. If user is in authorized AD group → Access granted
+8. If not → 403 Forbidden
+
+### Azure AD Configuration
+
+1. **Create Security Group:**
+   - Name: `SG-StoreTechOps-Users`
+   - Type: Security
+   - Add authorized users as members
+
+2. **Sync to Okta:**
+   - Ensure AD → Okta sync includes group membership
+   - Or manually create matching group in Okta
+
+### Okta Configuration
+
+1. **Create OIDC Application:**
+   - Application type: Web Application
+   - Sign-in redirect URI: `https://store-tech-ops.company.com/callback`
+   - Sign-out redirect URI: `https://store-tech-ops.company.com`
+   - Grant types: Authorization Code
+   - Assignments: Assign to the authorized group
+
+2. **Configure Groups Claim:**
+   - Go to Security → API → Authorization Servers
+   - Select your authorization server (or "default")
+   - Add a claim:
+     - Name: `groups`
+     - Include in: ID Token, Access Token
+     - Value type: Groups
+     - Filter: Matches regex `.*` (or specific group pattern)
+
+3. **Application Credentials:**
+   - Note the Client ID
+   - Generate a Client Secret
+   - Store in GCP Secret Manager
+
+### API Token Validation
+
+The API service validates incoming requests:
+
+```javascript
+// Middleware pseudocode
+async function authenticate(req, res, next) {
+  const token = req.headers.authorization?.replace('Bearer ', '');
+  
+  if (!token) {
+    return res.status(401).json({ error: 'No token provided' });
+  }
+  
+  try {
+    // Verify token with Okta
+    const decoded = await oktaJwtVerifier.verifyAccessToken(token, OKTA_AUDIENCE);
+    
+    // Check group membership
+    const groups = decoded.claims.groups || [];
+    const authorizedGroup = 'SG-StoreTechOps-Users';
+    
+    if (!groups.includes(authorizedGroup)) {
+      return res.status(403).json({ error: 'Not authorized' });
+    }
+    
+    req.user = decoded.claims;
+    next();
+  } catch (error) {
+    return res.status(401).json({ error: 'Invalid token' });
+  }
+}
+```
+
+### React Frontend Integration
+
+Install Okta SDK:
+```bash
+npm install @okta/okta-react @okta/okta-auth-js
+```
+
+Configure in the app:
+```typescript
+// src/config/okta.ts
+export const oktaConfig = {
+  issuer: import.meta.env.VITE_OKTA_ISSUER,
+  clientId: import.meta.env.VITE_OKTA_CLIENT_ID,
+  redirectUri: `${window.location.origin}/callback`,
+  scopes: ['openid', 'profile', 'email', 'groups'],
+};
+```
+
+Wrap the app with Okta provider:
+```typescript
+// src/main.tsx
+import { Security } from '@okta/okta-react';
+import { OktaAuth } from '@okta/okta-auth-js';
+
+const oktaAuth = new OktaAuth(oktaConfig);
+
+<Security oktaAuth={oktaAuth}>
+  <App />
+</Security>
+```
+
+Protected route example:
+```typescript
+import { useOktaAuth } from '@okta/okta-react';
+
+function App() {
+  const { authState, oktaAuth } = useOktaAuth();
+  
+  if (!authState) return <Loading />;
+  
+  if (!authState.isAuthenticated) {
+    return <LoginButton onClick={() => oktaAuth.signInWithRedirect()} />;
+  }
+  
+  return <Dashboard />;
+}
+```
+
+### Managing Access
+
+**To grant access:**
+1. Add user to `SG-StoreTechOps-Users` group in Azure AD
+2. Wait for sync to Okta (or manual sync)
+3. User can now log in
+
+**To revoke access:**
+1. Remove user from the AD group
+2. User's next token refresh will fail
+3. Active sessions will expire based on token lifetime
+
+### Security Considerations
+
+- Tokens expire after 1 hour (configurable in Okta)
+- Refresh tokens allow seamless re-authentication
+- All API calls require valid token
+- HTTPS enforced on all endpoints
+- Tokens stored in memory (not localStorage) to prevent XSS attacks
 
 ## License
 
